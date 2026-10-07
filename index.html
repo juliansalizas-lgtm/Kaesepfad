@@ -1,0 +1,7171 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1.0,
+             maximum-scale=1.0,
+             user-scalable=no"
+>
+
+<title>🧀 Käsepfad</title>
+
+
+<style>
+
+/* =========================================================
+   GRUNDLAYOUT
+   ========================================================= */
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#8bcf69;
+}
+
+body{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+button,
+input{
+
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+#app{
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   SCREENS
+   ========================================================= */
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    overflow:hidden;
+}
+
+.screen.active{
+
+    display:flex;
+}
+
+
+/* =========================================================
+   STARTSEITE
+   ========================================================= */
+
+#homeScreen{
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #83cb69,
+            #c2e78e
+        );
+}
+
+.homeBox{
+
+    width:min(92vw,560px);
+
+    background:
+        rgba(255,255,255,0.96);
+
+    border:
+        5px solid #69472a;
+
+    border-radius:30px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,0.25);
+}
+
+.logo{
+
+    font-size:
+        clamp(
+            45px,
+            10vw,
+            75px
+        );
+
+    font-weight:1000;
+
+    color:#5a3d16;
+
+    margin-bottom:7px;
+}
+
+.subtitle{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#765936;
+
+    margin-bottom:28px;
+}
+
+.menuButtons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.menuButton{
+
+    width:100%;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    color:#493418;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,0.18);
+}
+
+.menuButton:active{
+
+    transform:scale(0.98);
+}
+
+.playBtn{
+
+    background:#ffdc45;
+}
+
+.createBtn{
+
+    background:#8ce08c;
+}
+
+.joinBtn{
+
+    background:#82caff;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.formScreen{
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #88ce6f,
+            #b9df83
+        );
+}
+
+.formBox{
+
+    width:min(92vw,500px);
+
+    background:white;
+
+    border:
+        4px solid #69472a;
+
+    border-radius:26px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.25);
+}
+
+.formTitle{
+
+    font-size:32px;
+
+    font-weight:1000;
+
+    color:#5a3d16;
+
+    margin-bottom:12px;
+}
+
+.formText{
+
+    font-size:17px;
+
+    line-height:1.4;
+
+    color:#60492f;
+
+    margin-bottom:20px;
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:
+        3px solid #c5a878;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    outline:none;
+
+    margin-bottom:12px;
+}
+
+input:focus{
+
+    border-color:#6b9fe8;
+}
+
+.bigButton{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    background:#ffdc45;
+
+    color:#493418;
+
+    margin-top:5px;
+}
+
+.bigButton:disabled{
+
+    opacity:.45;
+
+    cursor:default;
+}
+
+.backButton{
+
+    background:#ddd;
+}
+
+
+/* =========================================================
+   LOBBY
+   ========================================================= */
+
+#lobbyScreen{
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #88ce6f,
+            #c7e697
+        );
+}
+
+.lobbyBox{
+
+    width:min(94vw,620px);
+
+    background:white;
+
+    border:
+        4px solid #69472a;
+
+    border-radius:28px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.25);
+}
+
+.lobbyTitle{
+
+    font-size:31px;
+
+    font-weight:1000;
+
+    color:#5a3d16;
+
+    margin-bottom:12px;
+}
+
+.lobbyCodeLabel{
+
+    font-size:15px;
+
+    font-weight:bold;
+}
+
+.lobbyCode{
+
+    font-size:
+        clamp(
+            35px,
+            9vw,
+            58px
+        );
+
+    font-weight:1000;
+
+    letter-spacing:5px;
+
+    color:#3f6fc2;
+
+    background:#edf5ff;
+
+    border:
+        3px solid #8cb9ff;
+
+    border-radius:18px;
+
+    padding:13px;
+
+    margin:10px 0 20px;
+}
+
+.playerList{
+
+    background:#f6f2e9;
+
+    border-radius:18px;
+
+    padding:14px;
+
+    margin-bottom:17px;
+}
+
+.player{
+
+    padding:12px;
+
+    background:white;
+
+    border-radius:13px;
+
+    margin:7px 0;
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+.waiting{
+
+    margin:13px 0;
+
+    font-weight:bold;
+
+    color:#6d6d6d;
+}
+
+.status{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    color:#69563e;
+
+    min-height:20px;
+}
+
+
+/* =========================================================
+   GAME SCREEN
+   ========================================================= */
+
+#gameScreen{
+
+    flex-direction:column;
+
+    background:#8bcf69;
+}
+
+
+/* =========================================================
+   GAME HEADER
+   ========================================================= */
+
+.gameHeader{
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:8px 12px;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    border-bottom:
+        3px solid #6b4a2b;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0,0,0,0.18);
+
+    z-index:10;
+}
+
+.gameHeaderTitle{
+
+    font-size:23px;
+
+    font-weight:1000;
+
+    color:#5a3d16;
+}
+
+.gameHeaderMode{
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#6d5433;
+
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   GAME AREA
+   ========================================================= */
+
+#gameArea{
+
+    position:relative;
+
+    flex:1;
+
+    min-height:0;
+    min-width:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:6px;
+
+    background:#8bcf69;
+}
+
+canvas{
+
+    display:block;
+
+    max-width:100%;
+    max-height:100%;
+
+    width:auto;
+    height:auto;
+
+    touch-action:none;
+}
+
+
+/* =========================================================
+   GAME HUD
+   ========================================================= */
+
+#gameHUD{
+
+    position:absolute;
+
+    top:12px;
+    left:12px;
+    right:12px;
+
+    z-index:8;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    pointer-events:none;
+}
+
+.hudPanel{
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border:
+        3px solid #6b4a2b;
+
+    border-radius:16px;
+
+    padding:
+        8px 11px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0,0,0,0.18);
+
+    pointer-events:auto;
+}
+
+#leftHUD{
+
+    max-width:
+        min(
+            470px,
+            56vw
+        );
+}
+
+#rightHUD{
+
+    width:
+        min(
+            300px,
+            34vw
+        );
+}
+
+#turnText{
+
+    font-size:20px;
+
+    font-weight:1000;
+
+    margin-bottom:3px;
+}
+
+#diceText{
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+#statusText{
+
+    margin-top:3px;
+
+    font-size:13px;
+
+    line-height:1.2;
+}
+
+#inventoryText{
+
+    font-size:14px;
+
+    line-height:1.35;
+
+    font-weight:bold;
+}
+
+.hudButtons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    margin-top:6px;
+}
+
+.hudButtons button{
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:
+        7px 10px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    color:#493418;
+}
+
+.hudButtons button:disabled{
+
+    opacity:.43;
+
+    cursor:default;
+}
+
+#diceBtn{
+    background:#ffdc45;
+}
+
+#equipBtn{
+    background:#8cc8ff;
+}
+
+#useBtn{
+    background:#e9a5ff;
+}
+
+#cheeseBtn{
+    background:#ffd56b;
+}
+
+
+/* =========================================================
+   ITEM POPUP
+   ========================================================= */
+
+#popup{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:30;
+
+    width:min(
+        92vw,
+        530px
+    );
+
+    background:white;
+
+    border:
+        4px solid #684527;
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:
+        0 14px 40px
+        rgba(0,0,0,0.35);
+
+    display:none;
+
+    text-align:center;
+}
+
+#popupTitle{
+
+    font-size:28px;
+
+    font-weight:1000;
+
+    margin-bottom:9px;
+}
+
+#popupText{
+
+    font-size:18px;
+
+    line-height:1.4;
+
+    margin-bottom:18px;
+}
+
+#popupButtons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+}
+
+#popupButtons button{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:13px;
+
+    font-size:17px;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.equipChoice{
+    background:#7fc7ff;
+}
+
+.storeChoice{
+    background:#9be58e;
+}
+
+.leaveChoice{
+    background:#dddddd;
+}
+
+.swapChoice{
+    background:#ffc56d;
+}
+
+
+/* =========================================================
+   WINNER
+   ========================================================= */
+
+#winner{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:50;
+
+    background:
+        rgba(0,0,0,0.48);
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+}
+
+#winnerBox{
+
+    width:min(
+        90vw,
+        560px
+    );
+
+    background:white;
+
+    border:
+        5px solid #69472a;
+
+    border-radius:28px;
+
+    padding:
+        34px 28px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.38);
+}
+
+#winnerTitle{
+
+    font-size:
+        clamp(
+            32px,
+            8vw,
+            45px
+        );
+
+    font-weight:1000;
+
+    margin-bottom:12px;
+}
+
+#winnerSub{
+
+    font-size:21px;
+
+    margin-bottom:20px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+#errorBox{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:15px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:100;
+
+    width:min(
+        92vw,
+        620px
+    );
+
+    background:#fff0f0;
+
+    color:#9a2323;
+
+    border:
+        3px solid #d85c5c;
+
+    border-radius:14px;
+
+    padding:11px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    display:none;
+}
+
+#errorBox.show{
+
+    display:block;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:800px){
+
+    .gameHeader{
+
+        padding:
+            6px 8px;
+    }
+
+    .gameHeaderTitle{
+
+        font-size:19px;
+    }
+
+    .gameHeaderMode{
+
+        font-size:11px;
+    }
+
+    #gameHUD{
+
+        top:7px;
+        left:7px;
+        right:7px;
+
+        gap:6px;
+    }
+
+    #leftHUD{
+
+        max-width:
+            62vw;
+    }
+
+    #rightHUD{
+
+        width:
+            31vw;
+    }
+
+    #turnText{
+
+        font-size:17px;
+    }
+
+    #diceText{
+
+        font-size:14px;
+    }
+
+    #statusText{
+
+        font-size:11px;
+    }
+
+    #inventoryText{
+
+        font-size:11px;
+    }
+
+    .hudPanel{
+
+        padding:
+            6px 8px;
+    }
+
+    .hudButtons{
+
+        gap:3px;
+    }
+
+    .hudButtons button{
+
+        font-size:11px;
+
+        padding:
+            6px 7px;
+    }
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div id="app">
+
+
+<!-- =======================================================
+     STARTSEITE
+     ======================================================= -->
+
+<section
+    id="homeScreen"
+    class="screen active"
+>
+
+    <div class="homeBox">
+
+        <div class="logo">
+            🧀 Käsepfad
+        </div>
+
+        <div class="subtitle">
+            Das große Käse-Abenteuer
+        </div>
+
+
+        <div class="menuButtons">
+
+            <button
+                class="menuButton playBtn"
+                onclick="openLocalGame()"
+            >
+                🎮 Spiel spielen
+            </button>
+
+
+            <button
+                class="menuButton createBtn"
+                onclick="openCreateScreen()"
+            >
+                🏠 Spiel erstellen
+            </button>
+
+
+            <button
+                class="menuButton joinBtn"
+                onclick="openJoinScreen()"
+            >
+                🚪 Lobby beitreten
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     SPIEL ERSTELLEN
+     ======================================================= -->
+
+<section
+    id="createScreen"
+    class="screen formScreen"
+>
+
+    <div class="formBox">
+
+        <div class="formTitle">
+            🏠 Spiel erstellen
+        </div>
+
+        <div class="formText">
+            Gib deinen Namen ein.
+            Danach bekommst du einen Lobby-Code.
+        </div>
+
+
+        <input
+            id="createName"
+            type="text"
+            maxlength="18"
+            placeholder="Dein Name"
+        >
+
+
+        <button
+            class="bigButton"
+            onclick="createLobby()"
+        >
+            🏠 Lobby erstellen
+        </button>
+
+
+        <button
+            class="bigButton backButton"
+            onclick="showScreen('homeScreen')"
+        >
+            ← Zurück
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     LOBBY BEITRETEN
+     ======================================================= -->
+
+<section
+    id="joinScreen"
+    class="screen formScreen"
+>
+
+    <div class="formBox">
+
+        <div class="formTitle">
+            🚪 Lobby beitreten
+        </div>
+
+        <div class="formText">
+            Gib den Lobby-Code und deinen Namen ein.
+        </div>
+
+
+        <input
+            id="joinCode"
+            type="text"
+            maxlength="6"
+            placeholder="Lobby-Code"
+            style="text-transform:uppercase"
+        >
+
+
+        <input
+            id="joinName"
+            type="text"
+            maxlength="18"
+            placeholder="Dein Name"
+        >
+
+
+        <button
+            class="bigButton"
+            onclick="joinLobby()"
+        >
+            🚪 Beitreten
+        </button>
+
+
+        <button
+            class="bigButton backButton"
+            onclick="showScreen('homeScreen')"
+        >
+            ← Zurück
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     LOBBY
+     ======================================================= -->
+
+<section
+    id="lobbyScreen"
+    class="screen"
+>
+
+    <div class="lobbyBox">
+
+        <div class="lobbyTitle">
+            🏠 Deine Lobby
+        </div>
+
+
+        <div class="lobbyCodeLabel">
+            Lobby-Code
+        </div>
+
+
+        <div
+            id="lobbyCodeText"
+            class="lobbyCode"
+        >
+            ------
+        </div>
+
+
+        <div class="playerList">
+
+            <div
+                id="player1"
+                class="player"
+            >
+                🔴 Spieler Rot
+            </div>
+
+
+            <div
+                id="player2"
+                class="player"
+                style="opacity:.55"
+            >
+                🔵 Warte auf zweiten Spieler...
+            </div>
+
+        </div>
+
+
+        <div
+            id="lobbyWaiting"
+            class="waiting"
+        >
+            ⏳ Warte auf einen zweiten Spieler...
+        </div>
+
+
+        <button
+            id="startOnlineBtn"
+            class="bigButton"
+            onclick="startOnlineGame()"
+            disabled
+        >
+            🎮 Spiel starten
+        </button>
+
+
+        <button
+            class="bigButton backButton"
+            onclick="leaveLobby()"
+        >
+            ← Lobby verlassen
+        </button>
+
+
+        <div
+            id="lobbyStatus"
+            class="status"
+        ></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     SPIEL
+     ======================================================= -->
+
+<section
+    id="gameScreen"
+    class="screen"
+>
+
+    <div class="gameHeader">
+
+        <div>
+
+            <div class="gameHeaderTitle">
+                🧀 Käsepfad
+            </div>
+
+            <div
+                id="gameHeaderMode"
+                class="gameHeaderMode"
+            >
+                Lokales Spiel
+            </div>
+
+        </div>
+
+
+        <button
+            class="bigButton"
+            style="
+                width:auto;
+                margin:0;
+                padding:8px 12px;
+                background:#ddd;
+            "
+            onclick="backToHomeFromGame()"
+        >
+            🏠 Menü
+        </button>
+
+    </div>
+
+
+
+    <div id="gameArea">
+
+        <canvas id="game"></canvas>
+
+
+        <!-- GAME HUD -->
+
+        <div id="gameHUD">
+
+
+            <div
+                id="leftHUD"
+                class="hudPanel"
+            >
+
+                <div
+                    id="turnText"
+                >
+                    Team Rot ist dran 🔴
+                </div>
+
+
+                <div
+                    id="diceText"
+                >
+                    Würfle, um zu starten.
+                </div>
+
+
+                <div
+                    id="statusText"
+                ></div>
+
+
+                <div class="hudButtons">
+
+                    <button
+                        id="diceBtn"
+                    >
+                        🎲 Würfeln
+                    </button>
+
+
+                    <button
+                        id="equipBtn"
+                    >
+                        🎒 Ausrüsten
+                    </button>
+
+
+                    <button
+                        id="useBtn"
+                    >
+                        🧰 Item benutzen
+                    </button>
+
+
+                    <button
+                        id="cheeseBtn"
+                    >
+                        🧀 Käsewürfel
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="rightHUD"
+                class="hudPanel"
+            >
+
+                <div
+                    style="
+                        font-size:16px;
+                        font-weight:1000;
+                        margin-bottom:3px;
+                    "
+                >
+                    🎒 Inventar
+                </div>
+
+
+                <div
+                    id="inventoryText"
+                >
+                    Rot: –
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ITEM POPUP -->
+
+        <div
+            id="popup"
+        >
+
+            <div
+                id="popupTitle"
+            >
+                🎁 Item gefunden!
+            </div>
+
+
+            <div
+                id="popupText"
+            ></div>
+
+
+            <div
+                id="popupButtons"
+            ></div>
+
+        </div>
+
+
+
+        <!-- WINNER -->
+
+        <div
+            id="winner"
+        >
+
+            <div id="winnerBox">
+
+                <div
+                    id="winnerTitle"
+                ></div>
+
+
+                <div
+                    id="winnerSub"
+                >
+                    🎉 Der Käsepfad ist geschafft!
+                </div>
+
+
+                <button
+                    class="bigButton"
+                    onclick="restartCurrentGame()"
+                >
+                    ↻ Noch einmal spielen
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div id="errorBox"></div>
+
+
+</div>
+
+
+
+<script type="module">
+
+/* =========================================================
+   FIREBASE
+   ========================================================= */
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    signInAnonymously
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getDatabase,
+    ref,
+    set,
+    get,
+    update,
+    remove,
+    onValue
+}
+from
+"https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+/* =========================================================
+   DEINE FIREBASE-KONFIGURATION
+   ========================================================= */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyAcNojqu3J83EVq6ypAcwGuUquJxF1nUQI",
+
+    authDomain:
+        "kaesepfad.firebaseapp.com",
+
+    databaseURL:
+        "https://kaesepfad-default-rtdb.europe-west1.firebasedatabase.app",
+
+    projectId:
+        "kaesepfad",
+
+    storageBucket:
+        "kaesepfad.firebasestorage.app",
+
+    messagingSenderId:
+        "2700478863",
+
+    appId:
+        "1:2700478863:web:ce0f9223ee3268e1b6a3fa",
+
+    measurementId:
+        "G-29PG25K56C"
+
+};
+
+
+/* =========================================================
+   FIREBASE INITIALISIEREN
+   ========================================================= */
+
+let firebaseReady = false;
+
+let currentUser = null;
+
+let db = null;
+
+let auth = null;
+
+try{
+
+    const app =
+        initializeApp(
+            firebaseConfig
+        );
+
+
+    auth =
+        getAuth(
+            app
+        );
+
+
+    db =
+        getDatabase(
+            app
+        );
+
+
+    signInAnonymously(
+        auth
+    )
+    .then(
+        result => {
+
+            currentUser =
+                result.user;
+
+            firebaseReady =
+                true;
+
+        }
+    )
+    .catch(
+        error => {
+
+            console.error(
+                error
+            );
+
+            showError(
+                "Firebase-Anmeldung fehlgeschlagen: "
+                + error.message
+            );
+
+        }
+    );
+
+}
+catch(error){
+
+    console.error(
+        error
+    );
+
+    showError(
+        "Firebase konnte nicht gestartet werden."
+    );
+
+}
+
+
+/* =========================================================
+   CANVAS
+   ========================================================= */
+
+const canvas =
+    document.getElementById(
+        "game"
+    );
+
+const ctx =
+    canvas.getContext(
+        "2d"
+    );
+
+
+const W = 1500;
+
+const H = 900;
+
+
+canvas.width =
+    W;
+
+canvas.height =
+    H;
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+const START = 0;
+
+const GOAL = 40;
+
+
+const nodes = [
+
+    {x:90,y:790},
+    {x:180,y:790},
+    {x:270,y:790},
+    {x:360,y:790},
+    {x:450,y:790},
+    {x:540,y:790},
+    {x:630,y:790},
+
+    {x:630,y:700},
+    {x:630,y:610},
+    {x:630,y:520},
+
+    {x:540,y:520},
+    {x:450,y:520},
+    {x:360,y:520},
+
+    {x:360,y:430},
+    {x:360,y:340},
+    {x:360,y:250},
+
+    {x:450,y:250},
+    {x:540,y:250},
+    {x:630,y:250},
+    {x:720,y:250},
+    {x:810,y:250},
+    {x:900,y:250},
+    {x:990,y:250},
+    {x:1080,y:250},
+    {x:1170,y:250},
+
+    {x:1170,y:340},
+    {x:1170,y:430},
+
+    {x:1080,y:430},
+    {x:990,y:430},
+    {x:900,y:430},
+    {x:810,y:430},
+    {x:720,y:430},
+
+    {x:720,y:520},
+    {x:720,y:610},
+    {x:720,y:700},
+    {x:720,y:790},
+
+    {x:810,y:790},
+    {x:900,y:790},
+    {x:990,y:790},
+    {x:1080,y:790},
+    {x:1170,y:790},
+
+    {x:270,y:700},
+    {x:270,y:610},
+
+    {x:450,y:430},
+    {x:540,y:430},
+
+    {x:900,y:160},
+    {x:990,y:160},
+
+    {x:1260,y:430},
+    {x:1260,y:520},
+
+    {x:720,y:880}
+
+];
+
+
+const edges = [
+
+    [0,1],
+    [1,2],
+    [2,3],
+    [3,4],
+    [4,5],
+    [5,6],
+
+    [6,7],
+    [7,8],
+    [8,9],
+
+    [9,10],
+    [10,11],
+    [11,12],
+
+    [12,13],
+    [13,14],
+    [14,15],
+
+    [15,16],
+    [16,17],
+    [17,18],
+    [18,19],
+    [19,20],
+
+    [20,21],
+    [21,22],
+    [22,23],
+    [23,24],
+
+    [24,25],
+    [25,26],
+
+    [26,27],
+    [27,28],
+    [28,29],
+    [29,30],
+    [30,31],
+
+    [31,32],
+    [32,33],
+    [33,34],
+    [34,35],
+
+    [35,36],
+    [36,37],
+    [37,38],
+    [38,39],
+    [39,40],
+
+    [2,41],
+    [41,42],
+
+    [13,43],
+    [43,44],
+
+    [21,45],
+    [45,46],
+
+    [26,47],
+    [47,48],
+
+    [35,49]
+
+];
+
+
+const adjacency =
+    Array.from(
+        {
+            length:nodes.length
+        },
+        () => []
+    );
+
+
+for(
+    const [a,b]
+    of edges
+){
+
+    adjacency[a].push(
+        b
+    );
+
+    adjacency[b].push(
+        a
+    );
+
+}
+
+
+/* =========================================================
+   ITEM-INFOS
+   ========================================================= */
+
+const ITEM_NAMES = {
+
+    sapphire:
+        "Saphir-Schwert",
+
+    ruby:
+        "Rubin-Schwert",
+
+    minecraftShield:
+        "Minecraft-Schild",
+
+    ancientShield:
+        "Antiker Schild",
+
+    cheese:
+        "Käsewürfel",
+
+    key:
+        "Goldener Schlüssel"
+
+};
+
+
+const ITEM_ICONS = {
+
+    sapphire:"💎",
+
+    ruby:"🗡️",
+
+    minecraftShield:"🛡️",
+
+    ancientShield:"🏰",
+
+    cheese:"🧀",
+
+    key:"🔑"
+
+};
+
+
+const ITEM_COLORS = {
+
+    sapphire:"#57c7ff",
+
+    ruby:"#ff5578",
+
+    minecraftShield:"#6ee27a",
+
+    ancientShield:"#b98cff",
+
+    cheese:"#ffd75c",
+
+    key:"#ffca2f"
+
+};
+
+
+const itemFieldColors = [
+
+    "#ff6fa8",
+    "#59c9ff",
+    "#76e58a",
+    "#ffd84d",
+    "#b77cff",
+    "#ff9754",
+    "#54e0d0"
+
+];
+
+
+/* =========================================================
+   MÄUSE-PFADE
+   ========================================================= */
+
+const mousePaths = [
+
+    [
+        1,2,3,4,5,6,7,8,
+        9,10,11,12,13,14
+    ],
+
+    [
+        15,16,17,18,19,20,
+        21,22,23,24,25,26
+    ],
+
+    [
+        27,28,29,30,31,32,
+        33,34,35,36,37,38
+    ]
+
+];
+
+
+const mouseSpeeds = [
+    0.72,
+    0.58,
+    0.63
+];
+
+
+/* =========================================================
+   SPIELMODUS
+   ========================================================= */
+
+let gameMode =
+    "local";
+
+let currentLobby =
+    null;
+
+let currentRole =
+    null;
+
+let lobbyUnsub =
+    null;
+
+let gameUnsub =
+    null;
+
+
+/* =========================================================
+   LOKALER / ONLINE SPIELSTATUS
+   ========================================================= */
+
+let gameState =
+    null;
+
+let popupOpen =
+    false;
+
+let pendingItem =
+    null;
+
+let pendingNode =
+    null;
+
+let shownDecisionId =
+    null;
+
+
+/* =========================================================
+   NEUEN SPIELSTATUS ERSTELLEN
+   ========================================================= */
+
+function createInitialGameState(){
+
+    const fields =
+        [];
+
+
+    while(
+        fields.length < 7
+    ){
+
+        const index =
+            Math.floor(
+                Math.random() *
+                nodes.length
+            );
+
+
+        if(
+            index === START ||
+            index === GOAL
+        ){
+
+            continue;
+
+        }
+
+
+        if(
+            fields.includes(index)
+        ){
+
+            continue;
+
+        }
+
+
+        fields.push(
+            index
+        );
+
+    }
+
+
+    return {
+
+        currentPlayer:0,
+
+        movesLeft:0,
+
+        diceValue:0,
+
+        gameOver:false,
+
+        winner:null,
+
+        status:
+            "Neue Partie gestartet! 🧀",
+
+        miceStart:
+            Date.now(),
+
+        itemFields:fields,
+
+        groundItems:[],
+
+        pendingDecision:null,
+
+        players:{
+
+            0:{
+
+                pos:START,
+
+                inventory:[],
+
+                equipped:null
+
+            },
+
+            1:{
+
+                pos:START,
+
+                inventory:[],
+
+                equipped:null
+
+            }
+
+        }
+
+    };
+
+}
+
+
+/* =========================================================
+   SPIELSTATUS SICHERSTELLEN
+   ========================================================= */
+
+function normalizeGameState(
+    state
+){
+
+    if(!state){
+        return null;
+    }
+
+
+    if(!state.players){
+        state.players = {};
+    }
+
+
+    if(!state.players[0]){
+        state.players[0] = {
+            pos:START,
+            inventory:[],
+            equipped:null
+        };
+    }
+
+
+    if(!state.players[1]){
+        state.players[1] = {
+            pos:START,
+            inventory:[],
+            equipped:null
+        };
+    }
+
+
+    if(!Array.isArray(
+        state.players[0].inventory
+    )){
+
+        state.players[0].inventory=[];
+
+    }
+
+
+    if(!Array.isArray(
+        state.players[1].inventory
+    )){
+
+        state.players[1].inventory=[];
+
+    }
+
+
+    if(!Array.isArray(
+        state.itemFields
+    )){
+
+        state.itemFields=[];
+
+    }
+
+
+    if(!Array.isArray(
+        state.groundItems
+    )){
+
+        state.groundItems=[];
+
+    }
+
+
+    if(
+        typeof state.currentPlayer
+        !== "number"
+    ){
+
+        state.currentPlayer=0;
+
+    }
+
+
+    if(
+        typeof state.movesLeft
+        !== "number"
+    ){
+
+        state.movesLeft=0;
+
+    }
+
+
+    if(
+        typeof state.gameOver
+        !== "boolean"
+    ){
+
+        state.gameOver=false;
+
+    }
+
+
+    return state;
+
+}
+
+
+/* =========================================================
+   FIREBASE STATE SPEICHERN
+   ========================================================= */
+
+async function saveOnlineGame(){
+
+    if(
+        gameMode !== "online" ||
+        !currentLobby ||
+        !gameState
+    ){
+
+        return;
+
+    }
+
+
+    try{
+
+        await set(
+
+            ref(
+                db,
+                "lobbies/" +
+                currentLobby +
+                "/game"
+            ),
+
+            gameState
+
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+        showError(
+            "Spiel konnte nicht synchronisiert werden: "
+            + error.message
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOBBY CODE
+   ========================================================= */
+
+function makeLobbyCode(){
+
+    const chars =
+        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+    let code = "";
+
+
+    for(
+        let i=0;
+        i<6;
+        i++
+    ){
+
+        code +=
+            chars[
+                Math.floor(
+                    Math.random() *
+                    chars.length
+                )
+            ];
+
+    }
+
+
+    return code;
+
+}
+
+
+async function getFreeLobbyCode(){
+
+    for(
+        let i=0;
+        i<30;
+        i++
+    ){
+
+        const code =
+            makeLobbyCode();
+
+
+        const snapshot =
+            await get(
+
+                ref(
+                    db,
+                    "lobbies/" +
+                    code
+                )
+
+            );
+
+
+        if(
+            !snapshot.exists()
+        ){
+
+            return code;
+
+        }
+
+    }
+
+
+    throw new Error(
+        "Kein freier Lobby-Code gefunden."
+    );
+
+}
+
+
+/* =========================================================
+   SCREENS
+   ========================================================= */
+
+window.showScreen =
+function(id){
+
+    document
+        .querySelectorAll(
+            ".screen"
+        )
+        .forEach(
+            screen => {
+
+                screen.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    document
+        .getElementById(
+            id
+        )
+        .classList.add(
+            "active"
+        );
+
+};
+
+
+/* =========================================================
+   LOKALES SPIEL
+   ========================================================= */
+
+window.openLocalGame =
+function(){
+
+    stopLobbyListeners();
+
+
+    gameMode =
+        "local";
+
+    currentLobby =
+        null;
+
+    currentRole =
+        null;
+
+
+    gameState =
+        createInitialGameState();
+
+
+    document.getElementById(
+        "gameHeaderMode"
+    ).textContent =
+        "🎮 Lokales Spiel – ein Gerät";
+
+
+    showScreen(
+        "gameScreen"
+    );
+
+
+    updateGameUI();
+
+    draw();
+
+};
+
+
+/* =========================================================
+   ERSTELLEN
+   ========================================================= */
+
+window.openCreateScreen =
+function(){
+
+    document.getElementById(
+        "createName"
+    ).value = "";
+
+
+    showScreen(
+        "createScreen"
+    );
+
+};
+
+
+/* =========================================================
+   BEITRETEN
+   ========================================================= */
+
+window.openJoinScreen =
+function(){
+
+    document.getElementById(
+        "joinCode"
+    ).value = "";
+
+
+    document.getElementById(
+        "joinName"
+    ).value = "";
+
+
+    showScreen(
+        "joinScreen"
+    );
+
+};
+
+
+/* =========================================================
+   LOBBY ERSTELLEN
+   ========================================================= */
+
+window.createLobby =
+async function(){
+
+    if(
+        !firebaseReady ||
+        !currentUser
+    ){
+
+        showError(
+            "Firebase wird noch vorbereitet. Warte kurz und versuche es dann erneut."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById(
+                "createName"
+            )
+            .value
+            .trim();
+
+
+    if(
+        name.length < 2
+    ){
+
+        showError(
+            "Bitte einen Namen mit mindestens 2 Zeichen eingeben."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        const code =
+            await getFreeLobbyCode();
+
+
+        currentLobby =
+            code;
+
+
+        currentRole =
+            0;
+
+
+        gameMode =
+            "online";
+
+
+        await set(
+
+            ref(
+                db,
+                "lobbies/" +
+                code
+            ),
+
+            {
+
+                host:
+                    currentUser.uid,
+
+                gameStarted:
+                    false,
+
+                status:
+                    "waiting",
+
+                players:{
+
+                    red:{
+
+                        uid:
+                            currentUser.uid,
+
+                        name:
+                            name
+
+                    },
+
+                    blue:null
+
+                }
+
+            }
+
+        );
+
+
+        openLobby(
+            code
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+        showError(
+            "Lobby konnte nicht erstellt werden: "
+            + error.message
+        );
+
+    }
+
+};
+
+
+/* =========================================================
+   LOBBY BEITRETEN
+   ========================================================= */
+
+window.joinLobby =
+async function(){
+
+    if(
+        !firebaseReady ||
+        !currentUser
+    ){
+
+        showError(
+            "Firebase wird noch vorbereitet. Warte kurz und versuche es dann erneut."
+        );
+
+        return;
+
+    }
+
+
+    const code =
+        document
+            .getElementById(
+                "joinCode"
+            )
+            .value
+            .trim()
+            .toUpperCase();
+
+
+    const name =
+        document
+            .getElementById(
+                "joinName"
+            )
+            .value
+            .trim();
+
+
+    if(
+        code.length !== 6 ||
+        name.length < 2
+    ){
+
+        showError(
+            "Bitte Lobby-Code und Namen richtig eingeben."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        const lobbyRef =
+            ref(
+                db,
+                "lobbies/" +
+                code
+            );
+
+
+        const snapshot =
+            await get(
+                lobbyRef
+            );
+
+
+        if(
+            !snapshot.exists()
+        ){
+
+            showError(
+                "Diese Lobby wurde nicht gefunden."
+            );
+
+            return;
+
+        }
+
+
+        const lobby =
+            snapshot.val();
+
+
+        if(
+            lobby.gameStarted
+        ){
+
+            showError(
+                "Das Spiel wurde bereits gestartet."
+            );
+
+            return;
+
+        }
+
+
+        if(
+            lobby.players &&
+            lobby.players.blue
+        ){
+
+            showError(
+                "Diese Lobby ist bereits voll."
+            );
+
+            return;
+
+        }
+
+
+        await update(
+
+            lobbyRef,
+
+            {
+
+                "players/blue":{
+
+                    uid:
+                        currentUser.uid,
+
+                    name:
+                        name
+
+                }
+
+            }
+
+        );
+
+
+        currentLobby =
+            code;
+
+
+        currentRole =
+            1;
+
+
+        gameMode =
+            "online";
+
+
+        openLobby(
+            code
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+        showError(
+            "Beitreten fehlgeschlagen: "
+            + error.message
+        );
+
+    }
+
+};
+
+
+/* =========================================================
+   LOBBY ÖFFNEN
+   ========================================================= */
+
+function openLobby(
+    code
+){
+
+    document.getElementById(
+        "lobbyCodeText"
+    ).textContent =
+        code;
+
+
+    showScreen(
+        "lobbyScreen"
+    );
+
+
+    watchLobby(
+        code
+    );
+
+}
+
+
+/* =========================================================
+   LOBBY LIVE
+   ========================================================= */
+
+function watchLobby(
+    code
+){
+
+    stopLobbyListeners();
+
+
+    const lobbyRef =
+        ref(
+            db,
+            "lobbies/" +
+            code
+        );
+
+
+    lobbyUnsub =
+        onValue(
+
+            lobbyRef,
+
+            snapshot => {
+
+                if(
+                    !snapshot.exists()
+                ){
+
+                    showError(
+                        "Die Lobby existiert nicht mehr."
+                    );
+
+
+                    currentLobby =
+                        null;
+
+
+                    showScreen(
+                        "homeScreen"
+                    );
+
+
+                    return;
+
+                }
+
+
+                const lobby =
+                    snapshot.val();
+
+
+                updateLobbyUI(
+                    lobby
+                );
+
+
+                if(
+                    lobby.gameStarted
+                ){
+
+                    openOnlineGame();
+
+                }
+
+            }
+
+        );
+
+}
+
+
+/* =========================================================
+   LOBBY UI
+   ========================================================= */
+
+function updateLobbyUI(
+    lobby
+){
+
+    const red =
+        lobby.players &&
+        lobby.players.red;
+
+
+    const blue =
+        lobby.players &&
+        lobby.players.blue;
+
+
+    document.getElementById(
+        "player1"
+    ).textContent =
+
+        red
+        ? `🔴 ${red.name}`
+        : "🔴 Spieler Rot";
+
+
+    const player2 =
+        document.getElementById(
+            "player2"
+        );
+
+
+    if(blue){
+
+        player2.textContent =
+            `🔵 ${blue.name}`;
+
+        player2.style.opacity =
+            "1";
+
+    }
+    else{
+
+        player2.textContent =
+            "🔵 Warte auf zweiten Spieler...";
+
+        player2.style.opacity =
+            ".55";
+
+    }
+
+
+    const startBtn =
+        document.getElementById(
+            "startOnlineBtn"
+        );
+
+
+    const isHost =
+        lobby.host ===
+        currentUser.uid;
+
+
+    startBtn.disabled =
+        !isHost ||
+        !blue ||
+        lobby.gameStarted;
+
+
+    const waiting =
+        document.getElementById(
+            "lobbyWaiting"
+        );
+
+
+    if(!blue){
+
+        waiting.textContent =
+            "⏳ Warte auf einen zweiten Spieler...";
+
+    }
+    else if(isHost){
+
+        waiting.textContent =
+            "✅ Spieler gefunden! Du kannst starten.";
+
+    }
+    else{
+
+        waiting.textContent =
+            "✅ Du bist beigetreten. Warte auf den Host.";
+
+    }
+
+
+    document.getElementById(
+        "lobbyStatus"
+    ).textContent =
+
+        isHost
+        ? "Du bist der Host und Team Rot."
+        : "Du bist Team Blau.";
+
+}
+
+
+/* =========================================================
+   ONLINE SPIEL STARTEN
+   ========================================================= */
+
+window.startOnlineGame =
+async function(){
+
+    if(
+        !currentLobby ||
+        !currentUser
+    ){
+
+        return;
+
+    }
+
+
+    const initial =
+        createInitialGameState();
+
+
+    try{
+
+        await update(
+
+            ref(
+                db,
+                "lobbies/" +
+                currentLobby
+            ),
+
+            {
+
+                gameStarted:
+                    true,
+
+                status:
+                    "playing",
+
+                game:
+                    initial
+
+            }
+
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+        showError(
+            "Das Spiel konnte nicht gestartet werden: "
+            + error.message
+        );
+
+    }
+
+};
+
+
+/* =========================================================
+   ONLINE GAME ÖFFNEN
+   ========================================================= */
+
+function openOnlineGame(){
+
+    document.getElementById(
+        "gameHeaderMode"
+    ).textContent =
+
+        `🌐 Online – Lobby ${
+            currentLobby
+        } – ${
+            currentRole === 0
+            ? "Team Rot"
+            : "Team Blau"
+        }`;
+
+
+    showScreen(
+        "gameScreen"
+    );
+
+
+    if(!gameUnsub){
+
+        watchGame();
+
+    }
+
+}
+
+
+/* =========================================================
+   GAME LIVE ABHÖREN
+   ========================================================= */
+
+function watchGame(){
+
+    if(
+        !currentLobby
+    ){
+
+        return;
+
+    }
+
+
+    if(gameUnsub){
+
+        gameUnsub();
+
+        gameUnsub =
+            null;
+
+    }
+
+
+    const gameRef =
+        ref(
+            db,
+            "lobbies/" +
+            currentLobby +
+            "/game"
+        );
+
+
+    gameUnsub =
+        onValue(
+
+            gameRef,
+
+            snapshot => {
+
+                if(
+                    !snapshot.exists()
+                ){
+
+                    return;
+
+                }
+
+
+                gameState =
+                    normalizeGameState(
+                        snapshot.val()
+                    );
+
+
+                updateGameUI();
+
+                draw();
+
+
+                handleRemotePendingDecision();
+
+            }
+
+        );
+
+}
+
+
+/* =========================================================
+   REMOTE ITEM POPUP
+   ========================================================= */
+
+function handleRemotePendingDecision(){
+
+    if(
+        gameMode !== "online" ||
+        !gameState ||
+        !gameState.pendingDecision ||
+        gameState.gameOver
+    ){
+
+        return;
+
+    }
+
+
+    const decision =
+        gameState.pendingDecision;
+
+
+    if(
+        decision.player !==
+        currentRole
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        shownDecisionId ===
+        decision.id
+    ){
+
+        return;
+
+    }
+
+
+    shownDecisionId =
+        decision.id;
+
+
+    openItemDecision(
+        decision.item,
+        decision.node
+    );
+
+}
+
+
+/* =========================================================
+   ITEM-ZUFALL
+   SCHLÜSSEL = 10 %
+   ========================================================= */
+
+function randomItem(){
+
+    const r =
+        Math.random();
+
+
+    if(
+        r < 0.10
+    ){
+
+        return "key";
+
+    }
+
+
+    if(
+        r < 0.35
+    ){
+
+        return "sapphire";
+
+    }
+
+
+    if(
+        r < 0.60
+    ){
+
+        return "ruby";
+
+    }
+
+
+    if(
+        r < 0.75
+    ){
+
+        return "minecraftShield";
+
+    }
+
+
+    if(
+        r < 0.90
+    ){
+
+        return "ancientShield";
+
+    }
+
+
+    return "cheese";
+
+}
+
+
+/* =========================================================
+   ITEMFELD ERSETZEN
+   ========================================================= */
+
+function createReplacementItemField(
+    oldNode
+){
+
+    let tries = 0;
+
+
+    while(
+        tries < 1000
+    ){
+
+        tries++;
+
+
+        const index =
+            Math.floor(
+                Math.random() *
+                nodes.length
+            );
+
+
+        if(
+            index === START ||
+            index === GOAL
+        ){
+
+            continue;
+
+        }
+
+
+        if(
+            index === oldNode
+        ){
+
+            continue;
+
+        }
+
+
+        if(
+            gameState.players[0].pos ===
+            index ||
+
+            gameState.players[1].pos ===
+            index
+        ){
+
+            continue;
+
+        }
+
+
+        if(
+            gameState.itemFields.includes(
+                index
+            )
+        ){
+
+            continue;
+
+        }
+
+
+        if(
+            gameState.groundItems.some(
+                item =>
+                    item.node === index
+            )
+        ){
+
+            continue;
+
+        }
+
+
+        gameState.itemFields.push(
+            index
+        );
+
+
+        return;
+
+    }
+
+}
+
+
+/* =========================================================
+   ITEMFELDER BELEGT?
+   ========================================================= */
+
+function hasKey(
+    player
+){
+
+    return (
+
+        player.equipped ===
+            "key"
+
+        ||
+
+        player.inventory.includes(
+            "key"
+        )
+
+    );
+
+}
+
+
+/* =========================================================
+   MAUSPOSITIONEN
+   ========================================================= */
+
+function getMousePosition(
+    mouseIndex
+){
+
+    const path =
+        mousePaths[
+            mouseIndex
+        ];
+
+
+    if(
+        !gameState ||
+        !gameState.miceStart
+    ){
+
+        return nodes[
+            path[0]
+        ];
+
+    }
+
+
+    const elapsed =
+        Math.max(
+            0,
+            (
+                Date.now() -
+                gameState.miceStart
+            ) / 1000
+        );
+
+
+    const progress =
+        (
+            elapsed *
+            mouseSpeeds[mouseIndex]
+        );
+
+
+    const segment =
+        Math.floor(
+            progress
+        ) %
+        path.length;
+
+
+    const t =
+        progress -
+        Math.floor(progress);
+
+
+    const a =
+        nodes[
+            path[segment]
+        ];
+
+
+    const b =
+        nodes[
+            path[
+                (segment+1) %
+                path.length
+            ]
+        ];
+
+
+    return {
+
+        x:
+            a.x +
+            (b.x-a.x)*t,
+
+        y:
+            a.y +
+            (b.y-a.y)*t
+
+    };
+
+}
+
+
+/* =========================================================
+   MAUS BLOCKIERT
+   ========================================================= */
+
+function isNodeBlockedByMouse(
+    index
+){
+
+    const n =
+        nodes[index];
+
+
+    for(
+        let i=0;
+        i<3;
+        i++
+    ){
+
+        const mouse =
+            getMousePosition(
+                i
+            );
+
+
+        const dx =
+            mouse.x -
+            n.x;
+
+
+        const dy =
+            mouse.y -
+            n.y;
+
+
+        if(
+            Math.hypot(
+                dx,
+                dy
+            ) < 44
+        ){
+
+            return true;
+
+        }
+
+    }
+
+
+    return false;
+
+}
+
+
+/* =========================================================
+   MÖGLICHE ZÜGE
+   ========================================================= */
+
+function getLegalMoves(){
+
+    if(
+        !gameState ||
+        gameState.movesLeft <= 0 ||
+        gameState.gameOver
+    ){
+
+        return [];
+
+    }
+
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    return adjacency[
+        player.pos
+    ].filter(
+        index => {
+
+            if(
+                isNodeBlockedByMouse(
+                    index
+                )
+            ){
+
+                return false;
+
+            }
+
+
+            if(
+                index === GOAL &&
+                !hasKey(player)
+            ){
+
+                return false;
+
+            }
+
+
+            return true;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   WÜRFEL
+   ========================================================= */
+
+document.getElementById(
+    "diceBtn"
+).onclick =
+    rollDice;
+
+
+async function rollDice(){
+
+    if(
+        !gameState ||
+        gameState.gameOver ||
+        popupOpen ||
+        gameState.movesLeft > 0
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        gameMode === "online" &&
+        gameState.currentPlayer !==
+        currentRole
+    ){
+
+        showError(
+            "Du bist gerade nicht dran."
+        );
+
+        return;
+
+    }
+
+
+    gameState.diceValue =
+        Math.floor(
+            Math.random()*6
+        ) + 1;
+
+
+    gameState.movesLeft =
+        gameState.diceValue;
+
+
+    gameState.status =
+        `🎲 Team ${
+            gameState.currentPlayer === 0
+            ? "Rot"
+            : "Blau"
+        } hat eine ${
+            gameState.diceValue
+        } gewürfelt.`;
+
+
+    await commitGameState();
+
+
+}
+
+
+/* =========================================================
+   GAME STATE SPEICHERN / LOKAL
+   ========================================================= */
+
+async function commitGameState(){
+
+    updateGameUI();
+
+    draw();
+
+
+    if(
+        gameMode === "online"
+    ){
+
+        await saveOnlineGame();
+
+    }
+
+}
+
+
+/* =========================================================
+   TIPPEN AUF CANVAS
+   ========================================================= */
+
+canvas.addEventListener(
+    "pointerdown",
+    event => {
+
+        handleCanvasTap(
+            event.clientX,
+            event.clientY
+        );
+
+    }
+);
+
+
+async function handleCanvasTap(
+    clientX,
+    clientY
+){
+
+    if(
+        !gameState ||
+        gameState.gameOver ||
+        popupOpen ||
+        gameState.movesLeft <= 0
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        gameMode === "online" &&
+        gameState.currentPlayer !==
+        currentRole
+    ){
+
+        return;
+
+    }
+
+
+    const rect =
+        canvas.getBoundingClientRect();
+
+
+    const x =
+        (
+            clientX -
+            rect.left
+        )
+        *
+        (
+            W /
+            rect.width
+        );
+
+
+    const y =
+        (
+            clientY -
+            rect.top
+        )
+        *
+        (
+            H /
+            rect.height
+        );
+
+
+    const legal =
+        getLegalMoves();
+
+
+    let clicked =
+        -1;
+
+    let best =
+        9999;
+
+
+    for(
+        const index of legal
+    ){
+
+        const n =
+            nodes[index];
+
+
+        const d =
+            Math.hypot(
+                x-n.x,
+                y-n.y
+            );
+
+
+        if(
+            d < 58 &&
+            d < best
+        ){
+
+            best =
+                d;
+
+            clicked =
+                index;
+
+        }
+
+    }
+
+
+    if(
+        clicked !== -1
+    ){
+
+        await moveOneStep(
+            clicked
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   EIN SCHRITT
+   ========================================================= */
+
+async function moveOneStep(
+    target
+){
+
+    if(
+        !gameState
+    ){
+
+        return;
+
+    }
+
+
+    const current =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    if(
+        !adjacency[
+            current.pos
+        ].includes(
+            target
+        )
+    ){
+
+        return;
+
+    }
+
+
+    const legal =
+        getLegalMoves();
+
+
+    if(
+        !legal.includes(
+            target
+        )
+    ){
+
+        return;
+
+    }
+
+
+    current.pos =
+        target;
+
+
+    gameState.movesLeft--;
+
+
+    /* =====================================================
+       HERUMLIEGENDES ITEM
+       ===================================================== */
+
+    const groundIndex =
+        gameState.groundItems.findIndex(
+            item =>
+                item.node === target
+        );
+
+
+    if(
+        groundIndex !== -1
+    ){
+
+        const ground =
+            gameState.groundItems[
+                groundIndex
+            ];
+
+
+        gameState.groundItems.splice(
+            groundIndex,
+            1
+        );
+
+
+        await startItemDecision(
+            ground.item,
+            target
+        );
+
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       RANDOM ITEMFELD
+       ===================================================== */
+
+    const fieldIndex =
+        gameState.itemFields.indexOf(
+            target
+        );
+
+
+    if(
+        fieldIndex !== -1
+    ){
+
+        gameState.itemFields.splice(
+            fieldIndex,
+            1
+        );
+
+
+        createReplacementItemField(
+            target
+        );
+
+
+        const found =
+            randomItem();
+
+
+        await startItemDecision(
+            found,
+            target
+        );
+
+
+        return;
+
+    }
+
+
+    await handleLandingEffects();
+
+}
+
+
+/* =========================================================
+   ITEM ENTSCHEIDUNG STARTEN
+   ========================================================= */
+
+async function startItemDecision(
+    item,
+    node
+){
+
+    const player =
+        gameState.currentPlayer;
+
+
+    const decisionId =
+        Date.now().toString() +
+        "-" +
+        Math.random()
+            .toString(36)
+            .slice(2);
+
+
+    gameState.pendingDecision = {
+
+        id:
+            decisionId,
+
+        player:
+            player,
+
+        item:
+            item,
+
+        node:
+            node
+
+    };
+
+
+    gameState.status =
+        `🎁 ${
+            ITEM_NAMES[item]
+        } gefunden!`;
+
+
+    shownDecisionId =
+        decisionId;
+
+
+    await commitGameState();
+
+
+    if(
+        gameMode === "local" ||
+        currentRole === player
+    ){
+
+        openItemDecision(
+            item,
+            node
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   ITEM POPUP
+   ========================================================= */
+
+function openItemDecision(
+    item,
+    node
+){
+
+    popupOpen =
+        true;
+
+
+    pendingItem =
+        item;
+
+
+    pendingNode =
+        node;
+
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    document.getElementById(
+        "popupTitle"
+    ).textContent =
+
+        `🎁 ${
+            ITEM_NAMES[item]
+        }`;
+
+
+    document.getElementById(
+        "popupText"
+    ).innerHTML =
+
+        `Du hast <b>${
+            ITEM_ICONS[item]
+        } ${
+            ITEM_NAMES[item]
+        }</b> erhalten!<br><br>
+        Was möchtest du machen?`;
+
+
+    const box =
+        document.getElementById(
+            "popupButtons"
+        );
+
+
+    box.innerHTML =
+        "";
+
+
+    /* AUSrüsten */
+
+    const equip =
+        document.createElement(
+            "button"
+        );
+
+
+    equip.className =
+        "equipChoice";
+
+
+    equip.textContent =
+        "⚡ Ausrüsten";
+
+
+    equip.onclick =
+        () =>
+            chooseEquipFound();
+
+
+    box.appendChild(
+        equip
+    );
+
+
+    /* INVENTAR */
+
+    if(
+        player.inventory.length <
+        3
+    ){
+
+        const store =
+            document.createElement(
+                "button"
+            );
+
+
+        store.className =
+            "storeChoice";
+
+
+        store.textContent =
+            "🎒 Ins Inventar";
+
+
+        store.onclick =
+            () =>
+                chooseStoreFound();
+
+
+        box.appendChild(
+            store
+        );
+
+    }
+    else{
+
+        const full =
+            document.createElement(
+                "div"
+            );
+
+
+        full.style.fontWeight =
+            "bold";
+
+        full.style.padding =
+            "4px";
+
+
+        full.textContent =
+            "🎒 Inventar ist voll";
+
+
+        box.appendChild(
+            full
+        );
+
+    }
+
+
+    /* LIEGEN LASSEN */
+
+    const leave =
+        document.createElement(
+            "button"
+        );
+
+
+    leave.className =
+        "leaveChoice";
+
+
+    leave.textContent =
+        "🚫 Liegen lassen";
+
+
+    leave.onclick =
+        () =>
+            chooseLeaveFound();
+
+
+    box.appendChild(
+        leave
+    );
+
+
+    document.getElementById(
+        "popup"
+    ).style.display =
+        "block";
+
+
+    updateGameUI();
+
+    draw();
+
+}
+
+
+/* =========================================================
+   LIEGEN LASSEN
+   ========================================================= */
+
+async function chooseLeaveFound(){
+
+    gameState.groundItems.push({
+
+        node:
+            pendingNode,
+
+        item:
+            pendingItem
+
+    });
+
+
+    gameState.pendingDecision =
+        null;
+
+
+    gameState.status =
+        `🚫 ${
+            ITEM_NAMES[pendingItem]
+        } wurde liegen gelassen.`;
+
+
+    closePopup();
+
+
+    await handleLandingEffects();
+
+}
+
+
+/* =========================================================
+   INS INVENTAR
+   ========================================================= */
+
+async function chooseStoreFound(){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    if(
+        player.inventory.length < 3
+    ){
+
+        player.inventory.push(
+            pendingItem
+        );
+
+
+        gameState.pendingDecision =
+            null;
+
+
+        gameState.status =
+            `🎒 ${
+                ITEM_NAMES[pendingItem]
+            } wurde ins Inventar gelegt.`;
+
+
+        closePopup();
+
+
+        await handleLandingEffects();
+
+
+        return;
+
+    }
+
+
+    openFullInventoryPopup();
+
+}
+
+
+/* =========================================================
+   AUSRÜSTEN
+   ========================================================= */
+
+async function chooseEquipFound(){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    /* nichts ausgerüstet */
+
+    if(
+        !player.equipped
+    ){
+
+        player.equipped =
+            pendingItem;
+
+
+        gameState.pendingDecision =
+            null;
+
+
+        gameState.status =
+            `⚡ ${
+                ITEM_NAMES[pendingItem]
+            } wurde ausgerüstet.`;
+
+
+        closePopup();
+
+
+        await handleLandingEffects();
+
+
+        return;
+
+    }
+
+
+    /* Ausrüstung vorhanden,
+       Inventar frei */
+
+    if(
+        player.inventory.length < 3
+    ){
+
+        player.inventory.push(
+            player.equipped
+        );
+
+
+        player.equipped =
+            pendingItem;
+
+
+        gameState.pendingDecision =
+            null;
+
+
+        gameState.status =
+            `⚡ ${
+                ITEM_NAMES[pendingItem]
+            } wurde ausgerüstet.`;
+
+
+        closePopup();
+
+
+        await handleLandingEffects();
+
+
+        return;
+
+    }
+
+
+    /* alles voll */
+
+    openEquipFullPopup();
+
+}
+
+
+/* =========================================================
+   INVENTAR VOLL
+   ========================================================= */
+
+function openFullInventoryPopup(){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    document.getElementById(
+        "popupTitle"
+    ).textContent =
+        "🎒 Inventar voll!";
+
+
+    document.getElementById(
+        "popupText"
+    ).innerHTML =
+
+        `Du kannst ${
+            ITEM_ICONS[pendingItem]
+        } <b>${
+            ITEM_NAMES[pendingItem]
+        }</b>
+        liegen lassen oder gegen ein Inventar-Item tauschen.`;
+
+
+    const box =
+        document.getElementById(
+            "popupButtons"
+        );
+
+
+    box.innerHTML =
+        "";
+
+
+    const leave =
+        document.createElement(
+            "button"
+        );
+
+
+    leave.className =
+        "leaveChoice";
+
+
+    leave.textContent =
+        "🚫 Neues Item liegen lassen";
+
+
+    leave.onclick =
+        () =>
+            chooseLeaveFound();
+
+
+    box.appendChild(
+        leave
+    );
+
+
+    player.inventory.forEach(
+        (item,index) => {
+
+            const btn =
+                document.createElement(
+                    "button"
+                );
+
+
+            btn.className =
+                "swapChoice";
+
+
+            btn.textContent =
+                `🔄 Tauschen mit ${
+                    ITEM_ICONS[item]
+                } ${
+                    ITEM_NAMES[item]
+                }`;
+
+
+            btn.onclick =
+                () =>
+                    swapInventoryItem(
+                        index
+                    );
+
+
+            box.appendChild(
+                btn
+            );
+
+        }
+    );
+
+
+    document.getElementById(
+        "popup"
+    ).style.display =
+        "block";
+
+}
+
+
+/* =========================================================
+   INVENTAR TAUSCH
+   ========================================================= */
+
+async function swapInventoryItem(
+    index
+){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    const oldItem =
+        player.inventory[
+            index
+        ];
+
+
+    player.inventory[
+        index
+    ] =
+        pendingItem;
+
+
+    gameState.groundItems.push({
+
+        node:
+            pendingNode,
+
+        item:
+            oldItem
+
+    });
+
+
+    gameState.pendingDecision =
+        null;
+
+
+    gameState.status =
+        `🔄 ${
+            ITEM_NAMES[pendingItem]
+        } wurde ins Inventar gelegt.`;
+
+
+    closePopup();
+
+
+    await handleLandingEffects();
+
+}
+
+
+/* =========================================================
+   AUSRÜSTUNG VOLL
+   ========================================================= */
+
+function openEquipFullPopup(){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    document.getElementById(
+        "popupTitle"
+    ).textContent =
+        "⚡ Ausrüstung wechseln";
+
+
+    document.getElementById(
+        "popupText"
+    ).innerHTML =
+
+        `Du hast bereits ${
+            ITEM_ICONS[player.equipped]
+        } <b>${
+            ITEM_NAMES[player.equipped]
+        }</b> ausgerüstet.<br><br>
+        Dein Inventar ist ebenfalls voll.`;
+
+
+    const box =
+        document.getElementById(
+            "popupButtons"
+        );
+
+
+    box.innerHTML =
+        "";
+
+
+    player.inventory.forEach(
+        (item,index) => {
+
+            const btn =
+                document.createElement(
+                    "button"
+                );
+
+
+            btn.className =
+                "swapChoice";
+
+
+            btn.textContent =
+                `🔄 ${
+                    ITEM_ICONS[item]
+                } ${
+                    ITEM_NAMES[item]
+                } ablegen`;
+
+
+            btn.onclick =
+                () =>
+                    swapEquippedItem(
+                        index
+                    );
+
+
+            box.appendChild(
+                btn
+            );
+
+        }
+    );
+
+
+    const leave =
+        document.createElement(
+            "button"
+        );
+
+
+    leave.className =
+        "leaveChoice";
+
+
+    leave.textContent =
+        "🚫 Neues Item liegen lassen";
+
+
+    leave.onclick =
+        () =>
+            chooseLeaveFound();
+
+
+    box.appendChild(
+        leave
+    );
+
+
+    document.getElementById(
+        "popup"
+    ).style.display =
+        "block";
+
+}
+
+
+async function swapEquippedItem(
+    index
+){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    const dropped =
+        player.inventory[
+            index
+        ];
+
+
+    player.inventory[
+        index
+    ] =
+        player.equipped;
+
+
+    player.equipped =
+        pendingItem;
+
+
+    gameState.groundItems.push({
+
+        node:
+            pendingNode,
+
+        item:
+            dropped
+
+    });
+
+
+    gameState.pendingDecision =
+        null;
+
+
+    gameState.status =
+        `⚡ ${
+            ITEM_NAMES[pendingItem]
+        } wurde ausgerüstet.`;
+
+
+    closePopup();
+
+
+    await handleLandingEffects();
+
+}
+
+
+/* =========================================================
+   POPUP SCHLIESSEN
+   ========================================================= */
+
+function closePopup(){
+
+    popupOpen =
+        false;
+
+
+    pendingItem =
+        null;
+
+
+    pendingNode =
+        null;
+
+
+    document.getElementById(
+        "popup"
+    ).style.display =
+        "none";
+
+
+    updateGameUI();
+
+    draw();
+
+}
+
+
+/* =========================================================
+   NACH ITEM-AUSWAHL
+   ========================================================= */
+
+async function handleLandingEffects(){
+
+    if(
+        !gameState ||
+        gameState.gameOver
+    ){
+
+        return;
+
+    }
+
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    const opponentIndex =
+        gameState.currentPlayer === 0
+        ? 1
+        : 0;
+
+
+    const opponent =
+        gameState.players[
+            opponentIndex
+        ];
+
+
+    /* Kollisionsfeld */
+
+    if(
+
+        opponent.pos ===
+            player.pos
+
+        &&
+
+        player.pos !== START
+
+    ){
+
+        handlePlayerCollision(
+            player,
+            opponent
+        );
+
+    }
+
+
+    /* Ziel */
+
+    if(
+        player.pos === GOAL
+    ){
+
+        if(
+            hasKey(player)
+        ){
+
+            useKeyToOpenGoal();
+
+            return;
+
+        }
+
+
+        gameState.status =
+            "🔒 Das Ziel ist noch verschlossen. Du brauchst den Goldenen Schlüssel.";
+
+    }
+
+
+    /* Zug wechseln */
+
+    if(
+        gameState.movesLeft <= 0
+    ){
+
+        gameState.movesLeft =
+            0;
+
+
+        gameState.currentPlayer =
+            opponentIndex;
+
+
+        gameState.status =
+            `Jetzt ist Team ${
+                gameState.currentPlayer === 0
+                ? "Rot"
+                : "Blau"
+            } dran.`;
+
+    }
+
+
+    await commitGameState();
+
+}
+
+
+/* =========================================================
+   KOLLISION
+   ========================================================= */
+
+function handlePlayerCollision(
+    attacker,
+    defender
+){
+
+    if(
+
+        attacker.equipped ===
+            "sapphire"
+
+        ||
+
+        attacker.equipped ===
+            "ruby"
+
+    ){
+
+        if(
+
+            defender.equipped ===
+                "minecraftShield"
+
+            ||
+
+            defender.equipped ===
+                "ancientShield"
+
+        ){
+
+            gameState.status =
+                `🛡️ Der Angriff wurde geblockt!`;
+
+            attacker.equipped =
+                null;
+
+            defender.equipped =
+                null;
+
+            return;
+
+        }
+
+
+        defender.pos =
+            START;
+
+
+        attacker.equipped =
+            null;
+
+
+        gameState.status =
+            `💥 Team ${
+                attacker ===
+                gameState.players[0]
+                ? "Rot"
+                : "Blau"
+            } hat den Gegner zum Start geschickt!`;
+
+    }
+
+}
+
+
+/* =========================================================
+   ITEM / AUSRÜSTEN BUTTON
+   ========================================================= */
+
+document.getElementById(
+    "equipBtn"
+).onclick =
+async () => {
+
+    if(
+        !gameState ||
+        gameState.gameOver ||
+        popupOpen
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        gameMode === "online" &&
+        gameState.currentPlayer !==
+        currentRole
+    ){
+
+        return;
+
+    }
+
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    if(
+        player.inventory.length === 0
+    ){
+
+        return;
+
+    }
+
+
+    const next =
+        player.inventory.shift();
+
+
+    if(
+        player.equipped
+    ){
+
+        player.inventory.unshift(
+            player.equipped
+        );
+
+    }
+
+
+    player.equipped =
+        next;
+
+
+    gameState.status =
+        `⚡ ${
+            ITEM_NAMES[next]
+        } wurde ausgerüstet.`;
+
+
+    await commitGameState();
+
+};
+
+
+/* =========================================================
+   ITEM BENUTZEN
+   ========================================================= */
+
+document.getElementById(
+    "useBtn"
+).onclick =
+async () => {
+
+    if(
+        !gameState
+    ){
+
+        return;
+
+    }
+
+
+    gameState.status =
+        "⚡ Schwert und Schild werden automatisch bei einer Kollision eingesetzt.";
+
+
+    await commitGameState();
+
+};
+
+
+/* =========================================================
+   KÄSEWÜRFEL
+   ========================================================= */
+
+document.getElementById(
+    "cheeseBtn"
+).onclick =
+async () => {
+
+    if(
+        !gameState ||
+        gameState.gameOver ||
+        popupOpen
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        gameMode === "online" &&
+        gameState.currentPlayer !==
+        currentRole
+    ){
+
+        return;
+
+    }
+
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    if(
+        player.equipped !==
+        "cheese"
+    ){
+
+        return;
+
+    }
+
+
+    const opponent =
+        gameState.players[
+            gameState.currentPlayer === 0
+            ? 1
+            : 0
+        ];
+
+
+    if(
+        opponent.pos !== START
+    ){
+
+        opponent.pos =
+            START;
+
+        player.equipped =
+            null;
+
+
+        gameState.status =
+            `🧀 Team ${
+                gameState.currentPlayer === 0
+                ? "Rot"
+                : "Blau"
+            } hat den Käsewürfel geworfen!`;
+
+    }
+    else{
+
+        gameState.status =
+            "🧀 Der Gegner ist bereits am Start.";
+
+    }
+
+
+    await commitGameState();
+
+};
+
+
+/* =========================================================
+   ZIEL ÖFFNEN
+   ========================================================= */
+
+function useKeyToOpenGoal(){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    if(
+        player.equipped ===
+        "key"
+    ){
+
+        player.equipped =
+            null;
+
+    }
+    else{
+
+        const index =
+            player.inventory.indexOf(
+                "key"
+            );
+
+
+        if(
+            index !== -1
+        ){
+
+            player.inventory.splice(
+                index,
+                1
+            );
+
+        }
+
+    }
+
+
+    gameState.gameOver =
+        true;
+
+
+    gameState.winner =
+        gameState.currentPlayer;
+
+
+    gameState.movesLeft =
+        0;
+
+
+    gameState.status =
+        `🎉 Team ${
+            gameState.currentPlayer === 0
+            ? "Rot"
+            : "Blau"
+        } hat das Ziel geöffnet!`;
+
+
+    if(
+        gameMode === "online"
+    ){
+
+        saveOnlineGame();
+
+    }
+
+
+    showWinner();
+
+}
+
+
+/* =========================================================
+   GEWINNER
+   ========================================================= */
+
+function showWinner(){
+
+    if(
+        !gameState ||
+        gameState.winner === null
+    ){
+
+        return;
+
+    }
+
+
+    const team =
+        gameState.winner === 0
+        ? "Rot"
+        : "Blau";
+
+
+    document.getElementById(
+        "winnerTitle"
+    ).textContent =
+        `Team ${team} hat gewonnen! ${
+            team === "Rot"
+            ? "🔴"
+            : "🔵"
+        }`;
+
+
+    document.getElementById(
+        "winner"
+    ).style.display =
+        "flex";
+
+
+    updateGameUI();
+
+}
+
+
+/* =========================================================
+   UI SPIEL
+   ========================================================= */
+
+function updateGameUI(){
+
+    if(
+        !gameState
+    ){
+
+        return;
+
+    }
+
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    const team =
+        gameState.currentPlayer === 0
+        ? "Rot"
+        : "Blau";
+
+
+    document.getElementById(
+        "turnText"
+    ).textContent =
+
+        gameState.gameOver
+
+        ? "Spiel beendet 🎉"
+
+        : `Team ${team} ist dran ${
+            team === "Rot"
+            ? "🔴"
+            : "🔵"
+        }`;
+
+
+    document.getElementById(
+        "diceText"
+    ).textContent =
+
+        gameState.movesLeft > 0
+
+        ? `Noch ${
+            gameState.movesLeft
+        } Schritt${
+            gameState.movesLeft === 1
+            ? ""
+            : "e"
+        }`
+
+        : "Würfle, um zu starten.";
+
+
+    document.getElementById(
+        "statusText"
+    ).textContent =
+        gameState.status ||
+        "";
+
+
+    const inventory =
+        player.inventory.length
+
+        ? player.inventory
+            .map(
+                item =>
+                    `${ITEM_ICONS[item]} ${
+                        ITEM_NAMES[item]
+                    }`
+            )
+            .join("<br>")
+
+        : "–";
+
+
+    const equipped =
+        player.equipped
+
+        ? `⚡ ${
+            ITEM_ICONS[
+                player.equipped
+            ]
+        } ${
+            ITEM_NAMES[
+                player.equipped
+            ]
+        }`
+
+        : "⚡ Nichts ausgerüstet";
+
+
+    document.getElementById(
+        "inventoryText"
+    ).innerHTML =
+
+        `<b>${
+            team
+        }:</b><br>
+        ${inventory}
+        <br><br>
+        ${equipped}`;
+
+
+    const myTurn =
+        gameMode === "local" ||
+        gameState.currentPlayer ===
+        currentRole;
+
+
+    document.getElementById(
+        "diceBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        gameState.movesLeft > 0 ||
+        !myTurn;
+
+
+    document.getElementById(
+        "equipBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        player.inventory.length === 0 ||
+        !myTurn;
+
+
+    document.getElementById(
+        "useBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        !myTurn;
+
+
+    document.getElementById(
+        "cheeseBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        player.equipped !== "cheese" ||
+        !myTurn;
+
+}
+
+
+/* =========================================================
+   NEUSTART
+   ========================================================= */
+
+window.restartCurrentGame =
+async function(){
+
+    document.getElementById(
+        "winner"
+    ).style.display =
+        "none";
+
+
+    popupOpen =
+        false;
+
+
+    shownDecisionId =
+        null;
+
+
+    if(
+        gameMode === "online"
+    ){
+
+        if(
+            currentRole !== 0
+        ){
+
+            showError(
+                "Nur Team Rot kann das Online-Spiel neu starten."
+            );
+
+            return;
+
+        }
+
+
+        gameState =
+            createInitialGameState();
+
+
+        await saveOnlineGame();
+
+    }
+    else{
+
+        gameState =
+            createInitialGameState();
+
+        updateGameUI();
+
+        draw();
+
+    }
+
+};
+
+
+/* =========================================================
+   AUS ONLINE SPIEL RAUS
+   ========================================================= */
+
+window.backToHomeFromGame =
+function(){
+
+    stopLobbyListeners();
+
+
+    gameMode =
+        "local";
+
+    currentLobby =
+        null;
+
+    currentRole =
+        null;
+
+    gameState =
+        null;
+
+    popupOpen =
+        false;
+
+
+    document.getElementById(
+        "popup"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "winner"
+    ).style.display =
+        "none";
+
+
+    showScreen(
+        "homeScreen"
+    );
+
+};
+
+
+/* =========================================================
+   LOBBY VERLASSEN
+   ========================================================= */
+
+window.leaveLobby =
+async function(){
+
+    if(
+        currentLobby &&
+        currentUser
+    ){
+
+        try{
+
+            const lobbyRef =
+                ref(
+                    db,
+                    "lobbies/" +
+                    currentLobby
+                );
+
+
+            const snapshot =
+                await get(
+                    lobbyRef
+                );
+
+
+            if(
+                snapshot.exists()
+            ){
+
+                const lobby =
+                    snapshot.val();
+
+
+                if(
+                    lobby.host ===
+                    currentUser.uid
+                ){
+
+                    await remove(
+                        lobbyRef
+                    );
+
+                }
+                else{
+
+                    await update(
+
+                        lobbyRef,
+
+                        {
+
+                            "players/blue":
+                                null
+
+                        }
+
+                    );
+
+                }
+
+            }
+
+        }
+        catch(error){
+
+            console.error(
+                error
+            );
+
+        }
+
+    }
+
+
+    stopLobbyListeners();
+
+
+    currentLobby =
+        null;
+
+
+    currentRole =
+        null;
+
+
+    showScreen(
+        "homeScreen"
+    );
+
+};
+
+
+/* =========================================================
+   LISTENER STOPPEN
+   ========================================================= */
+
+function stopLobbyListeners(){
+
+    if(
+        lobbyUnsub
+    ){
+
+        lobbyUnsub();
+
+        lobbyUnsub =
+            null;
+
+    }
+
+
+    if(
+        gameUnsub
+    ){
+
+        gameUnsub();
+
+        gameUnsub =
+            null;
+
+    }
+
+}
+
+
+/* =========================================================
+   FEHLER
+   ========================================================= */
+
+function showError(
+    message
+){
+
+    const box =
+        document.getElementById(
+            "errorBox"
+        );
+
+
+    box.textContent =
+        message;
+
+
+    box.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        () => {
+
+            box.classList.remove(
+                "show"
+            );
+
+        },
+        5000
+    );
+
+}
+
+
+/* =========================================================
+   ZEICHNEN
+   ========================================================= */
+
+function roundRect(
+    ctx,
+    x,
+    y,
+    w,
+    h,
+    r
+){
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(
+        x+r,
+        y
+    );
+
+
+    ctx.arcTo(
+        x+w,
+        y,
+        x+w,
+        y+h,
+        r
+    );
+
+
+    ctx.arcTo(
+        x+w,
+        y+h,
+        x,
+        y+h,
+        r
+    );
+
+
+    ctx.arcTo(
+        x,
+        y+h,
+        x,
+        y,
+        r
+    );
+
+
+    ctx.arcTo(
+        x,
+        y,
+        x+w,
+        y,
+        r
+    );
+
+
+    ctx.closePath();
+
+}
+
+
+/* =========================================================
+   HINTERGRUND
+   ========================================================= */
+
+function drawBackground(){
+
+    ctx.fillStyle =
+        "#8bcf69";
+
+
+    ctx.fillRect(
+        0,
+        0,
+        W,
+        H
+    );
+
+
+    for(
+        let i=0;
+        i<180;
+        i++
+    ){
+
+        const x =
+            (i*83) % W;
+
+
+        const y =
+            (i*137) % H;
+
+
+        ctx.fillStyle =
+            i%2===0
+            ? "#78bc5c"
+            : "#9bd979";
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            x,
+            y,
+            2.2,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+    }
+
+
+    /* Teich */
+
+    ctx.fillStyle =
+        "#5cb9e6";
+
+
+    ctx.beginPath();
+
+
+    ctx.ellipse(
+        1260,
+        180,
+        115,
+        62,
+        0,
+        0,
+        Math.PI*2
+    );
+
+
+    ctx.fill();
+
+
+    ctx.strokeStyle =
+        "#3a91c0";
+
+
+    ctx.lineWidth =
+        5;
+
+
+    ctx.stroke();
+
+
+    /* Blumen */
+
+    const flowers = [
+
+        [118,160],
+        [190,125],
+        [1330,620],
+        [1380,680],
+        [126,540],
+        [1260,700],
+        [1090,110],
+        [820,110]
+
+    ];
+
+
+    for(
+        const [x,y]
+        of flowers
+    ){
+
+        ctx.strokeStyle =
+            "#3f8f42";
+
+
+        ctx.lineWidth =
+            3;
+
+
+        ctx.beginPath();
+
+
+        ctx.moveTo(
+            x,
+            y+10
+        );
+
+
+        ctx.lineTo(
+            x,
+            y+25
+        );
+
+
+        ctx.stroke();
+
+
+        ctx.fillStyle =
+            "#fff";
+
+
+        for(
+            let a=0;
+            a<5;
+            a++
+        ){
+
+            const angle =
+                a*Math.PI*2/5;
+
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+
+                x+
+                    Math.cos(angle)*8,
+
+                y+
+                    Math.sin(angle)*8,
+
+                6,
+
+                0,
+                Math.PI*2
+
+            );
+
+
+            ctx.fill();
+
+        }
+
+
+        ctx.fillStyle =
+            "#ffd339";
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            x,
+            y,
+            5,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+    }
+
+
+    drawHedge(
+        80,
+        110,
+        250,
+        55
+    );
+
+
+    drawHedge(
+        1040,
+        90,
+        170,
+        55
+    );
+
+
+    drawHedge(
+        80,
+        600,
+        190,
+        48
+    );
+
+
+    drawHedge(
+        1230,
+        580,
+        190,
+        50
+    );
+
+}
+
+
+function drawHedge(
+    x,
+    y,
+    w,
+    h
+){
+
+    ctx.fillStyle =
+        "#3f873d";
+
+
+    roundRect(
+        ctx,
+        x,
+        y,
+        w,
+        h,
+        15
+    );
+
+
+    ctx.fill();
+
+
+    for(
+        let i=0;
+        i<w;
+        i+=28
+    ){
+
+        ctx.fillStyle =
+            "#4c9847";
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            x+14+i,
+            y+18,
+            12,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+    }
+
+}
+
+
+/* =========================================================
+   WEG
+   ========================================================= */
+
+function drawPath(){
+
+    ctx.save();
+
+
+    ctx.lineCap =
+        "round";
+
+
+    ctx.lineJoin =
+        "round";
+
+
+    /* Schatten */
+
+    ctx.strokeStyle =
+        "rgba(0,0,0,0.14)";
+
+
+    ctx.lineWidth =
+        82;
+
+
+    for(
+        const [a,b]
+        of edges
+    ){
+
+        ctx.beginPath();
+
+
+        ctx.moveTo(
+            nodes[a].x,
+            nodes[a].y
+        );
+
+
+        ctx.lineTo(
+            nodes[b].x,
+            nodes[b].y
+        );
+
+
+        ctx.stroke();
+
+    }
+
+
+    /* Weg */
+
+    ctx.strokeStyle =
+        "#d9bd88";
+
+
+    ctx.lineWidth =
+        72;
+
+
+    for(
+        const [a,b]
+        of edges
+    ){
+
+        ctx.beginPath();
+
+
+        ctx.moveTo(
+            nodes[a].x,
+            nodes[a].y
+        );
+
+
+        ctx.lineTo(
+            nodes[b].x,
+            nodes[b].y
+        );
+
+
+        ctx.stroke();
+
+    }
+
+
+    /* Pflaster */
+
+    ctx.strokeStyle =
+        "#b99b6c";
+
+
+    ctx.lineWidth =
+        2.4;
+
+
+    for(
+        const [a,b]
+        of edges
+    ){
+
+        const A =
+            nodes[a];
+
+
+        const B =
+            nodes[b];
+
+
+        const len =
+            Math.hypot(
+                B.x-A.x,
+                B.y-A.y
+            );
+
+
+        const pieces =
+            Math.max(
+                1,
+                Math.floor(
+                    len/28
+                )
+            );
+
+
+        for(
+            let j=1;
+            j<pieces;
+            j++
+        ){
+
+            const t =
+                j/pieces;
+
+
+            const x =
+                A.x+
+                (B.x-A.x)*t;
+
+
+            const y =
+                A.y+
+                (B.y-A.y)*t;
+
+
+            ctx.beginPath();
+
+
+            if(
+                A.x === B.x
+            ){
+
+                ctx.moveTo(
+                    x-34,
+                    y
+                );
+
+
+                ctx.lineTo(
+                    x+34,
+                    y
+                );
+
+            }
+            else{
+
+                ctx.moveTo(
+                    x,
+                    y-34
+                );
+
+
+                ctx.lineTo(
+                    x,
+                    y+34
+                );
+
+            }
+
+
+            ctx.stroke();
+
+        }
+
+    }
+
+
+    ctx.restore();
+
+}
+
+
+/* =========================================================
+   KNOTEN
+   ========================================================= */
+
+function drawNodes(){
+
+    for(
+        const n
+        of nodes
+    ){
+
+        ctx.fillStyle =
+            "#f2d9a4";
+
+
+        ctx.strokeStyle =
+            "#b49769";
+
+
+        ctx.lineWidth =
+            3;
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            n.x,
+            n.y,
+            22,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+        ctx.stroke();
+
+    }
+
+}
+
+
+/* =========================================================
+   ITEMFELD
+   ========================================================= */
+
+function drawItemField(
+    index,
+    slot
+){
+
+    const n =
+        nodes[index];
+
+
+    const color =
+        itemFieldColors[
+            slot %
+            itemFieldColors.length
+        ];
+
+
+    ctx.save();
+
+
+    ctx.shadowColor =
+        "rgba(0,0,0,0.25)";
+
+
+    ctx.shadowBlur =
+        10;
+
+
+    ctx.shadowOffsetY =
+        4;
+
+
+    ctx.fillStyle =
+        color;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-27,
+        n.y-27,
+
+        54,
+        54,
+
+        14
+
+    );
+
+
+    ctx.fill();
+
+
+    ctx.shadowColor =
+        "transparent";
+
+
+    ctx.strokeStyle =
+        "rgba(255,255,255,0.9)";
+
+
+    ctx.lineWidth =
+        3;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-27,
+        n.y-27,
+
+        54,
+        54,
+
+        14
+
+    );
+
+
+    ctx.stroke();
+
+
+    ctx.fillStyle =
+        "white";
+
+
+    ctx.font =
+        "900 34px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+        "?",
+        n.x,
+        n.y
+    );
+
+
+    ctx.restore();
+
+}
+
+
+/* =========================================================
+   BODEN-ITEM
+   ========================================================= */
+
+function drawGroundItem(
+    ground
+){
+
+    const n =
+        nodes[
+            ground.node
+        ];
+
+
+    ctx.save();
+
+
+    ctx.fillStyle =
+        ITEM_COLORS[
+            ground.item
+        ];
+
+
+    ctx.shadowColor =
+        "rgba(0,0,0,0.2)";
+
+
+    ctx.shadowBlur =
+        8;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-25,
+        n.y-25,
+
+        50,
+        50,
+
+        13
+
+    );
+
+
+    ctx.fill();
+
+
+    ctx.shadowColor =
+        "transparent";
+
+
+    ctx.font =
+        "28px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+
+        ITEM_ICONS[
+            ground.item
+        ],
+
+        n.x,
+        n.y
+
+    );
+
+
+    ctx.restore();
+
+}
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+function drawStart(){
+
+    const n =
+        nodes[START];
+
+
+    ctx.fillStyle =
+        "#fff8df";
+
+
+    ctx.strokeStyle =
+        "#76532f";
+
+
+    ctx.lineWidth =
+        4;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-28,
+        n.y-28,
+
+        56,
+        56,
+
+        16
+
+    );
+
+
+    ctx.fill();
+
+    ctx.stroke();
+
+
+    ctx.fillStyle =
+        "#59401f";
+
+
+    ctx.font =
+        "900 16px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+        "START",
+        n.x,
+        n.y
+    );
+
+}
+
+
+/* =========================================================
+   ZIEL
+   ========================================================= */
+
+function drawGoal(){
+
+    const n =
+        nodes[GOAL];
+
+
+    let unlocked =
+        false;
+
+
+    if(
+        gameState
+    ){
+
+        unlocked =
+            hasKey(
+                gameState.players[0]
+            )
+
+            ||
+
+            hasKey(
+                gameState.players[1]
+            );
+
+    }
+
+
+    ctx.save();
+
+
+    ctx.fillStyle =
+        unlocked
+        ? "#65d56c"
+        : "#888";
+
+
+    ctx.strokeStyle =
+        "#fff";
+
+
+    ctx.lineWidth =
+        4;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-31,
+        n.y-31,
+
+        62,
+        62,
+
+        17
+
+    );
+
+
+    ctx.fill();
+
+    ctx.stroke();
+
+
+    ctx.font =
+        "29px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+
+        unlocked
+        ? "🏆"
+        : "🔒",
+
+        n.x,
+        n.y
+
+    );
+
+
+    ctx.restore();
+
+}
+
+
+/* =========================================================
+   MÖGLICHE ZÜGE
+   ========================================================= */
+
+function drawLegalMoves(){
+
+    const legal =
+        getLegalMoves();
+
+
+    for(
+        const index
+        of legal
+    ){
+
+        const n =
+            nodes[index];
+
+
+        ctx.save();
+
+
+        ctx.fillStyle =
+            "rgba(255,231,50,0.35)";
+
+
+        ctx.strokeStyle =
+            "#ffe62f";
+
+
+        ctx.lineWidth =
+            5;
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+
+            n.x,
+            n.y,
+
+            38,
+
+            0,
+            Math.PI*2
+
+        );
+
+
+        ctx.fill();
+
+        ctx.stroke();
+
+
+        ctx.restore();
+
+    }
+
+}
+
+
+/* =========================================================
+   SPIELER
+   ========================================================= */
+
+function drawPlayer(
+    player,
+    index
+){
+
+    const n =
+        nodes[player.pos];
+
+
+    ctx.save();
+
+
+    /* Schatten */
+
+    ctx.fillStyle =
+        "rgba(0,0,0,0.22)";
+
+
+    ctx.beginPath();
+
+
+    ctx.ellipse(
+
+        n.x,
+        n.y+27,
+
+        29,
+        10,
+
+        0,
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    /* Käse */
+
+    ctx.fillStyle =
+        "#ffd84e";
+
+
+    ctx.strokeStyle =
+        "#c69421";
+
+
+    ctx.lineWidth =
+        4;
+
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(
+        n.x-24,
+        n.y+18
+    );
+
+
+    ctx.lineTo(
+        n.x-24,
+        n.y-17
+    );
+
+
+    ctx.lineTo(
+        n.x+24,
+        n.y-17
+    );
+
+
+    ctx.lineTo(
+        n.x+24,
+        n.y+18
+    );
+
+
+    ctx.closePath();
+
+
+    ctx.fill();
+
+    ctx.stroke();
+
+
+    /* Löcher */
+
+    ctx.fillStyle =
+        "#e2ae2b";
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+        n.x-10,
+        n.y-5,
+        4,
+        0,
+        Math.PI*2
+    );
+
+
+    ctx.fill();
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+        n.x+8,
+        n.y+8,
+        3.5,
+        0,
+        Math.PI*2
+    );
+
+
+    ctx.fill();
+
+
+    /* Flagge */
+
+    ctx.strokeStyle =
+        "#4f3822";
+
+
+    ctx.lineWidth =
+        3;
+
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(
+        n.x,
+        n.y-17
+    );
+
+
+    ctx.lineTo(
+        n.x,
+        n.y-48
+    );
+
+
+    ctx.stroke();
+
+
+    ctx.fillStyle =
+        index === 0
+        ? "#e53935"
+        : "#3f7cff";
+
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(
+        n.x,
+        n.y-47
+    );
+
+
+    ctx.lineTo(
+        n.x+21,
+        n.y-40
+    );
+
+
+    ctx.lineTo(
+        n.x,
+        n.y-33
+    );
+
+
+    ctx.closePath();
+
+
+    ctx.fill();
+
+
+    ctx.fillStyle =
+        "#5a3d16";
+
+
+    ctx.font =
+        "900 14px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+
+        index === 0
+        ? "R"
+        : "B",
+
+        n.x,
+        n.y
+
+    );
+
+
+    /* Item über Spieler */
+
+    if(
+        player.equipped
+    ){
+
+        ctx.font =
+            "20px Arial";
+
+
+        ctx.fillText(
+
+            ITEM_ICONS[
+                player.equipped
+            ],
+
+            n.x+29,
+            n.y-26
+
+        );
+
+    }
+
+
+    ctx.restore();
+
+}
+
+
+/* =========================================================
+   MÄUSE
+   ========================================================= */
+
+function drawMouse(
+    index
+){
+
+    const pos =
+        getMousePosition(
+            index
+        );
+
+
+    ctx.save();
+
+
+    /* Schatten */
+
+    ctx.fillStyle =
+        "rgba(0,0,0,0.20)";
+
+
+    ctx.beginPath();
+
+
+    ctx.ellipse(
+
+        pos.x,
+        pos.y+17,
+
+        22,
+        8,
+
+        0,
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    /* Schwanz */
+
+    ctx.strokeStyle =
+        "#a66a63";
+
+
+    ctx.lineWidth =
+        4;
+
+
+    ctx.beginPath();
+
+
+    ctx.moveTo(
+        pos.x-17,
+        pos.y+4
+    );
+
+
+    ctx.quadraticCurveTo(
+
+        pos.x-38,
+        pos.y+18,
+
+        pos.x-49,
+        pos.y+2
+
+    );
+
+
+    ctx.stroke();
+
+
+    /* Körper */
+
+    ctx.fillStyle =
+        "#b9a4a0";
+
+
+    ctx.beginPath();
+
+
+    ctx.ellipse(
+
+        pos.x,
+        pos.y+5,
+
+        24,
+        17,
+
+        0,
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    /* Kopf */
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+
+        pos.x+17,
+        pos.y-3,
+
+        16,
+
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    /* Ohren */
+
+    ctx.fillStyle =
+        "#d9aaa5";
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+
+        pos.x+7,
+        pos.y-17,
+
+        8,
+
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+
+        pos.x+25,
+        pos.y-19,
+
+        8,
+
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    /* Auge */
+
+    ctx.fillStyle =
+        "#222";
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+
+        pos.x+22,
+        pos.y-6,
+
+        2.8,
+
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    /* Nase */
+
+    ctx.fillStyle =
+        "#d56a6a";
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+
+        pos.x+33,
+        pos.y+1,
+
+        3,
+
+        0,
+        Math.PI*2
+
+    );
+
+
+    ctx.fill();
+
+
+    ctx.restore();
+
+}
+
+
+/* =========================================================
+   BOARD
+   ========================================================= */
+
+function draw(){
+
+    ctx.clearRect(
+        0,
+        0,
+        W,
+        H
+    );
+
+
+    drawBackground();
+
+    drawPath();
+
+    drawNodes();
+
+
+    if(
+        gameState
+    ){
+
+        drawStart();
+
+        drawGoal();
+
+
+        gameState.itemFields.forEach(
+
+            (index,slot) => {
+
+                drawItemField(
+                    index,
+                    slot
+                );
+
+            }
+
+        );
+
+
+        gameState.groundItems.forEach(
+            item => {
+
+                drawGroundItem(
+                    item
+                );
+
+            }
+        );
+
+
+        if(
+            gameState.movesLeft > 0 &&
+            !popupOpen
+        ){
+
+            drawLegalMoves();
+
+        }
+
+
+        drawPlayer(
+            gameState.players[0],
+            0
+        );
+
+
+        drawPlayer(
+            gameState.players[1],
+            1
+        );
+
+
+        for(
+            let i=0;
+            i<3;
+            i++
+        ){
+
+            drawMouse(
+                i
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+function animation(){
+
+    if(
+        gameState
+    ){
+
+        draw();
+
+    }
+
+
+    requestAnimationFrame(
+        animation
+    );
+
+}
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+document.getElementById(
+    "restartBtn"
+);
+
+document.getElementById(
+    "diceBtn"
+);
+
+
+requestAnimationFrame(
+    animation
+);
+
+</script>
+
+</body>
+</html>
