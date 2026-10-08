@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
 
 <meta charset="UTF-8">
 
 <meta
     name="viewport"
-    content="width=device-width,
-             initial-scale=1.0,
-             maximum-scale=1.0,
-             user-scalable=no"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 >
 
 <title>🧀 Käsepfad</title>
-
 
 <style>
 
@@ -29,13 +24,10 @@
 
 html,
 body{
-
     margin:0;
     padding:0;
-
     width:100%;
     height:100%;
-
     overflow:hidden;
 
     font-family:
@@ -47,17 +39,13 @@ body{
 }
 
 body{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 }
 
 button,
 input{
-
     font-family:inherit;
 }
 
@@ -67,14 +55,10 @@ input{
    ========================================================= */
 
 #app{
-
-    position:relative;
-
     width:100vw;
     height:100vh;
-
+    position:relative;
     overflow:hidden;
-
 }
 
 
@@ -83,9 +67,7 @@ input{
    ========================================================= */
 
 .screen{
-
     position:absolute;
-
     inset:0;
 
     width:100%;
@@ -97,7 +79,6 @@ input{
 }
 
 .screen.active{
-
     display:flex;
 }
 
@@ -107,7 +88,6 @@ input{
    ========================================================= */
 
 #homeScreen{
-
     justify-content:center;
     align-items:center;
 
@@ -117,16 +97,15 @@ input{
         linear-gradient(
             135deg,
             #83cb69,
-            #c2e78e
+            #c3e695
         );
 }
 
 .homeBox{
-
     width:min(92vw,560px);
 
     background:
-        rgba(255,255,255,0.96);
+        rgba(255,255,255,0.97);
 
     border:
         5px solid #69472a;
@@ -140,10 +119,24 @@ input{
     box-shadow:
         0 15px 45px
         rgba(0,0,0,0.25);
+
+    animation:
+        homeAppear .55s ease;
+}
+
+@keyframes homeAppear{
+    from{
+        transform:scale(.88);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
 }
 
 .logo{
-
     font-size:
         clamp(
             45px,
@@ -159,9 +152,7 @@ input{
 }
 
 .subtitle{
-
     font-size:20px;
-
     font-weight:bold;
 
     color:#765936;
@@ -170,16 +161,13 @@ input{
 }
 
 .menuButtons{
-
     display:flex;
-
     flex-direction:column;
 
     gap:14px;
 }
 
 .menuButton{
-
     width:100%;
 
     padding:17px;
@@ -199,25 +187,25 @@ input{
     box-shadow:
         0 5px 12px
         rgba(0,0,0,0.18);
+
+    transition:
+        transform .12s,
+        box-shadow .12s;
 }
 
 .menuButton:active{
-
-    transform:scale(0.98);
+    transform:scale(.97);
 }
 
 .playBtn{
-
     background:#ffdc45;
 }
 
 .createBtn{
-
     background:#8ce08c;
 }
 
 .joinBtn{
-
     background:#82caff;
 }
 
@@ -227,7 +215,6 @@ input{
    ========================================================= */
 
 .formScreen{
-
     justify-content:center;
     align-items:center;
 
@@ -242,10 +229,9 @@ input{
 }
 
 .formBox{
-
     width:min(92vw,500px);
 
-    background:white;
+    background:#fff;
 
     border:
         4px solid #69472a;
@@ -262,9 +248,7 @@ input{
 }
 
 .formTitle{
-
     font-size:32px;
-
     font-weight:1000;
 
     color:#5a3d16;
@@ -273,18 +257,16 @@ input{
 }
 
 .formText{
-
     font-size:17px;
 
-    line-height:1.4;
-
     color:#60492f;
+
+    line-height:1.4;
 
     margin-bottom:20px;
 }
 
 input{
-
     width:100%;
 
     padding:15px;
@@ -302,12 +284,10 @@ input{
 }
 
 input:focus{
-
     border-color:#6b9fe8;
 }
 
 .bigButton{
-
     width:100%;
 
     padding:14px;
@@ -330,14 +310,10 @@ input:focus{
 }
 
 .bigButton:disabled{
-
     opacity:.45;
-
-    cursor:default;
 }
 
 .backButton{
-
     background:#ddd;
 }
 
@@ -347,7 +323,6 @@ input:focus{
    ========================================================= */
 
 #lobbyScreen{
-
     justify-content:center;
     align-items:center;
 
@@ -362,7 +337,6 @@ input:focus{
 }
 
 .lobbyBox{
-
     width:min(94vw,620px);
 
     background:white;
@@ -382,7 +356,6 @@ input:focus{
 }
 
 .lobbyTitle{
-
     font-size:31px;
 
     font-weight:1000;
@@ -393,14 +366,11 @@ input:focus{
 }
 
 .lobbyCodeLabel{
-
     font-size:15px;
-
     font-weight:bold;
 }
 
 .lobbyCode{
-
     font-size:
         clamp(
             35px,
@@ -427,7 +397,6 @@ input:focus{
 }
 
 .playerList{
-
     background:#f6f2e9;
 
     border-radius:18px;
@@ -438,7 +407,6 @@ input:focus{
 }
 
 .player{
-
     padding:12px;
 
     background:white;
@@ -453,7 +421,6 @@ input:focus{
 }
 
 .waiting{
-
     margin:13px 0;
 
     font-weight:bold;
@@ -462,7 +429,6 @@ input:focus{
 }
 
 .status{
-
     margin-top:10px;
 
     font-size:14px;
@@ -474,51 +440,46 @@ input:focus{
 
 
 /* =========================================================
-   GAME SCREEN
+   SPIEL
    ========================================================= */
 
 #gameScreen{
-
     flex-direction:column;
 
     background:#8bcf69;
 }
 
-
-/* =========================================================
-   GAME HEADER
-   ========================================================= */
-
 .gameHeader{
-
     flex:0 0 auto;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     gap:12px;
 
-    padding:8px 12px;
+    padding:7px 10px;
 
     background:
-        rgba(255,255,255,0.97);
+        rgba(255,255,255,.97);
 
     border-bottom:
         3px solid #6b4a2b;
 
     box-shadow:
         0 4px 12px
-        rgba(0,0,0,0.18);
+        rgba(0,0,0,.18);
 
     z-index:10;
 }
 
-.gameHeaderTitle{
+.gameHeaderLeft{
+    min-width:0;
+    flex:1;
+}
 
-    font-size:23px;
+.gameHeaderTitle{
+    font-size:22px;
 
     font-weight:1000;
 
@@ -526,7 +487,6 @@ input:focus{
 }
 
 .gameHeaderMode{
-
     font-size:13px;
 
     font-weight:bold;
@@ -536,13 +496,200 @@ input:focus{
     margin-top:2px;
 }
 
+.gameHeaderButtons{
+    display:flex;
+    gap:6px;
+
+    align-items:center;
+}
+
+.headerButton{
+    border:none;
+
+    border-radius:11px;
+
+    padding:
+        8px 10px;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    background:#ddd;
+
+    color:#493418;
+}
+
 
 /* =========================================================
-   GAME AREA
+   GAME INFO – ÜBER DEM FELD
+   ========================================================= */
+
+#gameInfo{
+    flex:0 0 auto;
+
+    display:flex;
+
+    gap:8px;
+
+    padding:
+        7px 9px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-bottom:
+        2px solid #805b36;
+
+    z-index:9;
+}
+
+.infoPanel{
+    background:#fff;
+
+    border:
+        3px solid #6b4a2b;
+
+    border-radius:15px;
+
+    padding:
+        7px 9px;
+
+    box-shadow:
+        0 3px 7px
+        rgba(0,0,0,.14);
+}
+
+#turnPanel{
+    flex:1;
+    min-width:0;
+}
+
+#inventoryPanel{
+    width:
+        min(
+            330px,
+            35vw
+        );
+}
+
+#turnText{
+    font-size:19px;
+    font-weight:1000;
+
+    margin-bottom:2px;
+}
+
+#diceText{
+    font-size:15px;
+    font-weight:bold;
+}
+
+#statusText{
+    margin-top:3px;
+
+    font-size:12px;
+
+    line-height:1.2;
+}
+
+#inventoryText{
+    font-size:13px;
+
+    line-height:1.3;
+
+    font-weight:bold;
+}
+
+.gameButtons{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    margin-top:5px;
+}
+
+.gameButtons button{
+    border:none;
+
+    border-radius:9px;
+
+    padding:
+        7px 10px;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    color:#493418;
+}
+
+.gameButtons button:disabled{
+    opacity:.42;
+    cursor:default;
+}
+
+#diceBtn{
+    background:#ffdc45;
+}
+
+#equipBtn{
+    background:#8cc8ff;
+}
+
+#useBtn{
+    background:#e8a0ff;
+}
+
+#cheeseBtn{
+    background:#ffd56b;
+}
+
+.diceRollAnimation{
+    animation:
+        diceShake .45s ease;
+}
+
+@keyframes diceShake{
+
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+
+    20%{
+        transform:rotate(-7deg) scale(1.08);
+    }
+
+    40%{
+        transform:rotate(7deg) scale(1.12);
+    }
+
+    60%{
+        transform:rotate(-5deg) scale(1.08);
+    }
+
+    80%{
+        transform:rotate(4deg) scale(1.04);
+    }
+
+    100%{
+        transform:rotate(0deg) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   SPIELFELD
    ========================================================= */
 
 #gameArea{
-
     position:relative;
 
     flex:1;
@@ -557,181 +704,27 @@ input:focus{
 
     overflow:hidden;
 
-    padding:6px;
-
-    background:#8bcf69;
+    padding:5px;
 }
 
 canvas{
-
     display:block;
-
-    max-width:100%;
-    max-height:100%;
 
     width:auto;
     height:auto;
+
+    max-width:100%;
+    max-height:100%;
 
     touch-action:none;
 }
 
 
 /* =========================================================
-   GAME HUD
-   ========================================================= */
-
-#gameHUD{
-
-    position:absolute;
-
-    top:12px;
-    left:12px;
-    right:12px;
-
-    z-index:8;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    gap:12px;
-
-    pointer-events:none;
-}
-
-.hudPanel{
-
-    background:
-        rgba(255,255,255,0.95);
-
-    border:
-        3px solid #6b4a2b;
-
-    border-radius:16px;
-
-    padding:
-        8px 11px;
-
-    box-shadow:
-        0 4px 10px
-        rgba(0,0,0,0.18);
-
-    pointer-events:auto;
-}
-
-#leftHUD{
-
-    max-width:
-        min(
-            470px,
-            56vw
-        );
-}
-
-#rightHUD{
-
-    width:
-        min(
-            300px,
-            34vw
-        );
-}
-
-#turnText{
-
-    font-size:20px;
-
-    font-weight:1000;
-
-    margin-bottom:3px;
-}
-
-#diceText{
-
-    font-size:16px;
-
-    font-weight:bold;
-}
-
-#statusText{
-
-    margin-top:3px;
-
-    font-size:13px;
-
-    line-height:1.2;
-}
-
-#inventoryText{
-
-    font-size:14px;
-
-    line-height:1.35;
-
-    font-weight:bold;
-}
-
-.hudButtons{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:5px;
-
-    margin-top:6px;
-}
-
-.hudButtons button{
-
-    border:none;
-
-    border-radius:10px;
-
-    padding:
-        7px 10px;
-
-    font-size:13px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    color:#493418;
-}
-
-.hudButtons button:disabled{
-
-    opacity:.43;
-
-    cursor:default;
-}
-
-#diceBtn{
-    background:#ffdc45;
-}
-
-#equipBtn{
-    background:#8cc8ff;
-}
-
-#useBtn{
-    background:#e9a5ff;
-}
-
-#cheeseBtn{
-    background:#ffd56b;
-}
-
-
-/* =========================================================
-   ITEM POPUP
+   POPUP
    ========================================================= */
 
 #popup{
-
     position:absolute;
 
     left:50%;
@@ -740,7 +733,7 @@ canvas{
     transform:
         translate(-50%,-50%);
 
-    z-index:30;
+    z-index:40;
 
     width:min(
         92vw,
@@ -758,7 +751,7 @@ canvas{
 
     box-shadow:
         0 14px 40px
-        rgba(0,0,0,0.35);
+        rgba(0,0,0,.35);
 
     display:none;
 
@@ -766,41 +759,36 @@ canvas{
 }
 
 #popupTitle{
-
     font-size:28px;
 
     font-weight:1000;
 
-    margin-bottom:9px;
+    margin-bottom:8px;
 }
 
 #popupText{
-
     font-size:18px;
 
     line-height:1.4;
 
-    margin-bottom:18px;
+    margin-bottom:17px;
 }
 
 #popupButtons{
-
     display:flex;
-
     flex-direction:column;
 
     gap:9px;
 }
 
 #popupButtons button{
-
     width:100%;
-
-    padding:13px;
 
     border:none;
 
     border-radius:13px;
+
+    padding:13px;
 
     font-size:17px;
 
@@ -818,7 +806,7 @@ canvas{
 }
 
 .leaveChoice{
-    background:#dddddd;
+    background:#ddd;
 }
 
 .swapChoice{
@@ -827,11 +815,10 @@ canvas{
 
 
 /* =========================================================
-   WINNER
+   GEWINNER
    ========================================================= */
 
 #winner{
-
     position:absolute;
 
     inset:0;
@@ -839,7 +826,7 @@ canvas{
     z-index:50;
 
     background:
-        rgba(0,0,0,0.48);
+        rgba(0,0,0,.47);
 
     display:none;
 
@@ -848,10 +835,9 @@ canvas{
 }
 
 #winnerBox{
-
     width:min(
         90vw,
-        560px
+        570px
     );
 
     background:white;
@@ -868,16 +854,32 @@ canvas{
 
     box-shadow:
         0 15px 40px
-        rgba(0,0,0,0.38);
+        rgba(0,0,0,.38);
+
+    animation:
+        winnerAppear .45s ease;
+}
+
+@keyframes winnerAppear{
+
+    from{
+        transform:scale(.65);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
 }
 
 #winnerTitle{
-
     font-size:
         clamp(
             32px,
             8vw,
-            45px
+            46px
         );
 
     font-weight:1000;
@@ -886,7 +888,6 @@ canvas{
 }
 
 #winnerSub{
-
     font-size:21px;
 
     margin-bottom:20px;
@@ -894,15 +895,13 @@ canvas{
 
 
 /* =========================================================
-   ERROR
+   FEHLER
    ========================================================= */
 
 #errorBox{
-
     position:fixed;
 
     left:50%;
-
     bottom:15px;
 
     transform:
@@ -934,7 +933,6 @@ canvas{
 }
 
 #errorBox.show{
-
     display:block;
 }
 
@@ -946,80 +944,52 @@ canvas{
 @media(max-width:800px){
 
     .gameHeader{
-
-        padding:
-            6px 8px;
+        padding:6px 7px;
     }
 
     .gameHeaderTitle{
-
-        font-size:19px;
+        font-size:18px;
     }
 
     .gameHeaderMode{
-
-        font-size:11px;
+        font-size:10px;
     }
 
-    #gameHUD{
-
-        top:7px;
-        left:7px;
-        right:7px;
-
-        gap:6px;
+    .headerButton{
+        font-size:12px;
+        padding:7px 8px;
     }
 
-    #leftHUD{
-
-        max-width:
-            62vw;
+    #gameInfo{
+        flex-direction:column;
+        padding:5px 6px;
     }
 
-    #rightHUD{
-
-        width:
-            31vw;
+    #inventoryPanel{
+        width:100%;
     }
 
     #turnText{
-
-        font-size:17px;
+        font-size:16px;
     }
 
     #diceText{
-
-        font-size:14px;
+        font-size:13px;
     }
 
     #statusText{
-
         font-size:11px;
     }
 
     #inventoryText{
+        font-size:12px;
+    }
 
+    .gameButtons button{
         font-size:11px;
+        padding:6px 8px;
     }
 
-    .hudPanel{
-
-        padding:
-            6px 8px;
-    }
-
-    .hudButtons{
-
-        gap:3px;
-    }
-
-    .hudButtons button{
-
-        font-size:11px;
-
-        padding:
-            6px 7px;
-    }
 }
 
 </style>
@@ -1027,9 +997,7 @@ canvas{
 </head>
 
 
-
 <body>
-
 
 <div id="app">
 
@@ -1088,7 +1056,7 @@ canvas{
 
 
 <!-- =======================================================
-     SPIEL ERSTELLEN
+     CREATE
      ======================================================= -->
 
 <section
@@ -1103,8 +1071,7 @@ canvas{
         </div>
 
         <div class="formText">
-            Gib deinen Namen ein.
-            Danach bekommst du einen Lobby-Code.
+            Gib deinen Spielernamen ein.
         </div>
 
 
@@ -1138,7 +1105,7 @@ canvas{
 
 
 <!-- =======================================================
-     LOBBY BEITRETEN
+     JOIN
      ======================================================= -->
 
 <section
@@ -1153,7 +1120,7 @@ canvas{
         </div>
 
         <div class="formText">
-            Gib den Lobby-Code und deinen Namen ein.
+            Gib Lobby-Code und Namen ein.
         </div>
 
 
@@ -1283,7 +1250,7 @@ canvas{
 
 
 <!-- =======================================================
-     SPIEL
+     GAME
      ======================================================= -->
 
 <section
@@ -1293,7 +1260,7 @@ canvas{
 
     <div class="gameHeader">
 
-        <div>
+        <div class="gameHeaderLeft">
 
             <div class="gameHeaderTitle">
                 🧀 Käsepfad
@@ -1309,163 +1276,146 @@ canvas{
         </div>
 
 
-        <button
-            class="bigButton"
-            style="
-                width:auto;
-                margin:0;
-                padding:8px 12px;
-                background:#ddd;
-            "
-            onclick="backToHomeFromGame()"
-        >
-            🏠 Menü
-        </button>
+        <div class="gameHeaderButtons">
+
+            <button
+                id="soundBtn"
+                class="headerButton"
+                onclick="toggleSound()"
+            >
+                🔊
+            </button>
+
+
+            <button
+                class="headerButton"
+                onclick="backToHomeFromGame()"
+            >
+                🏠 Menü
+            </button>
+
+        </div>
 
     </div>
 
 
+    <!-- INFO OBEN, NICHT ÜBER DEM SPIELFELD -->
+
+    <div id="gameInfo">
+
+
+        <div
+            id="turnPanel"
+            class="infoPanel"
+        >
+
+            <div id="turnText">
+                Team Rot ist dran 🔴
+            </div>
+
+            <div id="diceText">
+                Würfle, um zu starten.
+            </div>
+
+            <div id="statusText"></div>
+
+
+            <div class="gameButtons">
+
+                <button
+                    id="diceBtn"
+                >
+                    🎲 Würfeln
+                </button>
+
+
+                <button
+                    id="equipBtn"
+                >
+                    🎒 Ausrüsten
+                </button>
+
+
+                <button
+                    id="useBtn"
+                >
+                    🧰 Item benutzen
+                </button>
+
+
+                <button
+                    id="cheeseBtn"
+                >
+                    🧀 Käsewürfel
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="inventoryPanel"
+            class="infoPanel"
+        >
+
+            <div
+                style="
+                    font-size:16px;
+                    font-weight:1000;
+                    margin-bottom:3px;
+                "
+            >
+                🎒 Inventar
+            </div>
+
+
+            <div id="inventoryText">
+                Rot: –
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SPIELFELD -->
 
     <div id="gameArea">
 
         <canvas id="game"></canvas>
 
 
-        <!-- GAME HUD -->
-
-        <div id="gameHUD">
-
-
-            <div
-                id="leftHUD"
-                class="hudPanel"
-            >
-
-                <div
-                    id="turnText"
-                >
-                    Team Rot ist dran 🔴
-                </div>
-
-
-                <div
-                    id="diceText"
-                >
-                    Würfle, um zu starten.
-                </div>
-
-
-                <div
-                    id="statusText"
-                ></div>
-
-
-                <div class="hudButtons">
-
-                    <button
-                        id="diceBtn"
-                    >
-                        🎲 Würfeln
-                    </button>
-
-
-                    <button
-                        id="equipBtn"
-                    >
-                        🎒 Ausrüsten
-                    </button>
-
-
-                    <button
-                        id="useBtn"
-                    >
-                        🧰 Item benutzen
-                    </button>
-
-
-                    <button
-                        id="cheeseBtn"
-                    >
-                        🧀 Käsewürfel
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <div
-                id="rightHUD"
-                class="hudPanel"
-            >
-
-                <div
-                    style="
-                        font-size:16px;
-                        font-weight:1000;
-                        margin-bottom:3px;
-                    "
-                >
-                    🎒 Inventar
-                </div>
-
-
-                <div
-                    id="inventoryText"
-                >
-                    Rot: –
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
         <!-- ITEM POPUP -->
 
-        <div
-            id="popup"
-        >
+        <div id="popup">
 
-            <div
-                id="popupTitle"
-            >
+            <div id="popupTitle">
                 🎁 Item gefunden!
             </div>
 
 
-            <div
-                id="popupText"
-            ></div>
+            <div id="popupText"></div>
 
 
-            <div
-                id="popupButtons"
-            ></div>
+            <div id="popupButtons"></div>
 
         </div>
 
 
 
-        <!-- WINNER -->
+        <!-- GEWINNER -->
 
-        <div
-            id="winner"
-        >
+        <div id="winner">
 
             <div id="winnerBox">
 
-                <div
-                    id="winnerTitle"
-                ></div>
+                <div id="winnerTitle"></div>
 
 
-                <div
-                    id="winnerSub"
-                >
+                <div id="winnerSub">
                     🎉 Der Käsepfad ist geschafft!
                 </div>
 
@@ -1489,15 +1439,19 @@ canvas{
 
 <div id="errorBox"></div>
 
-
 </div>
 
 
 
+<!-- =========================================================
+     FIREBASE + SPIEL
+     ========================================================= -->
+
 <script type="module">
 
+
 /* =========================================================
-   FIREBASE
+   FIREBASE IMPORTS
    ========================================================= */
 
 import {
@@ -1562,16 +1516,21 @@ const firebaseConfig = {
 
 
 /* =========================================================
-   FIREBASE INITIALISIEREN
+   FIREBASE START
    ========================================================= */
 
-let firebaseReady = false;
+let firebaseReady =
+    false;
 
-let currentUser = null;
+let currentUser =
+    null;
 
-let db = null;
+let db =
+    null;
 
-let auth = null;
+let auth =
+    null;
+
 
 try{
 
@@ -1615,8 +1574,8 @@ try{
             );
 
             showError(
-                "Firebase-Anmeldung fehlgeschlagen: "
-                + error.message
+                "Firebase-Anmeldung fehlgeschlagen: " +
+                error.message
             );
 
         }
@@ -1651,9 +1610,11 @@ const ctx =
     );
 
 
-const W = 1500;
+const W =
+    1500;
 
-const H = 900;
+const H =
+    900;
 
 
 canvas.width =
@@ -1664,280 +1625,63 @@ canvas.height =
 
 
 /* =========================================================
-   MAP
+   MAP-KONFIGURATION
    ========================================================= */
 
-const START = 0;
-
-const GOAL = 40;
-
-
-const nodes = [
-
-    {x:90,y:790},
-    {x:180,y:790},
-    {x:270,y:790},
-    {x:360,y:790},
-    {x:450,y:790},
-    {x:540,y:790},
-    {x:630,y:790},
-
-    {x:630,y:700},
-    {x:630,y:610},
-    {x:630,y:520},
-
-    {x:540,y:520},
-    {x:450,y:520},
-    {x:360,y:520},
-
-    {x:360,y:430},
-    {x:360,y:340},
-    {x:360,y:250},
-
-    {x:450,y:250},
-    {x:540,y:250},
-    {x:630,y:250},
-    {x:720,y:250},
-    {x:810,y:250},
-    {x:900,y:250},
-    {x:990,y:250},
-    {x:1080,y:250},
-    {x:1170,y:250},
-
-    {x:1170,y:340},
-    {x:1170,y:430},
-
-    {x:1080,y:430},
-    {x:990,y:430},
-    {x:900,y:430},
-    {x:810,y:430},
-    {x:720,y:430},
-
-    {x:720,y:520},
-    {x:720,y:610},
-    {x:720,y:700},
-    {x:720,y:790},
-
-    {x:810,y:790},
-    {x:900,y:790},
-    {x:990,y:790},
-    {x:1080,y:790},
-    {x:1170,y:790},
-
-    {x:270,y:700},
-    {x:270,y:610},
-
-    {x:450,y:430},
-    {x:540,y:430},
-
-    {x:900,y:160},
-    {x:990,y:160},
-
-    {x:1260,y:430},
-    {x:1260,y:520},
-
-    {x:720,y:880}
-
-];
-
-
-const edges = [
-
-    [0,1],
-    [1,2],
-    [2,3],
-    [3,4],
-    [4,5],
-    [5,6],
-
-    [6,7],
-    [7,8],
-    [8,9],
-
-    [9,10],
-    [10,11],
-    [11,12],
-
-    [12,13],
-    [13,14],
-    [14,15],
-
-    [15,16],
-    [16,17],
-    [17,18],
-    [18,19],
-    [19,20],
-
-    [20,21],
-    [21,22],
-    [22,23],
-    [23,24],
-
-    [24,25],
-    [25,26],
-
-    [26,27],
-    [27,28],
-    [28,29],
-    [29,30],
-    [30,31],
-
-    [31,32],
-    [32,33],
-    [33,34],
-    [34,35],
-
-    [35,36],
-    [36,37],
-    [37,38],
-    [38,39],
-    [39,40],
-
-    [2,41],
-    [41,42],
-
-    [13,43],
-    [43,44],
-
-    [21,45],
-    [45,46],
-
-    [26,47],
-    [47,48],
-
-    [35,49]
-
-];
-
-
-const adjacency =
-    Array.from(
-        {
-            length:nodes.length
-        },
-        () => []
-    );
-
-
-for(
-    const [a,b]
-    of edges
-){
-
-    adjacency[a].push(
-        b
-    );
-
-    adjacency[b].push(
-        a
-    );
-
-}
-
-
-/* =========================================================
-   ITEM-INFOS
-   ========================================================= */
-
-const ITEM_NAMES = {
-
-    sapphire:
-        "Saphir-Schwert",
-
-    ruby:
-        "Rubin-Schwert",
-
-    minecraftShield:
-        "Minecraft-Schild",
-
-    ancientShield:
-        "Antiker Schild",
-
-    cheese:
-        "Käsewürfel",
-
-    key:
-        "Goldener Schlüssel"
-
-};
-
-
-const ITEM_ICONS = {
-
-    sapphire:"💎",
-
-    ruby:"🗡️",
-
-    minecraftShield:"🛡️",
-
-    ancientShield:"🏰",
-
-    cheese:"🧀",
-
-    key:"🔑"
-
-};
-
-
-const ITEM_COLORS = {
-
-    sapphire:"#57c7ff",
-
-    ruby:"#ff5578",
-
-    minecraftShield:"#6ee27a",
-
-    ancientShield:"#b98cff",
-
-    cheese:"#ffd75c",
-
-    key:"#ffca2f"
-
-};
-
-
-const itemFieldColors = [
-
-    "#ff6fa8",
-    "#59c9ff",
-    "#76e58a",
-    "#ffd84d",
-    "#b77cff",
-    "#ff9754",
-    "#54e0d0"
+const MAPS = [
+
+    {
+        name:
+            "Hecken-Irrgarten",
+
+        seed:
+            183721
+    },
+
+    {
+        name:
+            "Teich-Labyrinth",
+
+        seed:
+            491287
+    },
+
+    {
+        name:
+            "Blumen-Labyrinth",
+
+        seed:
+            827341
+    },
+
+    {
+        name:
+            "Mondgarten",
+
+        seed:
+            319857
+    },
+
+    {
+        name:
+            "Herbst-Labyrinth",
+
+        seed:
+            675219
+    }
 
 ];
 
 
 /* =========================================================
-   MÄUSE-PFADE
+   AKTUELLE MAP
    ========================================================= */
 
-const mousePaths = [
+let currentMap =
+    null;
 
-    [
-        1,2,3,4,5,6,7,8,
-        9,10,11,12,13,14
-    ],
-
-    [
-        15,16,17,18,19,20,
-        21,22,23,24,25,26
-    ],
-
-    [
-        27,28,29,30,31,32,
-        33,34,35,36,37,38
-    ]
-
-];
-
-
-const mouseSpeeds = [
-    0.72,
-    0.58,
-    0.63
-];
+let currentMapId =
+    0;
 
 
 /* =========================================================
@@ -1961,7 +1705,7 @@ let gameUnsub =
 
 
 /* =========================================================
-   LOKALER / ONLINE SPIELSTATUS
+   GAME STATE
    ========================================================= */
 
 let gameState =
@@ -1979,31 +1723,764 @@ let pendingNode =
 let shownDecisionId =
     null;
 
+let soundEnabled =
+    true;
+
+let audioContext =
+    null;
+
 
 /* =========================================================
-   NEUEN SPIELSTATUS ERSTELLEN
+   ANIMATION
+   ========================================================= */
+
+const visualPlayers = [
+
+    {
+        x:0,
+        y:0,
+        targetX:0,
+        targetY:0,
+        initialized:false
+    },
+
+    {
+        x:0,
+        y:0,
+        targetX:0,
+        targetY:0,
+        initialized:false
+    }
+
+];
+
+
+let particles = [];
+
+let previousPositions = [
+
+    null,
+    null
+
+];
+
+
+let previousWinner =
+    null;
+
+
+/* =========================================================
+   RNG
+   ========================================================= */
+
+function createRng(seed){
+
+    let s =
+        seed >>> 0;
+
+
+    return function(){
+
+        s +=
+            0x6D2B79F5;
+
+
+        let t =
+            s;
+
+
+        t =
+            Math.imul(
+                t ^ (
+                    t >>> 15
+                ),
+                t | 1
+            );
+
+
+        t ^=
+            t +
+            Math.imul(
+                t ^ (
+                    t >>> 7
+                ),
+                t | 61
+            );
+
+
+        return (
+            (
+                t ^
+                (
+                    t >>> 14
+                )
+            ) >>> 0
+        ) / 4294967296;
+
+    };
+
+}
+
+
+/* =========================================================
+   SHUFFLE
+   ========================================================= */
+
+function shuffled(
+    arr,
+    rng
+){
+
+    const out =
+        arr.slice();
+
+
+    for(
+        let i =
+            out.length-1;
+
+        i>0;
+
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                rng() *
+                (i+1)
+            );
+
+
+        [
+            out[i],
+            out[j]
+        ] =
+        [
+            out[j],
+            out[i]
+        ];
+
+    }
+
+
+    return out;
+
+}
+
+
+/* =========================================================
+   MAZE GENERATOR
+   ========================================================= */
+
+function generateMaze(
+    mapId
+){
+
+    const config =
+        MAPS[
+            mapId %
+            MAPS.length
+        ];
+
+
+    const rng =
+        createRng(
+            config.seed
+        );
+
+
+    /*
+       Ungerade Größe:
+       echtes Labyrinth
+       mit geraden Wegen
+    */
+
+    const cols =
+        17;
+
+    const rows =
+        11;
+
+
+    const walls =
+        Array.from(
+            {
+                length:rows
+            },
+            () =>
+                Array(
+                    cols
+                ).fill(true)
+        );
+
+
+    function carve(
+        x,
+        y
+    ){
+
+        walls[y][x] =
+            false;
+
+
+        const dirs =
+            shuffled(
+                [
+                    [1,0],
+                    [-1,0],
+                    [0,1],
+                    [0,-1]
+                ],
+                rng
+            );
+
+
+        for(
+            const [
+                dx,
+                dy
+            ]
+            of dirs
+        ){
+
+            const nx =
+                x +
+                dx*2;
+
+
+            const ny =
+                y +
+                dy*2;
+
+
+            if(
+                nx < 1 ||
+                nx >= cols-1 ||
+                ny < 1 ||
+                ny >= rows-1
+            ){
+
+                continue;
+
+            }
+
+
+            if(
+                !walls[ny][nx]
+            ){
+
+                continue;
+
+            }
+
+
+            walls[
+                y+dy
+            ][
+                x+dx
+            ] =
+                false;
+
+
+            carve(
+                nx,
+                ny
+            );
+
+        }
+
+    }
+
+
+    carve(
+        1,
+        1
+    );
+
+
+    /*
+       Ein paar zusätzliche Öffnungen
+       machen alternative Wege.
+    */
+
+    let loops =
+        0;
+
+
+    while(
+        loops < 6
+    ){
+
+        const x =
+            1 +
+            Math.floor(
+                rng() *
+                (cols-2)
+            );
+
+
+        const y =
+            1 +
+            Math.floor(
+                rng() *
+                (rows-2)
+            );
+
+
+        if(
+            x % 2 === 1 &&
+            y % 2 === 1
+        ){
+
+            continue;
+
+        }
+
+
+        if(
+            !walls[y][x]
+        ){
+
+            continue;
+
+        }
+
+
+        let openNeighbors =
+            0;
+
+
+        if(
+            x > 0 &&
+            !walls[y][x-1]
+        ){
+
+            openNeighbors++;
+
+        }
+
+
+        if(
+            x < cols-1 &&
+            !walls[y][x+1]
+        ){
+
+            openNeighbors++;
+
+        }
+
+
+        if(
+            y > 0 &&
+            !walls[y-1][x]
+        ){
+
+            openNeighbors++;
+
+        }
+
+
+        if(
+            y < rows-1 &&
+            !walls[y+1][x]
+        ){
+
+            openNeighbors++;
+
+        }
+
+
+        if(
+            openNeighbors >= 2
+        ){
+
+            walls[y][x] =
+                false;
+
+            loops++;
+
+        }
+
+    }
+
+
+    /*
+       Nodes
+    */
+
+    const nodes =
+        [];
+
+    const nodeByCell =
+        new Map();
+
+
+    const marginX =
+        110;
+
+    const marginY =
+        80;
+
+
+    const spacingX =
+        (
+            W -
+            marginX*2
+        ) /
+        (cols-1);
+
+
+    const spacingY =
+        (
+            H -
+            marginY*2
+        ) /
+        (rows-1);
+
+
+    for(
+        let y=0;
+        y<rows;
+        y++
+    ){
+
+        for(
+            let x=0;
+            x<cols;
+            x++
+        ){
+
+            if(
+                walls[y][x]
+            ){
+
+                continue;
+
+            }
+
+
+            const id =
+                nodes.length;
+
+
+            nodes.push({
+
+                x:
+                    marginX +
+                    x*spacingX,
+
+                y:
+                    marginY +
+                    y*spacingY,
+
+                gx:x,
+                gy:y
+
+            });
+
+
+            nodeByCell.set(
+                `${x},${y}`,
+                id
+            );
+
+        }
+
+    }
+
+
+    /*
+       Verbindungen
+       NUR oben / unten / links / rechts
+    */
+
+    const edges =
+        [];
+
+
+    const adjacency =
+        Array.from(
+            {
+                length:nodes.length
+            },
+            () => []
+        );
+
+
+    for(
+        const node
+        of nodes
+    ){
+
+        const neighbors = [
+
+            [1,0],
+
+            [0,1]
+
+        ];
+
+
+        for(
+            const [
+                dx,
+                dy
+            ]
+            of neighbors
+        ){
+
+            const key =
+                `${node.gx+dx},${node.gy+dy}`;
+
+
+            if(
+                !nodeByCell.has(
+                    key
+                )
+            ){
+
+                continue;
+
+            }
+
+
+            const b =
+                nodeByCell.get(
+                    key
+                );
+
+
+            edges.push([
+                nodes.indexOf(
+                    node
+                ),
+                b
+            ]);
+
+        }
+
+    }
+
+
+    for(
+        const [a,b]
+        of edges
+    ){
+
+        adjacency[a].push(b);
+
+        adjacency[b].push(a);
+
+    }
+
+
+    const start =
+        nodeByCell.get(
+            "1,1"
+        );
+
+
+    const goal =
+        nodeByCell.get(
+            `${cols-2},${rows-2}`
+        );
+
+
+    return {
+
+        id:
+            mapId,
+
+        name:
+            config.name,
+
+        nodes,
+
+        edges,
+
+        adjacency,
+
+        start,
+
+        goal,
+
+        cols,
+
+        rows
+
+    };
+
+}
+
+
+/* =========================================================
+   MÄUSE-PFADE
+   ========================================================= */
+
+function createMousePaths(
+    map
+){
+
+    const rng =
+        createRng(
+            MAPS[
+                map.id
+            ].seed +
+            99173
+        );
+
+
+    const paths =
+        [];
+
+
+    for(
+        let m=0;
+        m<3;
+        m++
+    ){
+
+        let start =
+            Math.floor(
+                rng() *
+                map.nodes.length
+            );
+
+
+        if(
+            start === map.start ||
+            start === map.goal
+        ){
+
+            start =
+                (
+                    start + 5
+                ) %
+                map.nodes.length;
+
+        }
+
+
+        const path =
+            [start];
+
+
+        let previous =
+            -1;
+
+
+        for(
+            let i=0;
+            i<34;
+            i++
+        ){
+
+            const current =
+                path[
+                    path.length-1
+                ];
+
+
+            let choices =
+                map.adjacency[
+                    current
+                ]
+                .filter(
+                    x =>
+                        x !== previous
+                );
+
+
+            if(
+                choices.length === 0
+            ){
+
+                choices =
+                    map.adjacency[
+                        current
+                    ];
+
+            }
+
+
+            const next =
+                choices[
+                    Math.floor(
+                        rng() *
+                        choices.length
+                    )
+                ];
+
+
+            previous =
+                current;
+
+
+            path.push(
+                next
+            );
+
+        }
+
+
+        paths.push(
+            path
+        );
+
+    }
+
+
+    return paths;
+
+}
+
+
+/* =========================================================
+   INITIAL STATE
    ========================================================= */
 
 function createInitialGameState(){
 
-    const fields =
+    const mapId =
+        Math.floor(
+            Math.random() *
+            MAPS.length
+        );
+
+
+    const map =
+        generateMaze(
+            mapId
+        );
+
+
+    currentMapId =
+        mapId;
+
+
+    currentMap =
+        map;
+
+
+    const itemFields =
         [];
 
 
     while(
-        fields.length < 7
+        itemFields.length <
+        7
     ){
 
         const index =
             Math.floor(
                 Math.random() *
-                nodes.length
+                map.nodes.length
             );
 
 
         if(
-            index === START ||
-            index === GOAL
+            index === map.start ||
+            index === map.goal
         ){
 
             continue;
@@ -2012,7 +2489,9 @@ function createInitialGameState(){
 
 
         if(
-            fields.includes(index)
+            itemFields.includes(
+                index
+            )
         ){
 
             continue;
@@ -2020,7 +2499,7 @@ function createInitialGameState(){
         }
 
 
-        fields.push(
+        itemFields.push(
             index
         );
 
@@ -2029,47 +2508,87 @@ function createInitialGameState(){
 
     return {
 
-        currentPlayer:0,
+        mapId:
 
-        movesLeft:0,
+            mapId,
 
-        diceValue:0,
 
-        gameOver:false,
+        currentPlayer:
+            0,
 
-        winner:null,
+
+        movesLeft:
+            0,
+
+
+        diceValue:
+            0,
+
+
+        gameOver:
+            false,
+
+
+        winner:
+            null,
+
+
+        turnNumber:
+            0,
+
 
         status:
-            "Neue Partie gestartet! 🧀",
+            `🗺️ ${map.name} gestartet! 🧀`,
+
 
         miceStart:
             Date.now(),
 
-        itemFields:fields,
 
-        groundItems:[],
+        mousePaths:
+            createMousePaths(
+                map
+            ),
 
-        pendingDecision:null,
+
+        itemFields:
+            itemFields,
+
+
+        groundItems:
+            [],
+
+
+        pendingDecision:
+            null,
+
 
         players:{
 
             0:{
 
-                pos:START,
+                pos:
+                    map.start,
 
-                inventory:[],
+                inventory:
+                    [],
 
-                equipped:null
+                equipped:
+                    null
 
             },
 
+
             1:{
 
-                pos:START,
+                pos:
+                    map.start,
 
-                inventory:[],
+                inventory:
+                    [],
 
-                equipped:null
+                equipped:
+                    null
 
             }
 
@@ -2081,7 +2600,7 @@ function createInitialGameState(){
 
 
 /* =========================================================
-   SPIELSTATUS SICHERSTELLEN
+   STATE NORMALISIEREN
    ========================================================= */
 
 function normalizeGameState(
@@ -2093,71 +2612,73 @@ function normalizeGameState(
     }
 
 
-    if(!state.players){
+    if(
+        !state.players
+    ){
+
         state.players = {};
-    }
-
-
-    if(!state.players[0]){
-        state.players[0] = {
-            pos:START,
-            inventory:[],
-            equipped:null
-        };
-    }
-
-
-    if(!state.players[1]){
-        state.players[1] = {
-            pos:START,
-            inventory:[],
-            equipped:null
-        };
-    }
-
-
-    if(!Array.isArray(
-        state.players[0].inventory
-    )){
-
-        state.players[0].inventory=[];
 
     }
 
 
-    if(!Array.isArray(
-        state.players[1].inventory
-    )){
+    for(
+        const i of [0,1]
+    ){
 
-        state.players[1].inventory=[];
+        if(
+            !state.players[i]
+        ){
 
-    }
+            state.players[i] = {
+
+                pos:
+                    currentMap
+                    ? currentMap.start
+                    : 0,
+
+                inventory:[],
+
+                equipped:null
+
+            };
+
+        }
 
 
-    if(!Array.isArray(
-        state.itemFields
-    )){
+        if(
+            !Array.isArray(
+                state.players[i].inventory
+            )
+        ){
 
-        state.itemFields=[];
+            state.players[i].inventory =
+                [];
 
-    }
-
-
-    if(!Array.isArray(
-        state.groundItems
-    )){
-
-        state.groundItems=[];
+        }
 
     }
 
 
     if(
-        typeof state.currentPlayer
-        !== "number"
+        !Array.isArray(
+            state.itemFields
+        )
     ){
 
-        state.currentPlayer=0;
+        state.itemFields =
+            [];
+
+    }
+
+
+    if(
+        !Array.isArray(
+            state.groundItems
+        )
+    ){
+
+        state.groundItems =
+            [];
 
     }
 
@@ -2167,17 +2688,19 @@ function normalizeGameState(
         !== "number"
     ){
 
-        state.movesLeft=0;
+        state.movesLeft =
+            0;
 
     }
 
 
     if(
-        typeof state.gameOver
-        !== "boolean"
+        typeof state.turnNumber
+        !== "number"
     ){
 
-        state.gameOver=false;
+        state.turnNumber =
+            0;
 
     }
 
@@ -2188,7 +2711,617 @@ function normalizeGameState(
 
 
 /* =========================================================
-   FIREBASE STATE SPEICHERN
+   MAP LADEN
+   ========================================================= */
+
+function setCurrentMap(
+    mapId
+){
+
+    currentMapId =
+        Number(mapId) ||
+        0;
+
+
+    currentMap =
+        generateMaze(
+            currentMapId
+        );
+
+}
+
+
+/* =========================================================
+   SOUNDS
+   ========================================================= */
+
+function ensureAudio(){
+
+    if(
+        !soundEnabled
+    ){
+
+        return;
+
+    }
+
+
+    try{
+
+        if(
+            !audioContext
+        ){
+
+            audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+
+        }
+
+
+        if(
+            audioContext.state ===
+            "suspended"
+        ){
+
+            audioContext.resume();
+
+        }
+
+    }
+    catch(error){
+
+        console.warn(
+            "Audio nicht verfügbar",
+            error
+        );
+
+    }
+
+}
+
+
+function tone(
+    frequency,
+    duration,
+    type="sine",
+    volume=.045
+){
+
+    if(
+        !soundEnabled
+    ){
+
+        return;
+
+    }
+
+
+    ensureAudio();
+
+
+    if(
+        !audioContext
+    ){
+
+        return;
+
+    }
+
+
+    const osc =
+        audioContext.createOscillator();
+
+
+    const gain =
+        audioContext.createGain();
+
+
+    osc.type =
+        type;
+
+
+    osc.frequency.value =
+        frequency;
+
+
+    gain.gain.setValueAtTime(
+        volume,
+        audioContext.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        audioContext.currentTime +
+        duration
+    );
+
+
+    osc.connect(
+        gain
+    );
+
+
+    gain.connect(
+        audioContext.destination
+    );
+
+
+    osc.start();
+
+
+    osc.stop(
+        audioContext.currentTime +
+        duration
+    );
+
+}
+
+
+function soundDice(){
+
+    tone(
+        480,
+        .09,
+        "square",
+        .035
+    );
+
+    setTimeout(
+        () =>
+            tone(
+                660,
+                .12,
+                "square",
+                .035
+            ),
+        80
+    );
+
+}
+
+
+function soundStep(){
+
+    tone(
+        230,
+        .055,
+        "triangle",
+        .026
+    );
+
+}
+
+
+function soundItem(){
+
+    tone(
+        600,
+        .11,
+        "sine",
+        .04
+    );
+
+    setTimeout(
+        () =>
+            tone(
+                850,
+                .14,
+                "sine",
+                .04
+            ),
+        80
+    );
+
+}
+
+
+function soundBlocked(){
+
+    tone(
+        150,
+        .11,
+        "sawtooth",
+        .025
+    );
+
+}
+
+
+function soundWin(){
+
+    tone(
+        523,
+        .15,
+        "sine",
+        .045
+    );
+
+    setTimeout(
+        () =>
+            tone(
+                659,
+                .15,
+                "sine",
+                .045
+            ),
+        110
+    );
+
+    setTimeout(
+        () =>
+            tone(
+                784,
+                .22,
+                "sine",
+                .045
+            ),
+        220
+    );
+
+}
+
+
+window.toggleSound =
+function(){
+
+    soundEnabled =
+        !soundEnabled;
+
+
+    const btn =
+        document.getElementById(
+            "soundBtn"
+        );
+
+
+    btn.textContent =
+        soundEnabled
+        ? "🔊"
+        : "🔇";
+
+
+    if(
+        soundEnabled
+    ){
+
+        ensureAudio();
+
+    }
+
+};
+
+
+/* =========================================================
+   PARTIKEL
+   ========================================================= */
+
+function spawnParticles(
+    x,
+    y,
+    count=16
+){
+
+    for(
+        let i=0;
+        i<count;
+        i++
+    ){
+
+        const angle =
+            Math.random() *
+            Math.PI*2;
+
+
+        const speed =
+            50 +
+            Math.random()*130;
+
+
+        particles.push({
+
+            x,
+            y,
+
+            vx:
+                Math.cos(angle) *
+                speed,
+
+            vy:
+                Math.sin(angle) *
+                speed,
+
+            life:
+                .65 +
+                Math.random()*.45,
+
+            maxLife:
+                .65 +
+                Math.random()*.45,
+
+            size:
+                3 +
+                Math.random()*6
+
+        });
+
+    }
+
+}
+
+
+function updateParticles(
+    dt
+){
+
+    for(
+        let i=particles.length-1;
+        i>=0;
+        i--
+    ){
+
+        const p =
+            particles[i];
+
+
+        p.x +=
+            p.vx *
+            dt;
+
+
+        p.y +=
+            p.vy *
+            dt;
+
+
+        p.vy +=
+            180 *
+            dt;
+
+
+        p.life -=
+            dt;
+
+
+        if(
+            p.life <= 0
+        ){
+
+            particles.splice(
+                i,
+                1
+            );
+
+        }
+
+    }
+
+}
+
+
+function drawParticles(){
+
+    for(
+        const p of particles
+    ){
+
+        const alpha =
+            Math.max(
+                0,
+                p.life /
+                p.maxLife
+            );
+
+
+        ctx.globalAlpha =
+            alpha;
+
+
+        ctx.fillStyle =
+            "#fff";
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+    }
+
+
+    ctx.globalAlpha =
+        1;
+
+}
+
+
+/* =========================================================
+   VISUAL PLAYER SYNC
+   ========================================================= */
+
+function syncVisualPlayers(
+    state,
+    oldState=null
+){
+
+    for(
+        const i of [0,1]
+    ){
+
+        const pos =
+            state.players[i].pos;
+
+
+        const n =
+            currentMap.nodes[
+                pos
+            ];
+
+
+        const visual =
+            visualPlayers[i];
+
+
+        if(
+            !visual.initialized
+        ){
+
+            visual.x =
+                n.x;
+
+            visual.y =
+                n.y;
+
+            visual.targetX =
+                n.x;
+
+            visual.targetY =
+                n.y;
+
+            visual.initialized =
+                true;
+
+            continue;
+
+        }
+
+
+        if(
+            visual.targetX !== n.x ||
+            visual.targetY !== n.y
+        ){
+
+            visual.targetX =
+                n.x;
+
+            visual.targetY =
+                n.y;
+
+
+            soundStep();
+
+
+            spawnParticles(
+                n.x,
+                n.y,
+                5
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   STATE ÄNDERUNG
+   ========================================================= */
+
+function applyGameState(
+    nextState
+){
+
+    const oldState =
+        gameState;
+
+
+    gameState =
+        normalizeGameState(
+            nextState
+        );
+
+
+    if(
+        !gameState
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        currentMapId !==
+        Number(gameState.mapId)
+    ){
+
+        setCurrentMap(
+            gameState.mapId
+        );
+
+
+        visualPlayers[0].initialized =
+            false;
+
+        visualPlayers[1].initialized =
+            false;
+
+    }
+
+
+    syncVisualPlayers(
+        gameState,
+        oldState
+    );
+
+
+    if(
+        oldState &&
+        !oldState.pendingDecision &&
+        gameState.pendingDecision
+    ){
+
+        soundItem();
+
+    }
+
+
+    if(
+        oldState &&
+        !oldState.gameOver &&
+        gameState.gameOver
+    ){
+
+        soundWin();
+
+        spawnWinEffect();
+
+    }
+
+
+    updateGameUI();
+
+    draw();
+
+
+    if(
+        gameState.pendingDecision &&
+        gameState.pendingDecision.player ===
+            currentRole
+    ){
+
+        handlePendingDecision();
+
+    }
+
+}
+
+
+/* =========================================================
+   ONLINE SAVE
    ========================================================= */
 
 async function saveOnlineGame(){
@@ -2204,36 +3337,160 @@ async function saveOnlineGame(){
     }
 
 
-    try{
+    await set(
 
-        await set(
+        ref(
+            db,
+            "lobbies/" +
+            currentLobby +
+            "/game"
+        ),
 
-            ref(
-                db,
-                "lobbies/" +
-                currentLobby +
-                "/game"
-            ),
+        gameState
 
-            gameState
-
-        );
-
-    }
-    catch(error){
-
-        console.error(
-            error
-        );
-
-        showError(
-            "Spiel konnte nicht synchronisiert werden: "
-            + error.message
-        );
-
-    }
+    );
 
 }
+
+
+/* =========================================================
+   SCREEN
+   ========================================================= */
+
+window.showScreen =
+function(id){
+
+    document
+        .querySelectorAll(
+            ".screen"
+        )
+        .forEach(
+            screen =>
+                screen.classList.remove(
+                    "active"
+                )
+        );
+
+
+    document
+        .getElementById(
+            id
+        )
+        .classList.add(
+            "active"
+        );
+
+};
+
+
+/* =========================================================
+   LOKAL
+   ========================================================= */
+
+window.openLocalGame =
+function(){
+
+    stopListeners();
+
+
+    gameMode =
+        "local";
+
+
+    currentLobby =
+        null;
+
+
+    currentRole =
+        null;
+
+
+    gameState =
+        createInitialGameState();
+
+
+    document.getElementById(
+        "gameHeaderMode"
+    ).textContent =
+        `🎮 Lokal · ${currentMap.name}`;
+
+
+    showScreen(
+        "gameScreen"
+    );
+
+
+    popupOpen =
+        false;
+
+
+    document.getElementById(
+        "popup"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "winner"
+    ).style.display =
+        "none";
+
+
+    updateGameUI();
+
+
+    draw();
+
+
+    ensureAudio();
+
+};
+
+
+/* =========================================================
+   CREATE SCREEN
+   ========================================================= */
+
+window.openCreateScreen =
+function(){
+
+    document.getElementById(
+        "createName"
+    ).value =
+        "";
+
+
+    showScreen(
+        "createScreen"
+    );
+
+};
+
+
+/* =========================================================
+   JOIN SCREEN
+   ========================================================= */
+
+window.openJoinScreen =
+function(){
+
+    document.getElementById(
+        "joinCode"
+    ).value =
+        "";
+
+
+    document.getElementById(
+        "joinName"
+    ).value =
+        "";
+
+
+    showScreen(
+        "joinScreen"
+    );
+
+};
 
 
 /* =========================================================
@@ -2245,7 +3502,9 @@ function makeLobbyCode(){
     const chars =
         "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-    let code = "";
+
+    let code =
+        "";
 
 
     for(
@@ -2313,129 +3572,14 @@ async function getFreeLobbyCode(){
 
 
 /* =========================================================
-   SCREENS
-   ========================================================= */
-
-window.showScreen =
-function(id){
-
-    document
-        .querySelectorAll(
-            ".screen"
-        )
-        .forEach(
-            screen => {
-
-                screen.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    document
-        .getElementById(
-            id
-        )
-        .classList.add(
-            "active"
-        );
-
-};
-
-
-/* =========================================================
-   LOKALES SPIEL
-   ========================================================= */
-
-window.openLocalGame =
-function(){
-
-    stopLobbyListeners();
-
-
-    gameMode =
-        "local";
-
-    currentLobby =
-        null;
-
-    currentRole =
-        null;
-
-
-    gameState =
-        createInitialGameState();
-
-
-    document.getElementById(
-        "gameHeaderMode"
-    ).textContent =
-        "🎮 Lokales Spiel – ein Gerät";
-
-
-    showScreen(
-        "gameScreen"
-    );
-
-
-    updateGameUI();
-
-    draw();
-
-};
-
-
-/* =========================================================
-   ERSTELLEN
-   ========================================================= */
-
-window.openCreateScreen =
-function(){
-
-    document.getElementById(
-        "createName"
-    ).value = "";
-
-
-    showScreen(
-        "createScreen"
-    );
-
-};
-
-
-/* =========================================================
-   BEITRETEN
-   ========================================================= */
-
-window.openJoinScreen =
-function(){
-
-    document.getElementById(
-        "joinCode"
-    ).value = "";
-
-
-    document.getElementById(
-        "joinName"
-    ).value = "";
-
-
-    showScreen(
-        "joinScreen"
-    );
-
-};
-
-
-/* =========================================================
-   LOBBY ERSTELLEN
+   CREATE LOBBY
    ========================================================= */
 
 window.createLobby =
 async function(){
+
+    ensureAudio();
+
 
     if(
         !firebaseReady ||
@@ -2443,7 +3587,7 @@ async function(){
     ){
 
         showError(
-            "Firebase wird noch vorbereitet. Warte kurz und versuche es dann erneut."
+            "Firebase ist noch nicht bereit. Warte kurz."
         );
 
         return;
@@ -2465,7 +3609,7 @@ async function(){
     ){
 
         showError(
-            "Bitte einen Namen mit mindestens 2 Zeichen eingeben."
+            "Bitte einen Namen eingeben."
         );
 
         return;
@@ -2507,9 +3651,6 @@ async function(){
                 gameStarted:
                     false,
 
-                status:
-                    "waiting",
-
                 players:{
 
                     red:{
@@ -2535,7 +3676,6 @@ async function(){
             code
         );
 
-
     }
     catch(error){
 
@@ -2543,9 +3683,10 @@ async function(){
             error
         );
 
+
         showError(
-            "Lobby konnte nicht erstellt werden: "
-            + error.message
+            "Lobby konnte nicht erstellt werden: " +
+            error.message
         );
 
     }
@@ -2554,11 +3695,14 @@ async function(){
 
 
 /* =========================================================
-   LOBBY BEITRETEN
+   JOIN
    ========================================================= */
 
 window.joinLobby =
 async function(){
+
+    ensureAudio();
+
 
     if(
         !firebaseReady ||
@@ -2566,7 +3710,7 @@ async function(){
     ){
 
         showError(
-            "Firebase wird noch vorbereitet. Warte kurz und versuche es dann erneut."
+            "Firebase ist noch nicht bereit. Warte kurz."
         );
 
         return;
@@ -2645,7 +3789,7 @@ async function(){
         ){
 
             showError(
-                "Das Spiel wurde bereits gestartet."
+                "Das Spiel läuft bereits."
             );
 
             return;
@@ -2659,7 +3803,7 @@ async function(){
         ){
 
             showError(
-                "Diese Lobby ist bereits voll."
+                "Diese Lobby ist voll."
             );
 
             return;
@@ -2711,9 +3855,10 @@ async function(){
             error
         );
 
+
         showError(
-            "Beitreten fehlgeschlagen: "
-            + error.message
+            "Beitreten fehlgeschlagen: " +
+            error.message
         );
 
     }
@@ -2722,7 +3867,7 @@ async function(){
 
 
 /* =========================================================
-   LOBBY ÖFFNEN
+   LOBBY
    ========================================================= */
 
 function openLobby(
@@ -2748,14 +3893,14 @@ function openLobby(
 
 
 /* =========================================================
-   LOBBY LIVE
+   LOBBY WATCH
    ========================================================= */
 
 function watchLobby(
     code
 ){
 
-    stopLobbyListeners();
+    stopListeners();
 
 
     const lobbyRef =
@@ -2778,7 +3923,7 @@ function watchLobby(
                 ){
 
                     showError(
-                        "Die Lobby existiert nicht mehr."
+                        "Die Lobby wurde geschlossen."
                     );
 
 
@@ -2841,7 +3986,6 @@ function updateLobbyUI(
     document.getElementById(
         "player1"
     ).textContent =
-
         red
         ? `🔴 ${red.name}`
         : "🔴 Spieler Rot";
@@ -2853,7 +3997,9 @@ function updateLobbyUI(
         );
 
 
-    if(blue){
+    if(
+        blue
+    ){
 
         player2.textContent =
             `🔵 ${blue.name}`;
@@ -2873,18 +4019,14 @@ function updateLobbyUI(
     }
 
 
-    const startBtn =
-        document.getElementById(
-            "startOnlineBtn"
-        );
-
-
     const isHost =
         lobby.host ===
         currentUser.uid;
 
 
-    startBtn.disabled =
+    document.getElementById(
+        "startOnlineBtn"
+    ).disabled =
         !isHost ||
         !blue ||
         lobby.gameStarted;
@@ -2896,13 +4038,17 @@ function updateLobbyUI(
         );
 
 
-    if(!blue){
+    if(
+        !blue
+    ){
 
         waiting.textContent =
             "⏳ Warte auf einen zweiten Spieler...";
 
     }
-    else if(isHost){
+    else if(
+        isHost
+    ){
 
         waiting.textContent =
             "✅ Spieler gefunden! Du kannst starten.";
@@ -2911,7 +4057,7 @@ function updateLobbyUI(
     else{
 
         waiting.textContent =
-            "✅ Du bist beigetreten. Warte auf den Host.";
+            "✅ Beigetreten. Warte auf den Host.";
 
     }
 
@@ -2919,16 +4065,15 @@ function updateLobbyUI(
     document.getElementById(
         "lobbyStatus"
     ).textContent =
-
         isHost
-        ? "Du bist der Host und Team Rot."
+        ? "Du bist Team Rot."
         : "Du bist Team Blau.";
 
 }
 
 
 /* =========================================================
-   ONLINE SPIEL STARTEN
+   START ONLINE
    ========================================================= */
 
 window.startOnlineGame =
@@ -2944,11 +4089,11 @@ async function(){
     }
 
 
-    const initial =
-        createInitialGameState();
-
-
     try{
+
+        const initial =
+            createInitialGameState();
+
 
         await update(
 
@@ -2962,9 +4107,6 @@ async function(){
 
                 gameStarted:
                     true,
-
-                status:
-                    "playing",
 
                 game:
                     initial
@@ -2980,9 +4122,10 @@ async function(){
             error
         );
 
+
         showError(
-            "Das Spiel konnte nicht gestartet werden: "
-            + error.message
+            "Spiel konnte nicht gestartet werden: " +
+            error.message
         );
 
     }
@@ -2996,13 +4139,17 @@ async function(){
 
 function openOnlineGame(){
 
+    setCurrentMap(
+        gameState
+        ? gameState.mapId
+        : 0
+    );
+
+
     document.getElementById(
         "gameHeaderMode"
     ).textContent =
-
-        `🌐 Online – Lobby ${
-            currentLobby
-        } – ${
+        `🌐 Online · ${currentMap.name} · ${
             currentRole === 0
             ? "Team Rot"
             : "Team Blau"
@@ -3014,17 +4161,13 @@ function openOnlineGame(){
     );
 
 
-    if(!gameUnsub){
-
-        watchGame();
-
-    }
+    watchGame();
 
 }
 
 
 /* =========================================================
-   GAME LIVE ABHÖREN
+   GAME WATCH
    ========================================================= */
 
 function watchGame(){
@@ -3038,12 +4181,11 @@ function watchGame(){
     }
 
 
-    if(gameUnsub){
+    if(
+        gameUnsub
+    ){
 
         gameUnsub();
-
-        gameUnsub =
-            null;
 
     }
 
@@ -3073,18 +4215,9 @@ function watchGame(){
                 }
 
 
-                gameState =
-                    normalizeGameState(
-                        snapshot.val()
-                    );
-
-
-                updateGameUI();
-
-                draw();
-
-
-                handleRemotePendingDecision();
+                applyGameState(
+                    snapshot.val()
+                );
 
             }
 
@@ -3094,13 +4227,12 @@ function watchGame(){
 
 
 /* =========================================================
-   REMOTE ITEM POPUP
+   PENDING ITEM
    ========================================================= */
 
-function handleRemotePendingDecision(){
+function handlePendingDecision(){
 
     if(
-        gameMode !== "online" ||
         !gameState ||
         !gameState.pendingDecision ||
         gameState.gameOver
@@ -3116,6 +4248,7 @@ function handleRemotePendingDecision(){
 
 
     if(
+        gameMode === "online" &&
         decision.player !==
         currentRole
     ){
@@ -3148,8 +4281,7 @@ function handleRemotePendingDecision(){
 
 
 /* =========================================================
-   ITEM-ZUFALL
-   SCHLÜSSEL = 10 %
+   ITEM ZUFALL
    ========================================================= */
 
 function randomItem(){
@@ -3158,8 +4290,12 @@ function randomItem(){
         Math.random();
 
 
+    /*
+       10 % Schlüssel
+    */
+
     if(
-        r < 0.10
+        r < .10
     ){
 
         return "key";
@@ -3167,8 +4303,12 @@ function randomItem(){
     }
 
 
+    /*
+       25 % Saphir
+    */
+
     if(
-        r < 0.35
+        r < .35
     ){
 
         return "sapphire";
@@ -3176,8 +4316,12 @@ function randomItem(){
     }
 
 
+    /*
+       25 % Rubin
+    */
+
     if(
-        r < 0.60
+        r < .60
     ){
 
         return "ruby";
@@ -3185,8 +4329,12 @@ function randomItem(){
     }
 
 
+    /*
+       15 % Schild
+    */
+
     if(
-        r < 0.75
+        r < .75
     ){
 
         return "minecraftShield";
@@ -3194,8 +4342,12 @@ function randomItem(){
     }
 
 
+    /*
+       15 % Antiker Schild
+    */
+
     if(
-        r < 0.90
+        r < .90
     ){
 
         return "ancientShield";
@@ -3203,20 +4355,111 @@ function randomItem(){
     }
 
 
+    /*
+       10 % Käse
+    */
+
     return "cheese";
 
 }
 
 
 /* =========================================================
-   ITEMFELD ERSETZEN
+   ITEMINFOS
+   ========================================================= */
+
+const ITEM_NAMES = {
+
+    sapphire:
+        "Saphir-Schwert",
+
+    ruby:
+        "Rubin-Schwert",
+
+    minecraftShield:
+        "Minecraft-Schild",
+
+    ancientShield:
+        "Antiker Schild",
+
+    cheese:
+        "Käsewürfel",
+
+    key:
+        "Goldener Schlüssel"
+
+};
+
+
+const ITEM_ICONS = {
+
+    sapphire:
+        "💎",
+
+    ruby:
+        "🗡️",
+
+    minecraftShield:
+        "🛡️",
+
+    ancientShield:
+        "🏰",
+
+    cheese:
+        "🧀",
+
+    key:
+        "🔑"
+
+};
+
+
+const ITEM_COLORS = {
+
+    sapphire:
+        "#57c7ff",
+
+    ruby:
+        "#ff5578",
+
+    minecraftShield:
+        "#6ee27a",
+
+    ancientShield:
+        "#b98cff",
+
+    cheese:
+        "#ffd75c",
+
+    key:
+        "#ffca2f"
+
+};
+
+
+const FIELD_COLORS = [
+
+    "#ff6fa8",
+    "#59c9ff",
+    "#76e58a",
+    "#ffd84d",
+    "#b77cff",
+    "#ff9754",
+    "#54e0d0"
+
+];
+
+
+/* =========================================================
+   ITEM-FELD ERSETZEN
    ========================================================= */
 
 function createReplacementItemField(
     oldNode
 ){
 
-    let tries = 0;
+    let tries =
+        0;
 
 
     while(
@@ -3229,13 +4472,13 @@ function createReplacementItemField(
         const index =
             Math.floor(
                 Math.random() *
-                nodes.length
+                currentMap.nodes.length
             );
 
 
         if(
-            index === START ||
-            index === GOAL
+            index === currentMap.start ||
+            index === currentMap.goal
         ){
 
             continue;
@@ -3245,19 +4488,6 @@ function createReplacementItemField(
 
         if(
             index === oldNode
-        ){
-
-            continue;
-
-        }
-
-
-        if(
-            gameState.players[0].pos ===
-            index ||
-
-            gameState.players[1].pos ===
-            index
         ){
 
             continue;
@@ -3288,6 +4518,19 @@ function createReplacementItemField(
         }
 
 
+        if(
+            gameState.players[0].pos ===
+                index ||
+
+            gameState.players[1].pos ===
+                index
+        ){
+
+            continue;
+
+        }
+
+
         gameState.itemFields.push(
             index
         );
@@ -3301,7 +4544,7 @@ function createReplacementItemField(
 
 
 /* =========================================================
-   ITEMFELDER BELEGT?
+   SCHLÜSSEL?
    ========================================================= */
 
 function hasKey(
@@ -3325,29 +4568,47 @@ function hasKey(
 
 
 /* =========================================================
-   MAUSPOSITIONEN
+   MOUSE POSITION
    ========================================================= */
 
 function getMousePosition(
     mouseIndex
 ){
 
+    if(
+        !gameState ||
+        !gameState.mousePaths ||
+        !currentMap
+    ){
+
+        return currentMap.nodes[0];
+
+    }
+
+
     const path =
-        mousePaths[
+        gameState.mousePaths[
             mouseIndex
         ];
 
 
     if(
-        !gameState ||
-        !gameState.miceStart
+        !path ||
+        path.length < 2
     ){
 
-        return nodes[
-            path[0]
-        ];
+        return currentMap.nodes[0];
 
     }
+
+
+    const speeds = [
+
+        .64,
+        .53,
+        .58
+
+    ];
 
 
     const elapsed =
@@ -3361,35 +4622,40 @@ function getMousePosition(
 
 
     const progress =
-        (
-            elapsed *
-            mouseSpeeds[mouseIndex]
-        );
+        elapsed *
+        speeds[
+            mouseIndex
+        ];
 
 
     const segment =
         Math.floor(
             progress
         ) %
-        path.length;
+        (
+            path.length-1
+        );
 
 
     const t =
         progress -
-        Math.floor(progress);
+        Math.floor(
+            progress
+        );
 
 
     const a =
-        nodes[
-            path[segment]
+        currentMap.nodes[
+            path[
+                segment
+            ]
         ];
 
 
     const b =
-        nodes[
+        currentMap.nodes[
             path[
-                (segment+1) %
-                path.length
+                segment+1
             ]
         ];
 
@@ -3398,11 +4664,17 @@ function getMousePosition(
 
         x:
             a.x +
-            (b.x-a.x)*t,
+            (
+                b.x-a.x
+            ) *
+            t,
 
         y:
             a.y +
-            (b.y-a.y)*t
+            (
+                b.y-a.y
+            ) *
+            t
 
     };
 
@@ -3414,11 +4686,13 @@ function getMousePosition(
    ========================================================= */
 
 function isNodeBlockedByMouse(
-    index
+    nodeIndex
 ){
 
     const n =
-        nodes[index];
+        currentMap.nodes[
+            nodeIndex
+        ];
 
 
     for(
@@ -3433,21 +4707,11 @@ function isNodeBlockedByMouse(
             );
 
 
-        const dx =
-            mouse.x -
-            n.x;
-
-
-        const dy =
-            mouse.y -
-            n.y;
-
-
         if(
             Math.hypot(
-                dx,
-                dy
-            ) < 44
+                mouse.x-n.x,
+                mouse.y-n.y
+            ) < 33
         ){
 
             return true;
@@ -3463,7 +4727,7 @@ function isNodeBlockedByMouse(
 
 
 /* =========================================================
-   MÖGLICHE ZÜGE
+   LEGAL MOVES
    ========================================================= */
 
 function getLegalMoves(){
@@ -3485,14 +4749,14 @@ function getLegalMoves(){
         ];
 
 
-    return adjacency[
+    return currentMap.adjacency[
         player.pos
     ].filter(
-        index => {
+        node => {
 
             if(
                 isNodeBlockedByMouse(
-                    index
+                    node
                 )
             ){
 
@@ -3502,7 +4766,7 @@ function getLegalMoves(){
 
 
             if(
-                index === GOAL &&
+                node === currentMap.goal &&
                 !hasKey(player)
             ){
 
@@ -3526,10 +4790,10 @@ function getLegalMoves(){
 document.getElementById(
     "diceBtn"
 ).onclick =
-    rollDice;
+async function(){
 
+    ensureAudio();
 
-async function rollDice(){
 
     if(
         !gameState ||
@@ -3549,19 +4813,37 @@ async function rollDice(){
         currentRole
     ){
 
-        showError(
-            "Du bist gerade nicht dran."
-        );
-
         return;
 
     }
 
 
+    const diceText =
+        document.getElementById(
+            "diceText"
+        );
+
+
+    diceText.classList.remove(
+        "diceRollAnimation"
+    );
+
+
+    void diceText.offsetWidth;
+
+
+    diceText.classList.add(
+        "diceRollAnimation"
+    );
+
+
+    soundDice();
+
+
     gameState.diceValue =
         Math.floor(
             Math.random()*6
-        ) + 1;
+        )+1;
 
 
     gameState.movesLeft =
@@ -3580,12 +4862,11 @@ async function rollDice(){
 
     await commitGameState();
 
-
-}
+};
 
 
 /* =========================================================
-   GAME STATE SPEICHERN / LOKAL
+   COMMIT
    ========================================================= */
 
 async function commitGameState(){
@@ -3599,7 +4880,19 @@ async function commitGameState(){
         gameMode === "online"
     ){
 
-        await saveOnlineGame();
+        try{
+
+            await saveOnlineGame();
+
+        }
+        catch(error){
+
+            showError(
+                "Synchronisation fehlgeschlagen: " +
+                error.message
+            );
+
+        }
 
     }
 
@@ -3607,32 +4900,133 @@ async function commitGameState(){
 
 
 /* =========================================================
-   TIPPEN AUF CANVAS
+   CANVAS TAP
    ========================================================= */
 
 canvas.addEventListener(
     "pointerdown",
-    event => {
+    async event => {
 
-        handleCanvasTap(
-            event.clientX,
-            event.clientY
-        );
+        if(
+            !gameState ||
+            gameState.gameOver ||
+            popupOpen ||
+            gameState.movesLeft <= 0
+        ){
+
+            return;
+
+        }
+
+
+        if(
+            gameMode === "online" &&
+            gameState.currentPlayer !==
+            currentRole
+        ){
+
+            return;
+
+        }
+
+
+        const rect =
+            canvas.getBoundingClientRect();
+
+
+        const x =
+            (
+                event.clientX -
+                rect.left
+            ) *
+            (
+                W /
+                rect.width
+            );
+
+
+        const y =
+            (
+                event.clientY -
+                rect.top
+            ) *
+            (
+                H /
+                rect.height
+            );
+
+
+        const legal =
+            getLegalMoves();
+
+
+        let bestNode =
+            -1;
+
+
+        let bestDistance =
+            9999;
+
+
+        for(
+            const nodeIndex
+            of legal
+        ){
+
+            const n =
+                currentMap.nodes[
+                    nodeIndex
+                ];
+
+
+            const d =
+                Math.hypot(
+                    x-n.x,
+                    y-n.y
+                );
+
+
+            if(
+                d < 52 &&
+                d < bestDistance
+            ){
+
+                bestDistance =
+                    d;
+
+                bestNode =
+                    nodeIndex;
+
+            }
+
+        }
+
+
+        if(
+            bestNode !== -1
+        ){
+
+            await moveOneStep(
+                bestNode
+            );
+
+        }
 
     }
 );
 
 
-async function handleCanvasTap(
-    clientX,
-    clientY
-){
+/* =========================================================
+   ITEM-DROPS AUFRÄUMEN
+   ========================================================= */
+
+function expireOldGroundItems(){
 
     if(
         !gameState ||
-        gameState.gameOver ||
-        popupOpen ||
-        gameState.movesLeft <= 0
+        !Array.isArray(
+            gameState.groundItems
+        )
     ){
 
         return;
@@ -3640,96 +5034,33 @@ async function handleCanvasTap(
     }
 
 
-    if(
-        gameMode === "online" &&
-        gameState.currentPlayer !==
-        currentRole
-    ){
+    gameState.groundItems =
+        gameState.groundItems.filter(
+            item => {
 
-        return;
+                /*
+                   Das Item verschwindet,
+                   sobald der nächste Spieler
+                   seinen ersten Schritt macht.
+                */
 
-    }
+                if(
+                    item.expiresTurn <=
+                    gameState.turnNumber &&
+
+                    item.expiresFor ===
+                    gameState.currentPlayer
+                ){
+
+                    return false;
+
+                }
 
 
-    const rect =
-        canvas.getBoundingClientRect();
+                return true;
 
-
-    const x =
-        (
-            clientX -
-            rect.left
-        )
-        *
-        (
-            W /
-            rect.width
+            }
         );
-
-
-    const y =
-        (
-            clientY -
-            rect.top
-        )
-        *
-        (
-            H /
-            rect.height
-        );
-
-
-    const legal =
-        getLegalMoves();
-
-
-    let clicked =
-        -1;
-
-    let best =
-        9999;
-
-
-    for(
-        const index of legal
-    ){
-
-        const n =
-            nodes[index];
-
-
-        const d =
-            Math.hypot(
-                x-n.x,
-                y-n.y
-            );
-
-
-        if(
-            d < 58 &&
-            d < best
-        ){
-
-            best =
-                d;
-
-            clicked =
-                index;
-
-        }
-
-    }
-
-
-    if(
-        clicked !== -1
-    ){
-
-        await moveOneStep(
-            clicked
-        );
-
-    }
 
 }
 
@@ -3742,24 +5073,24 @@ async function moveOneStep(
     target
 ){
 
-    if(
-        !gameState
-    ){
-
-        return;
-
-    }
-
-
-    const current =
+    const player =
         gameState.players[
             gameState.currentPlayer
         ];
 
 
+    /*
+       Liegengebliebene Items entfernen,
+       wenn jetzt der nächste Spieler
+       seinen ersten Schritt macht.
+    */
+
+    expireOldGroundItems();
+
+
     if(
-        !adjacency[
-            current.pos
+        !currentMap.adjacency[
+            player.pos
         ].includes(
             target
         )
@@ -3770,31 +5101,32 @@ async function moveOneStep(
     }
 
 
-    const legal =
-        getLegalMoves();
-
-
     if(
-        !legal.includes(
+        !getLegalMoves().includes(
             target
         )
     ){
+
+        soundBlocked();
 
         return;
 
     }
 
 
-    current.pos =
+    player.pos =
         target;
 
 
     gameState.movesLeft--;
 
 
-    /* =====================================================
-       HERUMLIEGENDES ITEM
-       ===================================================== */
+    soundStep();
+
+
+    /*
+       Item vom Boden
+    */
 
     const groundIndex =
         gameState.groundItems.findIndex(
@@ -3830,9 +5162,9 @@ async function moveOneStep(
     }
 
 
-    /* =====================================================
-       RANDOM ITEMFELD
-       ===================================================== */
+    /*
+       Buntes Random-Itemfeld
+    */
 
     const fieldIndex =
         gameState.itemFields.indexOf(
@@ -3855,12 +5187,12 @@ async function moveOneStep(
         );
 
 
-        const found =
+        const item =
             randomItem();
 
 
         await startItemDecision(
-            found,
+            item,
             target
         );
 
@@ -3876,17 +5208,13 @@ async function moveOneStep(
 
 
 /* =========================================================
-   ITEM ENTSCHEIDUNG STARTEN
+   ITEM ENTSCHEIDUNG
    ========================================================= */
 
 async function startItemDecision(
     item,
     node
 ){
-
-    const player =
-        gameState.currentPlayer;
-
 
     const decisionId =
         Date.now().toString() +
@@ -3902,7 +5230,7 @@ async function startItemDecision(
             decisionId,
 
         player:
-            player,
+            gameState.currentPlayer,
 
         item:
             item,
@@ -3913,30 +5241,23 @@ async function startItemDecision(
     };
 
 
+    shownDecisionId =
+        decisionId;
+
+
     gameState.status =
         `🎁 ${
             ITEM_NAMES[item]
         } gefunden!`;
 
 
-    shownDecisionId =
-        decisionId;
-
-
     await commitGameState();
 
 
-    if(
-        gameMode === "local" ||
-        currentRole === player
-    ){
-
-        openItemDecision(
-            item,
-            node
-        );
-
-    }
+    openItemDecision(
+        item,
+        node
+    );
 
 }
 
@@ -3949,6 +5270,15 @@ function openItemDecision(
     item,
     node
 ){
+
+    if(
+        popupOpen
+    ){
+
+        return;
+
+    }
+
 
     popupOpen =
         true;
@@ -3971,7 +5301,6 @@ function openItemDecision(
     document.getElementById(
         "popupTitle"
     ).textContent =
-
         `🎁 ${
             ITEM_NAMES[item]
         }`;
@@ -3999,7 +5328,9 @@ function openItemDecision(
         "";
 
 
-    /* AUSrüsten */
+    /*
+       AUSrüsten
+    */
 
     const equip =
         document.createElement(
@@ -4016,8 +5347,7 @@ function openItemDecision(
 
 
     equip.onclick =
-        () =>
-            chooseEquipFound();
+        chooseEquipFound;
 
 
     box.appendChild(
@@ -4025,7 +5355,9 @@ function openItemDecision(
     );
 
 
-    /* INVENTAR */
+    /*
+       INS INVENTAR
+    */
 
     if(
         player.inventory.length <
@@ -4047,8 +5379,7 @@ function openItemDecision(
 
 
         store.onclick =
-            () =>
-                chooseStoreFound();
+            chooseStoreFound;
 
 
         box.appendChild(
@@ -4067,12 +5398,9 @@ function openItemDecision(
         full.style.fontWeight =
             "bold";
 
-        full.style.padding =
-            "4px";
-
 
         full.textContent =
-            "🎒 Inventar ist voll";
+            "🎒 Inventar voll";
 
 
         box.appendChild(
@@ -4082,7 +5410,9 @@ function openItemDecision(
     }
 
 
-    /* LIEGEN LASSEN */
+    /*
+       LIEGEN LASSEN
+    */
 
     const leave =
         document.createElement(
@@ -4099,8 +5429,7 @@ function openItemDecision(
 
 
     leave.onclick =
-        () =>
-            chooseLeaveFound();
+        chooseLeaveFound;
 
 
     box.appendChild(
@@ -4122,10 +5451,16 @@ function openItemDecision(
 
 
 /* =========================================================
-   LIEGEN LASSEN
+   ITEM LIEGEN LASSEN
    ========================================================= */
 
 async function chooseLeaveFound(){
+
+    const nextPlayer =
+        gameState.currentPlayer === 0
+        ? 1
+        : 0;
+
 
     gameState.groundItems.push({
 
@@ -4133,7 +5468,13 @@ async function chooseLeaveFound(){
             pendingNode,
 
         item:
-            pendingItem
+            pendingItem,
+
+        expiresTurn:
+            gameState.turnNumber + 1,
+
+        expiresFor:
+            nextPlayer
 
     });
 
@@ -4169,36 +5510,35 @@ async function chooseStoreFound(){
 
 
     if(
-        player.inventory.length < 3
+        player.inventory.length >= 3
     ){
 
-        player.inventory.push(
-            pendingItem
-        );
-
-
-        gameState.pendingDecision =
-            null;
-
-
-        gameState.status =
-            `🎒 ${
-                ITEM_NAMES[pendingItem]
-            } wurde ins Inventar gelegt.`;
-
-
-        closePopup();
-
-
-        await handleLandingEffects();
-
+        openFullInventoryPopup();
 
         return;
 
     }
 
 
-    openFullInventoryPopup();
+    player.inventory.push(
+        pendingItem
+    );
+
+
+    gameState.pendingDecision =
+        null;
+
+
+    gameState.status =
+        `🎒 ${
+            ITEM_NAMES[pendingItem]
+        } wurde ins Inventar gelegt.`;
+
+
+    closePopup();
+
+
+    await handleLandingEffects();
 
 }
 
@@ -4214,8 +5554,6 @@ async function chooseEquipFound(){
             gameState.currentPlayer
         ];
 
-
-    /* nichts ausgerüstet */
 
     if(
         !player.equipped
@@ -4240,14 +5578,10 @@ async function chooseEquipFound(){
 
         await handleLandingEffects();
 
-
         return;
 
     }
 
-
-    /* Ausrüstung vorhanden,
-       Inventar frei */
 
     if(
         player.inventory.length < 3
@@ -4277,13 +5611,10 @@ async function chooseEquipFound(){
 
         await handleLandingEffects();
 
-
         return;
 
     }
 
-
-    /* alles voll */
 
     openEquipFullPopup();
 
@@ -4312,12 +5643,12 @@ function openFullInventoryPopup(){
         "popupText"
     ).innerHTML =
 
-        `Du kannst ${
+        `Du hast kein Platz mehr für ${
             ITEM_ICONS[pendingItem]
-        } <b>${
+        } ${
             ITEM_NAMES[pendingItem]
-        }</b>
-        liegen lassen oder gegen ein Inventar-Item tauschen.`;
+        }.<br><br>
+        Liegen lassen oder tauschen?`;
 
 
     const box =
@@ -4341,12 +5672,11 @@ function openFullInventoryPopup(){
 
 
     leave.textContent =
-        "🚫 Neues Item liegen lassen";
+        "🚫 Liegen lassen";
 
 
     leave.onclick =
-        () =>
-            chooseLeaveFound();
+        chooseLeaveFound;
 
 
     box.appendChild(
@@ -4357,17 +5687,17 @@ function openFullInventoryPopup(){
     player.inventory.forEach(
         (item,index) => {
 
-            const btn =
+            const button =
                 document.createElement(
                     "button"
                 );
 
 
-            btn.className =
+            button.className =
                 "swapChoice";
 
 
-            btn.textContent =
+            button.textContent =
                 `🔄 Tauschen mit ${
                     ITEM_ICONS[item]
                 } ${
@@ -4375,7 +5705,7 @@ function openFullInventoryPopup(){
                 }`;
 
 
-            btn.onclick =
+            button.onclick =
                 () =>
                     swapInventoryItem(
                         index
@@ -4383,7 +5713,7 @@ function openFullInventoryPopup(){
 
 
             box.appendChild(
-                btn
+                button
             );
 
         }
@@ -4430,7 +5760,15 @@ async function swapInventoryItem(
             pendingNode,
 
         item:
-            oldItem
+            oldItem,
+
+        expiresTurn:
+            gameState.turnNumber + 1,
+
+        expiresFor:
+            gameState.currentPlayer === 0
+            ? 1
+            : 0
 
     });
 
@@ -4439,13 +5777,13 @@ async function swapInventoryItem(
         null;
 
 
+    closePopup();
+
+
     gameState.status =
         `🔄 ${
             ITEM_NAMES[pendingItem]
         } wurde ins Inventar gelegt.`;
-
-
-    closePopup();
 
 
     await handleLandingEffects();
@@ -4454,7 +5792,7 @@ async function swapInventoryItem(
 
 
 /* =========================================================
-   AUSRÜSTUNG VOLL
+   AUSGERÜSTETES ITEM VOLL
    ========================================================= */
 
 function openEquipFullPopup(){
@@ -4477,9 +5815,9 @@ function openEquipFullPopup(){
 
         `Du hast bereits ${
             ITEM_ICONS[player.equipped]
-        } <b>${
+        } ${
             ITEM_NAMES[player.equipped]
-        }</b> ausgerüstet.<br><br>
+        } ausgerüstet.<br><br>
         Dein Inventar ist ebenfalls voll.`;
 
 
@@ -4496,17 +5834,17 @@ function openEquipFullPopup(){
     player.inventory.forEach(
         (item,index) => {
 
-            const btn =
+            const button =
                 document.createElement(
                     "button"
                 );
 
 
-            btn.className =
+            button.className =
                 "swapChoice";
 
 
-            btn.textContent =
+            button.textContent =
                 `🔄 ${
                     ITEM_ICONS[item]
                 } ${
@@ -4514,15 +5852,64 @@ function openEquipFullPopup(){
                 } ablegen`;
 
 
-            btn.onclick =
-                () =>
-                    swapEquippedItem(
+            button.onclick =
+                async () => {
+
+                    const dropped =
+                        player.inventory[
+                            index
+                        ];
+
+
+                    player.inventory[
                         index
-                    );
+                    ] =
+                        player.equipped;
+
+
+                    player.equipped =
+                        pendingItem;
+
+
+                    gameState.groundItems.push({
+
+                        node:
+                            pendingNode,
+
+                        item:
+                            dropped,
+
+                        expiresTurn:
+                            gameState.turnNumber + 1,
+
+                        expiresFor:
+                            gameState.currentPlayer === 0
+                            ? 1
+                            : 0
+
+                    });
+
+
+                    gameState.pendingDecision =
+                        null;
+
+
+                    closePopup();
+
+
+                    gameState.status =
+                        `⚡ ${
+                            ITEM_NAMES[pendingItem]
+                        } wurde ausgerüstet.`;
+
+
+                    await handleLandingEffects();
+
+                };
 
 
             box.appendChild(
-                btn
+                button
             );
 
         }
@@ -4540,12 +5927,11 @@ function openEquipFullPopup(){
 
 
     leave.textContent =
-        "🚫 Neues Item liegen lassen";
+        "🚫 Liegen lassen";
 
 
     leave.onclick =
-        () =>
-            chooseLeaveFound();
+        chooseLeaveFound;
 
 
     box.appendChild(
@@ -4561,63 +5947,8 @@ function openEquipFullPopup(){
 }
 
 
-async function swapEquippedItem(
-    index
-){
-
-    const player =
-        gameState.players[
-            gameState.currentPlayer
-        ];
-
-
-    const dropped =
-        player.inventory[
-            index
-        ];
-
-
-    player.inventory[
-        index
-    ] =
-        player.equipped;
-
-
-    player.equipped =
-        pendingItem;
-
-
-    gameState.groundItems.push({
-
-        node:
-            pendingNode,
-
-        item:
-            dropped
-
-    });
-
-
-    gameState.pendingDecision =
-        null;
-
-
-    gameState.status =
-        `⚡ ${
-            ITEM_NAMES[pendingItem]
-        } wurde ausgerüstet.`;
-
-
-    closePopup();
-
-
-    await handleLandingEffects();
-
-}
-
-
 /* =========================================================
-   POPUP SCHLIESSEN
+   POPUP ZU
    ========================================================= */
 
 function closePopup(){
@@ -4648,7 +5979,7 @@ function closePopup(){
 
 
 /* =========================================================
-   NACH ITEM-AUSWAHL
+   LANDING EFFECTS
    ========================================================= */
 
 async function handleLandingEffects(){
@@ -4681,17 +6012,16 @@ async function handleLandingEffects(){
         ];
 
 
-    /* Kollisionsfeld */
+    /*
+       Spieler treffen
+    */
 
     if(
+        player.pos ===
+        opponent.pos &&
 
-        opponent.pos ===
-            player.pos
-
-        &&
-
-        player.pos !== START
-
+        player.pos !==
+        currentMap.start
     ){
 
         handlePlayerCollision(
@@ -4702,10 +6032,13 @@ async function handleLandingEffects(){
     }
 
 
-    /* Ziel */
+    /*
+       Ziel
+    */
 
     if(
-        player.pos === GOAL
+        player.pos ===
+        currentMap.goal
     ){
 
         if(
@@ -4720,12 +6053,14 @@ async function handleLandingEffects(){
 
 
         gameState.status =
-            "🔒 Das Ziel ist noch verschlossen. Du brauchst den Goldenen Schlüssel.";
+            "🔒 Ziel verschlossen – du brauchst den Goldenen Schlüssel.";
 
     }
 
 
-    /* Zug wechseln */
+    /*
+       Zug wechseln
+    */
 
     if(
         gameState.movesLeft <= 0
@@ -4733,6 +6068,9 @@ async function handleLandingEffects(){
 
         gameState.movesLeft =
             0;
+
+
+        gameState.turnNumber++;
 
 
         gameState.currentPlayer =
@@ -4787,14 +6125,19 @@ function handlePlayerCollision(
 
         ){
 
-            gameState.status =
-                `🛡️ Der Angriff wurde geblockt!`;
-
             attacker.equipped =
                 null;
 
+
             defender.equipped =
                 null;
+
+
+            gameState.status =
+                "🛡️ Der Angriff wurde geblockt!";
+
+
+            soundBlocked();
 
             return;
 
@@ -4802,7 +6145,7 @@ function handlePlayerCollision(
 
 
         defender.pos =
-            START;
+            currentMap.start;
 
 
         attacker.equipped =
@@ -4815,7 +6158,7 @@ function handlePlayerCollision(
                 gameState.players[0]
                 ? "Rot"
                 : "Blau"
-            } hat den Gegner zum Start geschickt!`;
+            } hat den Gegner zurück zum Start geschickt!`;
 
     }
 
@@ -4823,13 +6166,155 @@ function handlePlayerCollision(
 
 
 /* =========================================================
-   ITEM / AUSRÜSTEN BUTTON
+   ZIEL
+   ========================================================= */
+
+function useKeyToOpenGoal(){
+
+    const player =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    if(
+        player.equipped ===
+        "key"
+    ){
+
+        player.equipped =
+            null;
+
+    }
+    else{
+
+        const index =
+            player.inventory.indexOf(
+                "key"
+            );
+
+
+        if(
+            index !== -1
+        ){
+
+            player.inventory.splice(
+                index,
+                1
+            );
+
+        }
+
+    }
+
+
+    gameState.gameOver =
+        true;
+
+
+    gameState.winner =
+        gameState.currentPlayer;
+
+
+    gameState.movesLeft =
+        0;
+
+
+    gameState.status =
+        `🏆 Team ${
+            gameState.currentPlayer === 0
+            ? "Rot"
+            : "Blau"
+        } hat das Ziel geöffnet!`;
+
+
+    showWinner();
+
+
+    if(
+        gameMode === "online"
+    ){
+
+        saveOnlineGame();
+
+    }
+
+}
+
+
+/* =========================================================
+   WIN EFFEKT
+   ========================================================= */
+
+function spawnWinEffect(){
+
+    if(
+        !currentMap ||
+        !gameState
+    ){
+
+        return;
+
+    }
+
+
+    const n =
+        currentMap.nodes[
+            gameState.players[
+                gameState.winner
+            ].pos
+        ];
+
+
+    spawnParticles(
+        n.x,
+        n.y,
+        70
+    );
+
+}
+
+
+/* =========================================================
+   WINNER
+   ========================================================= */
+
+function showWinner(){
+
+    const team =
+        gameState.winner === 0
+        ? "Rot"
+        : "Blau";
+
+
+    document.getElementById(
+        "winnerTitle"
+    ).textContent =
+        `Team ${
+            team
+        } hat gewonnen! ${
+            team === "Rot"
+            ? "🔴"
+            : "🔵"
+        }`;
+
+
+    document.getElementById(
+        "winner"
+    ).style.display =
+        "flex";
+
+}
+
+
+/* =========================================================
+   EQUIP BUTTON
    ========================================================= */
 
 document.getElementById(
     "equipBtn"
 ).onclick =
-async () => {
+async function(){
 
     if(
         !gameState ||
@@ -4899,16 +6384,28 @@ async () => {
 
 
 /* =========================================================
-   ITEM BENUTZEN
+   USE BUTTON
    ========================================================= */
 
 document.getElementById(
     "useBtn"
 ).onclick =
-async () => {
+async function(){
 
     if(
-        !gameState
+        !gameState ||
+        popupOpen
+    ){
+
+        return;
+
+    }
+
+
+    if(
+        gameMode === "online" &&
+        gameState.currentPlayer !==
+        currentRole
     ){
 
         return;
@@ -4917,7 +6414,7 @@ async () => {
 
 
     gameState.status =
-        "⚡ Schwert und Schild werden automatisch bei einer Kollision eingesetzt.";
+        "⚡ Schwert und Schild werden bei einer Kollision automatisch eingesetzt.";
 
 
     await commitGameState();
@@ -4926,13 +6423,13 @@ async () => {
 
 
 /* =========================================================
-   KÄSEWÜRFEL
+   CHEESE
    ========================================================= */
 
 document.getElementById(
     "cheeseBtn"
 ).onclick =
-async () => {
+async function(){
 
     if(
         !gameState ||
@@ -4981,22 +6478,20 @@ async () => {
 
 
     if(
-        opponent.pos !== START
+        opponent.pos !==
+        currentMap.start
     ){
 
         opponent.pos =
-            START;
+            currentMap.start;
+
 
         player.equipped =
             null;
 
 
         gameState.status =
-            `🧀 Team ${
-                gameState.currentPlayer === 0
-                ? "Rot"
-                : "Blau"
-            } hat den Käsewürfel geworfen!`;
+            "🧀 Der Käsewürfel wurde geworfen!";
 
     }
     else{
@@ -5010,282 +6505,6 @@ async () => {
     await commitGameState();
 
 };
-
-
-/* =========================================================
-   ZIEL ÖFFNEN
-   ========================================================= */
-
-function useKeyToOpenGoal(){
-
-    const player =
-        gameState.players[
-            gameState.currentPlayer
-        ];
-
-
-    if(
-        player.equipped ===
-        "key"
-    ){
-
-        player.equipped =
-            null;
-
-    }
-    else{
-
-        const index =
-            player.inventory.indexOf(
-                "key"
-            );
-
-
-        if(
-            index !== -1
-        ){
-
-            player.inventory.splice(
-                index,
-                1
-            );
-
-        }
-
-    }
-
-
-    gameState.gameOver =
-        true;
-
-
-    gameState.winner =
-        gameState.currentPlayer;
-
-
-    gameState.movesLeft =
-        0;
-
-
-    gameState.status =
-        `🎉 Team ${
-            gameState.currentPlayer === 0
-            ? "Rot"
-            : "Blau"
-        } hat das Ziel geöffnet!`;
-
-
-    if(
-        gameMode === "online"
-    ){
-
-        saveOnlineGame();
-
-    }
-
-
-    showWinner();
-
-}
-
-
-/* =========================================================
-   GEWINNER
-   ========================================================= */
-
-function showWinner(){
-
-    if(
-        !gameState ||
-        gameState.winner === null
-    ){
-
-        return;
-
-    }
-
-
-    const team =
-        gameState.winner === 0
-        ? "Rot"
-        : "Blau";
-
-
-    document.getElementById(
-        "winnerTitle"
-    ).textContent =
-        `Team ${team} hat gewonnen! ${
-            team === "Rot"
-            ? "🔴"
-            : "🔵"
-        }`;
-
-
-    document.getElementById(
-        "winner"
-    ).style.display =
-        "flex";
-
-
-    updateGameUI();
-
-}
-
-
-/* =========================================================
-   UI SPIEL
-   ========================================================= */
-
-function updateGameUI(){
-
-    if(
-        !gameState
-    ){
-
-        return;
-
-    }
-
-
-    const player =
-        gameState.players[
-            gameState.currentPlayer
-        ];
-
-
-    const team =
-        gameState.currentPlayer === 0
-        ? "Rot"
-        : "Blau";
-
-
-    document.getElementById(
-        "turnText"
-    ).textContent =
-
-        gameState.gameOver
-
-        ? "Spiel beendet 🎉"
-
-        : `Team ${team} ist dran ${
-            team === "Rot"
-            ? "🔴"
-            : "🔵"
-        }`;
-
-
-    document.getElementById(
-        "diceText"
-    ).textContent =
-
-        gameState.movesLeft > 0
-
-        ? `Noch ${
-            gameState.movesLeft
-        } Schritt${
-            gameState.movesLeft === 1
-            ? ""
-            : "e"
-        }`
-
-        : "Würfle, um zu starten.";
-
-
-    document.getElementById(
-        "statusText"
-    ).textContent =
-        gameState.status ||
-        "";
-
-
-    const inventory =
-        player.inventory.length
-
-        ? player.inventory
-            .map(
-                item =>
-                    `${ITEM_ICONS[item]} ${
-                        ITEM_NAMES[item]
-                    }`
-            )
-            .join("<br>")
-
-        : "–";
-
-
-    const equipped =
-        player.equipped
-
-        ? `⚡ ${
-            ITEM_ICONS[
-                player.equipped
-            ]
-        } ${
-            ITEM_NAMES[
-                player.equipped
-            ]
-        }`
-
-        : "⚡ Nichts ausgerüstet";
-
-
-    document.getElementById(
-        "inventoryText"
-    ).innerHTML =
-
-        `<b>${
-            team
-        }:</b><br>
-        ${inventory}
-        <br><br>
-        ${equipped}`;
-
-
-    const myTurn =
-        gameMode === "local" ||
-        gameState.currentPlayer ===
-        currentRole;
-
-
-    document.getElementById(
-        "diceBtn"
-    ).disabled =
-
-        gameState.gameOver ||
-        popupOpen ||
-        gameState.movesLeft > 0 ||
-        !myTurn;
-
-
-    document.getElementById(
-        "equipBtn"
-    ).disabled =
-
-        gameState.gameOver ||
-        popupOpen ||
-        player.inventory.length === 0 ||
-        !myTurn;
-
-
-    document.getElementById(
-        "useBtn"
-    ).disabled =
-
-        gameState.gameOver ||
-        popupOpen ||
-        !myTurn;
-
-
-    document.getElementById(
-        "cheeseBtn"
-    ).disabled =
-
-        gameState.gameOver ||
-        popupOpen ||
-        player.equipped !== "cheese" ||
-        !myTurn;
-
-}
 
 
 /* =========================================================
@@ -5318,7 +6537,7 @@ async function(){
         ){
 
             showError(
-                "Nur Team Rot kann das Online-Spiel neu starten."
+                "Nur Team Rot kann die Online-Partie neu starten."
             );
 
             return;
@@ -5338,6 +6557,7 @@ async function(){
         gameState =
             createInitialGameState();
 
+
         updateGameUI();
 
         draw();
@@ -5348,26 +6568,30 @@ async function(){
 
 
 /* =========================================================
-   AUS ONLINE SPIEL RAUS
+   MENU
    ========================================================= */
 
 window.backToHomeFromGame =
 function(){
 
-    stopLobbyListeners();
+    stopListeners();
+
+
+    currentLobby =
+        null;
+
+
+    currentRole =
+        null;
 
 
     gameMode =
         "local";
 
-    currentLobby =
-        null;
-
-    currentRole =
-        null;
 
     gameState =
         null;
+
 
     popupOpen =
         false;
@@ -5469,7 +6693,7 @@ async function(){
     }
 
 
-    stopLobbyListeners();
+    stopListeners();
 
 
     currentLobby =
@@ -5491,7 +6715,7 @@ async function(){
    LISTENER STOPPEN
    ========================================================= */
 
-function stopLobbyListeners(){
+function stopListeners(){
 
     if(
         lobbyUnsub
@@ -5520,7 +6744,164 @@ function stopLobbyListeners(){
 
 
 /* =========================================================
-   FEHLER
+   UI
+   ========================================================= */
+
+function updateGameUI(){
+
+    if(
+        !gameState ||
+        !currentMap
+    ){
+
+        return;
+
+    }
+
+
+    const current =
+        gameState.players[
+            gameState.currentPlayer
+        ];
+
+
+    const team =
+        gameState.currentPlayer === 0
+        ? "Rot"
+        : "Blau";
+
+
+    document.getElementById(
+        "turnText"
+    ).textContent =
+
+        gameState.gameOver
+
+        ? "Spiel beendet 🎉"
+
+        : `Team ${
+            team
+        } ist dran ${
+            team === "Rot"
+            ? "🔴"
+            : "🔵"
+        }`;
+
+
+    document.getElementById(
+        "diceText"
+    ).textContent =
+
+        gameState.movesLeft > 0
+
+        ? `Noch ${
+            gameState.movesLeft
+        } Schritt${
+            gameState.movesLeft === 1
+            ? ""
+            : "e"
+        }`
+
+        : "Würfle, um zu starten.";
+
+
+    document.getElementById(
+        "statusText"
+    ).textContent =
+        gameState.status ||
+        "";
+
+
+    const inventory =
+        current.inventory.length
+
+        ? current.inventory
+            .map(
+                item =>
+                    `${ITEM_ICONS[item]} ${
+                        ITEM_NAMES[item]
+                    }`
+            )
+            .join("<br>")
+
+        : "–";
+
+
+    const equipped =
+        current.equipped
+
+        ? `⚡ ${
+            ITEM_ICONS[
+                current.equipped
+            ]
+        } ${
+            ITEM_NAMES[
+                current.equipped
+            ]
+        }`
+
+        : "⚡ Nichts ausgerüstet";
+
+
+    document.getElementById(
+        "inventoryText"
+    ).innerHTML =
+
+        `<b>${team}</b><br>
+        ${inventory}
+        <br>
+        ${equipped}`;
+
+
+    const myTurn =
+        gameMode === "local" ||
+        gameState.currentPlayer ===
+        currentRole;
+
+
+    document.getElementById(
+        "diceBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        gameState.movesLeft > 0 ||
+        !myTurn;
+
+
+    document.getElementById(
+        "equipBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        current.inventory.length === 0 ||
+        !myTurn;
+
+
+    document.getElementById(
+        "useBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        !myTurn;
+
+
+    document.getElementById(
+        "cheeseBtn"
+    ).disabled =
+
+        gameState.gameOver ||
+        popupOpen ||
+        current.equipped !== "cheese" ||
+        !myTurn;
+
+}
+
+
+/* =========================================================
+   ERROR
    ========================================================= */
 
 function showError(
@@ -5557,7 +6938,7 @@ function showError(
 
 
 /* =========================================================
-   ZEICHNEN
+   RENDERING
    ========================================================= */
 
 function roundRect(
@@ -5620,13 +7001,33 @@ function roundRect(
 
 
 /* =========================================================
-   HINTERGRUND
+   BACKGROUND
    ========================================================= */
 
 function drawBackground(){
 
+    const mapId =
+        currentMap
+        ? currentMap.id
+        : 0;
+
+
+    const backgrounds = [
+
+        "#82c867",
+        "#74c6d1",
+        "#95d16d",
+        "#6a8a77",
+        "#c89f69"
+
+    ];
+
+
     ctx.fillStyle =
-        "#8bcf69";
+        backgrounds[
+            mapId %
+            backgrounds.length
+        ];
 
 
     ctx.fillRect(
@@ -5637,24 +7038,50 @@ function drawBackground(){
     );
 
 
+    /*
+       Wiesen-/Themenpunkte
+    */
+
+    const rng =
+        createRng(
+            10000 +
+            mapId*555
+        );
+
+
     for(
         let i=0;
-        i<180;
+        i<110;
         i++
     ){
 
         const x =
-            (i*83) % W;
+            20 +
+            rng()*(
+                W-40
+            );
 
 
         const y =
-            (i*137) % H;
+            20 +
+            rng()*(
+                H-40
+            );
+
+
+        const r =
+            1.5 +
+            rng()*2.5;
 
 
         ctx.fillStyle =
-            i%2===0
-            ? "#78bc5c"
-            : "#9bd979";
+            mapId === 1
+            ? "#4e9db0"
+            : mapId === 3
+            ? "#6e786f"
+            : mapId === 4
+            ? "#aa7d47"
+            : "#66a953";
 
 
         ctx.beginPath();
@@ -5663,7 +7090,7 @@ function drawBackground(){
         ctx.arc(
             x,
             y,
-            2.2,
+            r,
             0,
             Math.PI*2
         );
@@ -5674,20 +7101,109 @@ function drawBackground(){
     }
 
 
-    /* Teich */
+    /*
+       Teiche / dekorative Flächen
+    */
+
+    if(
+        mapId === 1
+    ){
+
+        drawLake(
+            1290,
+            150,
+            120,
+            65
+        );
+
+        drawLake(
+            170,
+            760,
+            85,
+            45
+        );
+
+    }
+
+
+    if(
+        mapId === 2
+    ){
+
+        drawFlowerPatch(
+            125,
+            150
+        );
+
+        drawFlowerPatch(
+            1360,
+            680
+        );
+
+        drawFlowerPatch(
+            1260,
+            180
+        );
+
+    }
+
+
+    if(
+        mapId === 3
+    ){
+
+        drawMoon(
+            1300,
+            130
+        );
+
+        drawStars();
+
+    }
+
+
+    if(
+        mapId === 4
+    ){
+
+        drawLeafPatch(
+            130,
+            160
+        );
+
+        drawLeafPatch(
+            1350,
+            160
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   DEKORATION
+   ========================================================= */
+
+function drawLake(
+    x,
+    y,
+    w,
+    h
+){
 
     ctx.fillStyle =
-        "#5cb9e6";
+        "#4eafd0";
 
 
     ctx.beginPath();
 
 
     ctx.ellipse(
-        1260,
-        180,
-        115,
-        62,
+        x,
+        y,
+        w,
+        h,
         0,
         0,
         Math.PI*2
@@ -5698,99 +7214,68 @@ function drawBackground(){
 
 
     ctx.strokeStyle =
-        "#3a91c0";
+        "#3b8daa";
 
 
     ctx.lineWidth =
-        5;
+        4;
 
 
     ctx.stroke();
 
+}
 
-    /* Blumen */
 
-    const flowers = [
-
-        [118,160],
-        [190,125],
-        [1330,620],
-        [1380,680],
-        [126,540],
-        [1260,700],
-        [1090,110],
-        [820,110]
-
-    ];
-
+function drawFlowerPatch(
+    x,
+    y
+){
 
     for(
-        const [x,y]
-        of flowers
+        let i=0;
+        i<12;
+        i++
     ){
 
-        ctx.strokeStyle =
-            "#3f8f42";
+        const px =
+            x +
+            Math.cos(
+                i*2.4
+            ) *
+            (
+                20 +
+                i*2
+            );
 
 
-        ctx.lineWidth =
-            3;
-
-
-        ctx.beginPath();
-
-
-        ctx.moveTo(
-            x,
-            y+10
-        );
-
-
-        ctx.lineTo(
-            x,
-            y+25
-        );
-
-
-        ctx.stroke();
+        const py =
+            y +
+            Math.sin(
+                i*2.4
+            ) *
+            (
+                20 +
+                i*2
+            );
 
 
         ctx.fillStyle =
             "#fff";
 
 
-        for(
-            let a=0;
-            a<5;
-            a++
-        ){
-
-            const angle =
-                a*Math.PI*2/5;
+        ctx.beginPath();
 
 
-            ctx.beginPath();
+        ctx.arc(
+            px,
+            py,
+            5,
+            0,
+            Math.PI*2
+        );
 
 
-            ctx.arc(
-
-                x+
-                    Math.cos(angle)*8,
-
-                y+
-                    Math.sin(angle)*8,
-
-                6,
-
-                0,
-                Math.PI*2
-
-            );
-
-
-            ctx.fill();
-
-        }
+        ctx.fill();
 
 
         ctx.fillStyle =
@@ -5801,9 +7286,9 @@ function drawBackground(){
 
 
         ctx.arc(
-            x,
-            y,
-            5,
+            px,
+            py,
+            3,
             0,
             Math.PI*2
         );
@@ -5813,82 +7298,125 @@ function drawBackground(){
 
     }
 
-
-    drawHedge(
-        80,
-        110,
-        250,
-        55
-    );
-
-
-    drawHedge(
-        1040,
-        90,
-        170,
-        55
-    );
-
-
-    drawHedge(
-        80,
-        600,
-        190,
-        48
-    );
-
-
-    drawHedge(
-        1230,
-        580,
-        190,
-        50
-    );
-
 }
 
 
-function drawHedge(
+function drawMoon(
     x,
-    y,
-    w,
-    h
+    y
 ){
 
     ctx.fillStyle =
-        "#3f873d";
+        "#f7eb9a";
 
 
-    roundRect(
-        ctx,
+    ctx.beginPath();
+
+
+    ctx.arc(
         x,
         y,
-        w,
-        h,
-        15
+        44,
+        0,
+        Math.PI*2
     );
 
 
     ctx.fill();
 
 
+    ctx.fillStyle =
+        "#6a8a77";
+
+
+    ctx.beginPath();
+
+
+    ctx.arc(
+        x+18,
+        y-13,
+        40,
+        0,
+        Math.PI*2
+    );
+
+
+    ctx.fill();
+
+}
+
+
+function drawStars(){
+
+    const rng =
+        createRng(
+            99991
+        );
+
+
+    ctx.fillStyle =
+        "#fff7c4";
+
+
     for(
         let i=0;
-        i<w;
-        i+=28
+        i<30;
+        i++
     ){
-
-        ctx.fillStyle =
-            "#4c9847";
-
 
         ctx.beginPath();
 
 
         ctx.arc(
-            x+14+i,
-            y+18,
-            12,
+            rng()*W,
+            rng()*250,
+            2,
+            0,
+            Math.PI*2
+        );
+
+
+        ctx.fill();
+
+    }
+
+}
+
+
+function drawLeafPatch(
+    x,
+    y
+){
+
+    for(
+        let i=0;
+        i<14;
+        i++
+    ){
+
+        ctx.fillStyle =
+            i%2
+            ? "#d08039"
+            : "#e4a84d";
+
+
+        ctx.beginPath();
+
+
+        ctx.ellipse(
+            x+
+                Math.cos(i*2.1) *
+                35,
+
+            y+
+                Math.sin(i*2.1) *
+                25,
+
+            10,
+            5,
+
+            i,
+
             0,
             Math.PI*2
         );
@@ -5907,8 +7435,18 @@ function drawHedge(
 
 function drawPath(){
 
-    ctx.save();
+    if(
+        !currentMap
+    ){
 
+        return;
+
+    }
+
+
+    /*
+       Wegschatten
+    */
 
     ctx.lineCap =
         "round";
@@ -5918,33 +7456,31 @@ function drawPath(){
         "round";
 
 
-    /* Schatten */
-
     ctx.strokeStyle =
-        "rgba(0,0,0,0.14)";
+        "rgba(0,0,0,.16)";
 
 
     ctx.lineWidth =
-        82;
+        52;
 
 
     for(
         const [a,b]
-        of edges
+        of currentMap.edges
     ){
 
         ctx.beginPath();
 
 
         ctx.moveTo(
-            nodes[a].x,
-            nodes[a].y
+            currentMap.nodes[a].x,
+            currentMap.nodes[a].y
         );
 
 
         ctx.lineTo(
-            nodes[b].x,
-            nodes[b].y
+            currentMap.nodes[b].x,
+            currentMap.nodes[b].y
         );
 
 
@@ -5953,33 +7489,35 @@ function drawPath(){
     }
 
 
-    /* Weg */
+    /*
+       Steinweg
+    */
 
     ctx.strokeStyle =
-        "#d9bd88";
+        "#d8bd8d";
 
 
     ctx.lineWidth =
-        72;
+        45;
 
 
     for(
         const [a,b]
-        of edges
+        of currentMap.edges
     ){
 
         ctx.beginPath();
 
 
         ctx.moveTo(
-            nodes[a].x,
-            nodes[a].y
+            currentMap.nodes[a].x,
+            currentMap.nodes[a].y
         );
 
 
         ctx.lineTo(
-            nodes[b].x,
-            nodes[b].y
+            currentMap.nodes[b].x,
+            currentMap.nodes[b].y
         );
 
 
@@ -5988,30 +7526,32 @@ function drawPath(){
     }
 
 
-    /* Pflaster */
+    /*
+       Pflasterlinien
+    */
 
     ctx.strokeStyle =
-        "#b99b6c";
+        "#b3966c";
 
 
     ctx.lineWidth =
-        2.4;
+        1.8;
 
 
     for(
         const [a,b]
-        of edges
+        of currentMap.edges
     ){
 
         const A =
-            nodes[a];
+            currentMap.nodes[a];
 
 
         const B =
-            nodes[b];
+            currentMap.nodes[b];
 
 
-        const len =
+        const length =
             Math.hypot(
                 B.x-A.x,
                 B.y-A.y
@@ -6019,31 +7559,28 @@ function drawPath(){
 
 
         const pieces =
-            Math.max(
-                1,
-                Math.floor(
-                    len/28
-                )
+            Math.floor(
+                length / 28
             );
 
 
         for(
-            let j=1;
-            j<pieces;
-            j++
+            let i=1;
+            i<pieces;
+            i++
         ){
 
             const t =
-                j/pieces;
+                i/pieces;
 
 
             const x =
-                A.x+
+                A.x +
                 (B.x-A.x)*t;
 
 
             const y =
-                A.y+
+                A.y +
                 (B.y-A.y)*t;
 
 
@@ -6055,13 +7592,13 @@ function drawPath(){
             ){
 
                 ctx.moveTo(
-                    x-34,
+                    x-21,
                     y
                 );
 
 
                 ctx.lineTo(
-                    x+34,
+                    x+21,
                     y
                 );
 
@@ -6070,13 +7607,13 @@ function drawPath(){
 
                 ctx.moveTo(
                     x,
-                    y-34
+                    y-21
                 );
 
 
                 ctx.lineTo(
                     x,
-                    y+34
+                    y+21
                 );
 
             }
@@ -6088,33 +7625,39 @@ function drawPath(){
 
     }
 
-
-    ctx.restore();
-
 }
 
 
 /* =========================================================
-   KNOTEN
+   MAP-KNOTEN
    ========================================================= */
 
 function drawNodes(){
 
+    if(
+        !currentMap
+    ){
+
+        return;
+
+    }
+
+
     for(
         const n
-        of nodes
+        of currentMap.nodes
     ){
 
         ctx.fillStyle =
-            "#f2d9a4";
+            "#f1d8a5";
 
 
         ctx.strokeStyle =
-            "#b49769";
+            "#ac8d62";
 
 
         ctx.lineWidth =
-            3;
+            2.5;
 
 
         ctx.beginPath();
@@ -6123,7 +7666,7 @@ function drawNodes(){
         ctx.arc(
             n.x,
             n.y,
-            22,
+            13,
             0,
             Math.PI*2
         );
@@ -6139,7 +7682,170 @@ function drawNodes(){
 
 
 /* =========================================================
-   ITEMFELD
+   START
+   ========================================================= */
+
+function drawStart(){
+
+    const n =
+        currentMap.nodes[
+            currentMap.start
+        ];
+
+
+    ctx.fillStyle =
+        "#fff7dc";
+
+
+    ctx.strokeStyle =
+        "#6e4d2b";
+
+
+    ctx.lineWidth =
+        3;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-24,
+        n.y-24,
+
+        48,
+        48,
+
+        13
+
+    );
+
+
+    ctx.fill();
+
+    ctx.stroke();
+
+
+    ctx.fillStyle =
+        "#5d4021";
+
+
+    ctx.font =
+        "900 11px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+        "START",
+        n.x,
+        n.y
+    );
+
+}
+
+
+/* =========================================================
+   ZIEL
+   ========================================================= */
+
+function drawGoal(){
+
+    const n =
+        currentMap.nodes[
+            currentMap.goal
+        ];
+
+
+    let unlocked =
+        false;
+
+
+    if(
+        gameState
+    ){
+
+        unlocked =
+            hasKey(
+                gameState.players[0]
+            )
+
+            ||
+
+            hasKey(
+                gameState.players[1]
+            );
+
+    }
+
+
+    ctx.fillStyle =
+        unlocked
+        ? "#65d56c"
+        : "#777";
+
+
+    ctx.strokeStyle =
+        "#fff";
+
+
+    ctx.lineWidth =
+        3.5;
+
+
+    roundRect(
+
+        ctx,
+
+        n.x-25,
+        n.y-25,
+
+        50,
+        50,
+
+        14
+
+    );
+
+
+    ctx.fill();
+
+    ctx.stroke();
+
+
+    ctx.font =
+        "25px Arial";
+
+
+    ctx.textAlign =
+        "center";
+
+
+    ctx.textBaseline =
+        "middle";
+
+
+    ctx.fillText(
+
+        unlocked
+        ? "🏆"
+        : "🔒",
+
+        n.x,
+        n.y
+
+    );
+
+}
+
+
+/* =========================================================
+   BUNTE ITEMFELDER
    ========================================================= */
 
 function drawItemField(
@@ -6148,13 +7854,15 @@ function drawItemField(
 ){
 
     const n =
-        nodes[index];
+        currentMap.nodes[
+            index
+        ];
 
 
     const color =
-        itemFieldColors[
+        FIELD_COLORS[
             slot %
-            itemFieldColors.length
+            FIELD_COLORS.length
         ];
 
 
@@ -6162,15 +7870,15 @@ function drawItemField(
 
 
     ctx.shadowColor =
-        "rgba(0,0,0,0.25)";
+        "rgba(0,0,0,.24)";
 
 
     ctx.shadowBlur =
-        10;
+        8;
 
 
     ctx.shadowOffsetY =
-        4;
+        3;
 
 
     ctx.fillStyle =
@@ -6181,13 +7889,13 @@ function drawItemField(
 
         ctx,
 
-        n.x-27,
-        n.y-27,
+        n.x-17,
+        n.y-17,
 
-        54,
-        54,
+        34,
+        34,
 
-        14
+        10
 
     );
 
@@ -6200,37 +7908,22 @@ function drawItemField(
 
 
     ctx.strokeStyle =
-        "rgba(255,255,255,0.9)";
+        "rgba(255,255,255,.92)";
 
 
     ctx.lineWidth =
-        3;
-
-
-    roundRect(
-
-        ctx,
-
-        n.x-27,
-        n.y-27,
-
-        54,
-        54,
-
-        14
-
-    );
+        2.5;
 
 
     ctx.stroke();
 
 
     ctx.fillStyle =
-        "white";
+        "#fff";
 
 
     ctx.font =
-        "900 34px Arial";
+        "900 24px Arial";
 
 
     ctx.textAlign =
@@ -6262,7 +7955,7 @@ function drawGroundItem(
 ){
 
     const n =
-        nodes[
+        currentMap.nodes[
             ground.node
         ];
 
@@ -6277,24 +7970,24 @@ function drawGroundItem(
 
 
     ctx.shadowColor =
-        "rgba(0,0,0,0.2)";
+        "rgba(0,0,0,.20)";
 
 
     ctx.shadowBlur =
-        8;
+        7;
 
 
     roundRect(
 
         ctx,
 
-        n.x-25,
-        n.y-25,
+        n.x-18,
+        n.y-18,
 
-        50,
-        50,
+        36,
+        36,
 
-        13
+        10
 
     );
 
@@ -6307,7 +8000,7 @@ function drawGroundItem(
 
 
     ctx.font =
-        "28px Arial";
+        "23px Arial";
 
 
     ctx.textAlign =
@@ -6336,175 +8029,20 @@ function drawGroundItem(
 
 
 /* =========================================================
-   START
-   ========================================================= */
-
-function drawStart(){
-
-    const n =
-        nodes[START];
-
-
-    ctx.fillStyle =
-        "#fff8df";
-
-
-    ctx.strokeStyle =
-        "#76532f";
-
-
-    ctx.lineWidth =
-        4;
-
-
-    roundRect(
-
-        ctx,
-
-        n.x-28,
-        n.y-28,
-
-        56,
-        56,
-
-        16
-
-    );
-
-
-    ctx.fill();
-
-    ctx.stroke();
-
-
-    ctx.fillStyle =
-        "#59401f";
-
-
-    ctx.font =
-        "900 16px Arial";
-
-
-    ctx.textAlign =
-        "center";
-
-
-    ctx.textBaseline =
-        "middle";
-
-
-    ctx.fillText(
-        "START",
-        n.x,
-        n.y
-    );
-
-}
-
-
-/* =========================================================
-   ZIEL
-   ========================================================= */
-
-function drawGoal(){
-
-    const n =
-        nodes[GOAL];
-
-
-    let unlocked =
-        false;
-
-
-    if(
-        gameState
-    ){
-
-        unlocked =
-            hasKey(
-                gameState.players[0]
-            )
-
-            ||
-
-            hasKey(
-                gameState.players[1]
-            );
-
-    }
-
-
-    ctx.save();
-
-
-    ctx.fillStyle =
-        unlocked
-        ? "#65d56c"
-        : "#888";
-
-
-    ctx.strokeStyle =
-        "#fff";
-
-
-    ctx.lineWidth =
-        4;
-
-
-    roundRect(
-
-        ctx,
-
-        n.x-31,
-        n.y-31,
-
-        62,
-        62,
-
-        17
-
-    );
-
-
-    ctx.fill();
-
-    ctx.stroke();
-
-
-    ctx.font =
-        "29px Arial";
-
-
-    ctx.textAlign =
-        "center";
-
-
-    ctx.textBaseline =
-        "middle";
-
-
-    ctx.fillText(
-
-        unlocked
-        ? "🏆"
-        : "🔒",
-
-        n.x,
-        n.y
-
-    );
-
-
-    ctx.restore();
-
-}
-
-
-/* =========================================================
-   MÖGLICHE ZÜGE
+   LEGAL MOVES
    ========================================================= */
 
 function drawLegalMoves(){
+
+    if(
+        !gameState ||
+        popupOpen
+    ){
+
+        return;
+
+    }
+
 
     const legal =
         getLegalMoves();
@@ -6516,37 +8054,35 @@ function drawLegalMoves(){
     ){
 
         const n =
-            nodes[index];
+            currentMap.nodes[
+                index
+            ];
 
 
         ctx.save();
 
 
         ctx.fillStyle =
-            "rgba(255,231,50,0.35)";
+            "rgba(255,229,45,.34)";
 
 
         ctx.strokeStyle =
-            "#ffe62f";
+            "#ffe32e";
 
 
         ctx.lineWidth =
-            5;
+            4;
 
 
         ctx.beginPath();
 
 
         ctx.arc(
-
             n.x,
             n.y,
-
-            38,
-
+            22,
             0,
             Math.PI*2
-
         );
 
 
@@ -6567,45 +8103,83 @@ function drawLegalMoves(){
    ========================================================= */
 
 function drawPlayer(
-    player,
     index
 ){
 
-    const n =
-        nodes[player.pos];
+    const player =
+        gameState.players[
+            index
+        ];
 
 
-    ctx.save();
+    const visual =
+        visualPlayers[
+            index
+        ];
 
 
-    /* Schatten */
+    /*
+       weiche Animation
+    */
+
+    visual.x +=
+        (
+            visual.targetX -
+            visual.x
+        ) *
+        .18;
+
+
+    visual.y +=
+        (
+            visual.targetY -
+            visual.y
+        ) *
+        .18;
+
+
+    const x =
+        visual.x;
+
+
+    const y =
+        visual.y;
+
+
+    const flag =
+        index === 0
+        ? "#e53935"
+        : "#3f7cff";
+
+
+    /*
+       Schatten
+    */
 
     ctx.fillStyle =
-        "rgba(0,0,0,0.22)";
+        "rgba(0,0,0,.22)";
 
 
     ctx.beginPath();
 
 
     ctx.ellipse(
-
-        n.x,
-        n.y+27,
-
-        29,
-        10,
-
+        x,
+        y+19,
+        22,
+        7,
         0,
         0,
         Math.PI*2
-
     );
 
 
     ctx.fill();
 
 
-    /* Käse */
+    /*
+       Käse
+    */
 
     ctx.fillStyle =
         "#ffd84e";
@@ -6616,33 +8190,33 @@ function drawPlayer(
 
 
     ctx.lineWidth =
-        4;
+        3;
 
 
     ctx.beginPath();
 
 
     ctx.moveTo(
-        n.x-24,
-        n.y+18
+        x-19,
+        y+14
     );
 
 
     ctx.lineTo(
-        n.x-24,
-        n.y-17
+        x-19,
+        y-13
     );
 
 
     ctx.lineTo(
-        n.x+24,
-        n.y-17
+        x+19,
+        y-13
     );
 
 
     ctx.lineTo(
-        n.x+24,
-        n.y+18
+        x+19,
+        y+14
     );
 
 
@@ -6654,7 +8228,9 @@ function drawPlayer(
     ctx.stroke();
 
 
-    /* Löcher */
+    /*
+       Löcher
+    */
 
     ctx.fillStyle =
         "#e2ae2b";
@@ -6664,9 +8240,9 @@ function drawPlayer(
 
 
     ctx.arc(
-        n.x-10,
-        n.y-5,
-        4,
+        x-8,
+        y-2,
+        3,
         0,
         Math.PI*2
     );
@@ -6679,9 +8255,9 @@ function drawPlayer(
 
 
     ctx.arc(
-        n.x+8,
-        n.y+8,
-        3.5,
+        x+7,
+        y+7,
+        2.6,
         0,
         Math.PI*2
     );
@@ -6690,28 +8266,30 @@ function drawPlayer(
     ctx.fill();
 
 
-    /* Flagge */
+    /*
+       Flagge
+    */
 
     ctx.strokeStyle =
         "#4f3822";
 
 
     ctx.lineWidth =
-        3;
+        2.5;
 
 
     ctx.beginPath();
 
 
     ctx.moveTo(
-        n.x,
-        n.y-17
+        x,
+        y-13
     );
 
 
     ctx.lineTo(
-        n.x,
-        n.y-48
+        x,
+        y-38
     );
 
 
@@ -6719,29 +8297,27 @@ function drawPlayer(
 
 
     ctx.fillStyle =
-        index === 0
-        ? "#e53935"
-        : "#3f7cff";
+        flag;
 
 
     ctx.beginPath();
 
 
     ctx.moveTo(
-        n.x,
-        n.y-47
+        x,
+        y-38
     );
 
 
     ctx.lineTo(
-        n.x+21,
-        n.y-40
+        x+16,
+        y-32
     );
 
 
     ctx.lineTo(
-        n.x,
-        n.y-33
+        x,
+        y-27
     );
 
 
@@ -6751,12 +8327,16 @@ function drawPlayer(
     ctx.fill();
 
 
+    /*
+       Team
+    */
+
     ctx.fillStyle =
         "#5a3d16";
 
 
     ctx.font =
-        "900 14px Arial";
+        "900 11px Arial";
 
 
     ctx.textAlign =
@@ -6773,20 +8353,22 @@ function drawPlayer(
         ? "R"
         : "B",
 
-        n.x,
-        n.y
+        x,
+        y
 
     );
 
 
-    /* Item über Spieler */
+    /*
+       Ausrüstung
+    */
 
     if(
         player.equipped
     ){
 
         ctx.font =
-            "20px Arial";
+            "17px Arial";
 
 
         ctx.fillText(
@@ -6795,21 +8377,18 @@ function drawPlayer(
                 player.equipped
             ],
 
-            n.x+29,
-            n.y-26
+            x+23,
+            y-20
 
         );
 
     }
 
-
-    ctx.restore();
-
 }
 
 
 /* =========================================================
-   MÄUSE
+   MAUS
    ========================================================= */
 
 function drawMouse(
@@ -6822,70 +8401,77 @@ function drawMouse(
         );
 
 
+    const x =
+        pos.x;
+
+
+    const y =
+        pos.y;
+
+
     ctx.save();
 
 
-    /* Schatten */
+    /*
+       Schatten
+    */
 
     ctx.fillStyle =
-        "rgba(0,0,0,0.20)";
+        "rgba(0,0,0,.18)";
 
 
     ctx.beginPath();
 
 
     ctx.ellipse(
-
-        pos.x,
-        pos.y+17,
-
-        22,
-        8,
-
+        x,
+        y+14,
+        19,
+        6,
         0,
         0,
         Math.PI*2
-
     );
 
 
     ctx.fill();
 
 
-    /* Schwanz */
+    /*
+       Schwanz
+    */
 
     ctx.strokeStyle =
         "#a66a63";
 
 
     ctx.lineWidth =
-        4;
+        3;
 
 
     ctx.beginPath();
 
 
     ctx.moveTo(
-        pos.x-17,
-        pos.y+4
+        x-12,
+        y+3
     );
 
 
     ctx.quadraticCurveTo(
-
-        pos.x-38,
-        pos.y+18,
-
-        pos.x-49,
-        pos.y+2
-
+        x-28,
+        y+15,
+        x-40,
+        y+2
     );
 
 
     ctx.stroke();
 
 
-    /* Körper */
+    /*
+       Körper
+    */
 
     ctx.fillStyle =
         "#b9a4a0";
@@ -6895,45 +8481,41 @@ function drawMouse(
 
 
     ctx.ellipse(
-
-        pos.x,
-        pos.y+5,
-
-        24,
-        17,
-
+        x,
+        y+3,
+        20,
+        14,
         0,
         0,
         Math.PI*2
-
     );
 
 
     ctx.fill();
 
 
-    /* Kopf */
+    /*
+       Kopf
+    */
 
     ctx.beginPath();
 
 
     ctx.arc(
-
-        pos.x+17,
-        pos.y-3,
-
-        16,
-
+        x+14,
+        y-3,
+        13,
         0,
         Math.PI*2
-
     );
 
 
     ctx.fill();
 
 
-    /* Ohren */
+    /*
+       Ohren
+    */
 
     ctx.fillStyle =
         "#d9aaa5";
@@ -6943,15 +8525,11 @@ function drawMouse(
 
 
     ctx.arc(
-
-        pos.x+7,
-        pos.y-17,
-
-        8,
-
+        x+5,
+        y-16,
+        7,
         0,
         Math.PI*2
-
     );
 
 
@@ -6962,22 +8540,20 @@ function drawMouse(
 
 
     ctx.arc(
-
-        pos.x+25,
-        pos.y-19,
-
-        8,
-
+        x+20,
+        y-17,
+        7,
         0,
         Math.PI*2
-
     );
 
 
     ctx.fill();
 
 
-    /* Auge */
+    /*
+       Auge
+    */
 
     ctx.fillStyle =
         "#222";
@@ -6987,22 +8563,20 @@ function drawMouse(
 
 
     ctx.arc(
-
-        pos.x+22,
-        pos.y-6,
-
-        2.8,
-
+        x+18,
+        y-5,
+        2.2,
         0,
         Math.PI*2
-
     );
 
 
     ctx.fill();
 
 
-    /* Nase */
+    /*
+       Nase
+    */
 
     ctx.fillStyle =
         "#d56a6a";
@@ -7012,15 +8586,11 @@ function drawMouse(
 
 
     ctx.arc(
-
-        pos.x+33,
-        pos.y+1,
-
-        3,
-
+        x+26,
+        y,
+        2.5,
         0,
         Math.PI*2
-
     );
 
 
@@ -7054,95 +8624,111 @@ function draw(){
 
 
     if(
-        gameState
+        !gameState ||
+        !currentMap
     ){
 
-        drawStart();
+        return;
 
-        drawGoal();
-
-
-        gameState.itemFields.forEach(
-
-            (index,slot) => {
-
-                drawItemField(
-                    index,
-                    slot
-                );
-
-            }
-
-        );
+    }
 
 
-        gameState.groundItems.forEach(
-            item => {
+    drawStart();
 
-                drawGroundItem(
-                    item
-                );
-
-            }
-        );
+    drawGoal();
 
 
-        if(
-            gameState.movesLeft > 0 &&
-            !popupOpen
-        ){
+    gameState.itemFields.forEach(
 
-            drawLegalMoves();
+        (
+            index,
+            slot
+        ) => {
 
-        }
-
-
-        drawPlayer(
-            gameState.players[0],
-            0
-        );
-
-
-        drawPlayer(
-            gameState.players[1],
-            1
-        );
-
-
-        for(
-            let i=0;
-            i<3;
-            i++
-        ){
-
-            drawMouse(
-                i
+            drawItemField(
+                index,
+                slot
             );
 
         }
 
-    }
+    );
+
+
+    gameState.groundItems.forEach(
+        drawGroundItem
+    );
+
+
+    drawLegalMoves();
+
+
+    drawPlayer(
+        0
+    );
+
+
+    drawPlayer(
+        1
+    );
+
+
+    drawMouse(
+        0
+    );
+
+
+    drawMouse(
+        1
+    );
+
+
+    drawMouse(
+        2
+    );
+
+
+    drawParticles();
 
 }
 
 
 /* =========================================================
-   ANIMATION
+   ANIMATION LOOP
    ========================================================= */
 
-function animation(){
+let previousTime =
+    performance.now();
 
-    if(
-        gameState
-    ){
 
-        draw();
+function animate(
+    now
+){
 
-    }
+    const dt =
+        Math.min(
+            .04,
+            (
+                now -
+                previousTime
+            ) / 1000
+        );
+
+
+    previousTime =
+        now;
+
+
+    updateParticles(
+        dt
+    );
+
+
+    draw();
 
 
     requestAnimationFrame(
-        animation
+        animate
     );
 
 }
@@ -7152,17 +8738,8 @@ function animation(){
    START
    ========================================================= */
 
-document.getElementById(
-    "restartBtn"
-);
-
-document.getElementById(
-    "diceBtn"
-);
-
-
 requestAnimationFrame(
-    animation
+    animate
 );
 
 </script>
